@@ -2,22 +2,14 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<groupId>org.jbrew</groupId>
+	<artifactId>jbrew-parent</artifactId>
+	<version>0.0.7-SNAPSHOT</version>
 
-	<groupId>software.nealk</groupId>
-	<artifactId>nealk-sdk-concurrent-lib</artifactId>
-	<version>1.1-SNAPSHOT</version>
-
-	<name>nealk-sdk-concurrent-lib</name>
-	<description>An easy-to-consume concurrency library allowing for "Tasks" to execute business logic in a thread safe manner. This library helps users achieve multi-threading in their applications without worrying about synchronization and blocking for race conditions.</description>
-	<url>https://github.com/nealkumar/NealK-SDK-Concurrent-Library</url>
-
-	<developers>
-		<developer>
-			<name>Neal Kumar</name>
-			<email>nealk@nealk.com</email>
-			<organization>nealk.com</organization>
-		</developer>
-	</developers>
+	<name>JBrew Parent POM</name>
+	<description>The JBrew Java library collection is a set of helper libraries with features ranging from concurrency to sorting! Be sure to check out the documentation at jbrew.org.</description>
+	<url>https://jbrew.org</url>
 
 	<licenses>
 		<license>
@@ -27,10 +19,34 @@
 		</license>
 	</licenses>
 
+	<modules>
+		<module>concurrent</module>
+	</modules>
+
+	<developers>
+		<developer>
+			<name>Neal Kumar</name>
+			<email>nealk@nealk.com</email>
+			<organization>JBrew</organization>
+			<organizationUrl>jbrew.org</organizationUrl>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<sonar.projectKey>org.jbrew:jbrew-parent</sonar.projectKey>
+		<sonar.organization>nealkumar</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.login>${env.SONAR_TOKEN}</sonar.login>
+		<!--<sonar.java.libraries>target/dependency</sonar.java.libraries>-->
+	</properties>
+
 	<distributionManagement>
 		<site>
-			<id>http://nealk.software</id>
-			<url>http://nealk.software</url>
+			<id>http://jbrew.org</id>
+			<url>http://jbrew.org</url>
 		</site>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -42,12 +58,6 @@
 		</repository>
 	</distributionManagement>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -58,10 +68,10 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:git://github.com/nealkumar/NealK-SDK-Concurrent-Library.git</connection>
-		<developerConnection>scm:git:git@github.com:nealkumar/NealK-SDK-Concurrent-Library.git</developerConnection>
-		<url>https://github.com/nealkumar/NealK-SDK-Concurrent-Library</url>
-		<tag>HEAD</tag>
+		<connection>scm:git:git://github.com/nealkumar/JBrew.git</connection>
+		<developerConnection>scm:git:git@github.com:nealkumar/JBrew.git</developerConnection>
+		<url>https://github.com/nealkumar/JBrew</url>
+		<tag>v0.0.6</tag>
 	</scm>
 
 	<profiles>
@@ -98,6 +108,25 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
 				<version>1.6.7</version>
@@ -129,6 +158,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>3.0.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -136,15 +168,6 @@
 							<goal>jar</goal>
 						</goals>
 					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-				<executions>
 					<execution>
 						<id>attach-javadoc</id>
 						<goals>
@@ -212,4 +235,28 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.0</version>
+				<reportSets>
+					<reportSet>
+						<id>non-aggregate</id>
+						<reports>
+							<report>javadoc</report>
+						</reports>
+					</reportSet>
+					<reportSet>
+						<id>aggregate</id>
+						<inherited>false</inherited>
+						<reports>
+							<report>aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>

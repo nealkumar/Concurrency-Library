@@ -1,15 +1,12 @@
-package software.nealk.concurrent.tasks;
+package org.jbrew.concurrent;
 
-import software.nealk.concurrent.Task;
-
-public abstract class NonRetrievableTask implements Task{
+public abstract class NonRetrievableTask implements Task<Void>{
 
 	@Override
-	public final synchronized void run() {
-		// TODO Auto-generated method stub
+	public final void run() {
 		System.out.println("Thread " 
 				+ Thread.currentThread().getId()
-				+ " is running....");
+				+ " is running...");
 		this.execute();
 	}
 	
