@@ -11,7 +11,7 @@ To import this library into Maven, simply insert the following dependency in you
       <groupId>software.nealk</groupId>
       <artifactId>nealk-sdk-concurrent-lib</artifactId>
       <version>1.1</version>
-</dependency>
+    </dependency>
   </dependencies>
 ```
 # Concurrent Tasks Java Library
