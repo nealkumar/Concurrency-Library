@@ -3,7 +3,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/nealkumar/sdk-concurrency-library/badge)](https://www.codefactor.io/repository/github/nealkumar/sdk-concurrency-library)
 [![Build Status](https://travis-ci.com/nealkumar/SDK-Concurrency-Library.svg?branch=master)](https://travis-ci.com/nealkumar/SDK-Concurrency-Library)
 [![codecov](https://codecov.io/gh/nealkumar/SDK-Concurrency-Library/branch/master/graph/badge.svg)](https://codecov.io/gh/nealkumar/SDK-Concurrency-Library)
-[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+[![DepShield Badge](https://depshield.sonatype.org/badges/nealkumar/SDK-Concurrency-Library/depshield.svg)](https://depshield.github.io)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 # Maven Central Dependency
 To import this library into Maven, simply insert the following dependency in your pom.xml:
