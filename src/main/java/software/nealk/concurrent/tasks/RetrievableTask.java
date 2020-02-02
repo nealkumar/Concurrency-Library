@@ -16,7 +16,7 @@ public abstract class RetrievableTask<T> implements Task{
 	public final void run() {
 		System.out.println("Thread " 
 							+ Thread.currentThread().getId()
-							+ " is running....");
+							+ " is running...");
 		this.execute();
 		this.objSem.release();
 	}
