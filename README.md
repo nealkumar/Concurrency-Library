@@ -2,7 +2,7 @@
 [![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?style=flat-square)](https://gitter.im/Concurrent-Tasks/community)
 [![Coverage Status](https://coveralls.io/repos/github/nealkumar/SDK-Concurrency-Library/badge.svg?branch=master)](https://coveralls.io/github/nealkumar/SDK-Concurrency-Library?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/nealkumar/sdk-concurrency-library/badge)](https://www.codefactor.io/repository/github/nealkumar/sdk-concurrency-library)
-[![Build Status](https://travis-ci.com/nealkumar/Concurrent-Tasks-Library.svg?branch=master)](https://travis-ci.com/nealkumar/Concurrent-Tasks-Library)
+[![Build Status](https://travis-ci.com/nealkumar/SDK-Concurrency-Library.svg?branch=master)](https://travis-ci.com/nealkumar/SDK-Concurrency-Library)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 # Maven Central Dependency
 To import this library into Maven, simply insert the following dependency in your pom.xml:
