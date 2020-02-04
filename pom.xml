@@ -60,9 +60,9 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:git://github.com/nealkumar/SDK-Concurrency-Library.git</connection>
-		<developerConnection>scm:git:git@github.com:nealkumar/SDK-Concurrency-Library.git</developerConnection>
-		<url>https://github.com/nealkumar/NealK-SDK-Concurrent-Library</url>
+		<connection>scm:git:git://github.com/nealkumar/Concurrency-Library.git</connection>
+		<developerConnection>scm:git:git@github.com:nealkumar/Concurrency-Library.git</developerConnection>
+		<url>https://github.com/nealkumar/Concurrency-Library</url>
 		<tag>HEAD</tag>
 	</scm>
 
