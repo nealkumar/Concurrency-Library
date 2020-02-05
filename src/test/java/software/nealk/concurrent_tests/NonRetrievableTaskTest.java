@@ -21,6 +21,18 @@ public class NonRetrievableTaskTest {
 		r.getVal();
 	}
 	
+	@Test
+	public void checkExecuteMethod() {
+		NR r = new NR();
+		r.execute();
+	}
+	
+	@Test
+	public void checkRunMethod() {
+		Runnable r = new NR();
+		r.run();
+	}
+	
 	
 	private class NR extends NonRetrievableTask{
 		@Override
