@@ -11,8 +11,8 @@ To import this library into Maven, simply insert the following dependency in you
   <dependencies>
     <dependency>
       <groupId>software.nealk</groupId>
-      <artifactId>nealk-sdk-concurrent-lib</artifactId>
-      <version>1.1</version>
+      <artifactId>concurrent</artifactId>
+      <version>0.2.7</version>
     </dependency>
   </dependencies>
 ```
