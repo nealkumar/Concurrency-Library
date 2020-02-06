@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/software.nealk/nealk-sdk-concurrent-lib.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22software.nealk%22%20AND%20a:%22nealk-sdk-concurrent-lib%22)
+[![Maven Central](https://img.shields.io/maven-central/v/software.nealk/concurrent.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22software.nealk%22%20AND%20a:%22concurrent%22)
 [![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?style=flat-square)](https://gitter.im/Concurrent-Tasks/community)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/nealkumar/Concurrency-Library/master?label=code%20quality%20grade)](https://www.codefactor.io/repository/github/nealkumar/concurrency-library)
 [![Build Status](https://travis-ci.com/nealkumar/Concurrency-Library.svg?branch=master)](https://travis-ci.com/nealkumar/Concurrency-Library)
