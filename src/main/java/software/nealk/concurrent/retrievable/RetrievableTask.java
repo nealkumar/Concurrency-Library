@@ -1,4 +1,4 @@
-package software.nealk.concurrent.tasks;
+package software.nealk.concurrent.retrievable;
 
 import software.nealk.concurrent.Task;
 import software.nealk.concurrent.ThreadSafe;

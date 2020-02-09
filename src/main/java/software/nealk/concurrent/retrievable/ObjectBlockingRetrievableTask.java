@@ -1,4 +1,4 @@
-package software.nealk.concurrent.tasks;
+package software.nealk.concurrent.retrievable;
 
 
 public abstract class ObjectBlockingRetrievableTask<T> extends RetrievableTask<T>{
