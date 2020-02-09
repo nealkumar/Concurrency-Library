@@ -6,7 +6,7 @@ import junit.framework.Assert;
 import software.nealk.concurrent.tasks.NonRetrievableTask;
 
 @SuppressWarnings("deprecation")
-public class NonRetrievableTaskTest {
+public class NonRetrievableTaskUnitTest {
 	
 	@Test
 	public void instantiateNonRetrievableTaskTest() {
