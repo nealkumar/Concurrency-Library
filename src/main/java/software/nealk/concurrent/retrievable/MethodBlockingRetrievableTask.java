@@ -11,7 +11,6 @@ public abstract class MethodBlockingRetrievableTask<T> extends RetrievableTask<T
 
 	@Override
 	public final void run() {
-		// TODO Auto-generated method stub
 		this.execute();
 		this.objSem.release();
 	}

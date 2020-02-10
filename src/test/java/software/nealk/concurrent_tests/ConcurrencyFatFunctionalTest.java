@@ -45,7 +45,6 @@ public class ConcurrencyFatFunctionalTest {
 	private class RT<T> extends MethodBlockingRetrievableTask<String>{
 		@Override
 		protected void execute() {
-			// TODO Auto-generated method stub
 			System.out.println("In RT!");
 			this.setVal("Retrievable Task'S Object is set!");
 		}
