@@ -1,6 +1,6 @@
 package software.nealk.concurrent;
 
-public interface Task extends Runnable{
+public interface Task<T> extends Runnable{
 	
 	/**
 	 * <p>Returns the thread-safe value of Type &lt;?&gt;</p>
@@ -10,6 +10,7 @@ public interface Task extends Runnable{
 	 * @exception InterruptedException
 	 * @author nealk
 	 */
+	@SuppressWarnings("hiding")
 	@ThreadSafe
 	public abstract <T extends Object> T getVal() throws InterruptedException;
 

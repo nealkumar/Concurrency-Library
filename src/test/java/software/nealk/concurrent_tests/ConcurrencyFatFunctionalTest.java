@@ -1,18 +1,26 @@
 package software.nealk.concurrent_tests;
 
+import software.nealk.Testing;
 import software.nealk.concurrent.Task;
-import software.nealk.concurrent.tasks.MethodBlockingRetrievableTask;
-import software.nealk.concurrent.tasks.ObjectBlockingRetrievableTask;
+import software.nealk.concurrent.retrievable.MethodBlockingRetrievableTask;
+import software.nealk.concurrent.retrievable.ObjectBlockingRetrievableTask;
 
-public class ObjectBlockingRetrievableTaskIntegTest {
+/**
+ * Simple functional test for Retrievable and NonRetrievable Tasks
+ * 
+ * @author nealk
+ *
+ */
+@Testing
+public class ConcurrencyFatFunctionalTest {
 	
 	public static void main(String[] args) throws InterruptedException {
-		new ObjectBlockingRetrievableTaskIntegTest().go();
+		new ConcurrencyFatFunctionalTest().go();
 	}
 	
 	private void go() throws InterruptedException {
-		Task r = new OBRT();
-		Task r1 = new RT();
+		Task<String> r = new OBRT<>();
+		Task<String> r1 = new RT<>();
 		new Thread(r).start();
 		new Thread(r1).start();
 		System.out.println(r.getVal());
@@ -20,7 +28,7 @@ public class ObjectBlockingRetrievableTaskIntegTest {
 	}
 	
 	
-	private class OBRT extends ObjectBlockingRetrievableTask<String>{
+	private class OBRT<T> extends ObjectBlockingRetrievableTask<String>{
 		@Override
 		protected void execute() {
 			System.out.println("I am inside OBRT!");
@@ -34,7 +42,7 @@ public class ObjectBlockingRetrievableTaskIntegTest {
 		}
 	}
 	
-	private class RT extends MethodBlockingRetrievableTask<String>{
+	private class RT<T> extends MethodBlockingRetrievableTask<String>{
 		@Override
 		protected void execute() {
 			// TODO Auto-generated method stub

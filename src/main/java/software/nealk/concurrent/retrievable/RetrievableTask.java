@@ -3,7 +3,7 @@ package software.nealk.concurrent.retrievable;
 import software.nealk.concurrent.Task;
 import software.nealk.concurrent.ThreadSafe;
 
-public abstract class RetrievableTask<T> implements Task{
+public abstract class RetrievableTask<T> implements Task<T>{
 	
 	protected boolean printThreadIdFlag;
 	

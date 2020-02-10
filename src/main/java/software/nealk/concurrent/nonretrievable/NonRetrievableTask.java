@@ -2,7 +2,7 @@ package software.nealk.concurrent.nonretrievable;
 
 import software.nealk.concurrent.Task;
 
-public abstract class NonRetrievableTask implements Task{
+public abstract class NonRetrievableTask implements Task<Void>{
 
 	@Override
 	public final synchronized void run() {
