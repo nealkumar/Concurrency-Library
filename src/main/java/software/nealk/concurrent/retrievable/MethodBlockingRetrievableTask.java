@@ -23,7 +23,6 @@ public abstract class MethodBlockingRetrievableTask<T> extends RetrievableTask<T
 
 	@Override
 	public final T getVal() throws InterruptedException {
-		// TODO Auto-generated method stub
 		this.objSem.acquire();
 		return this.obj;
 	}
