@@ -34,7 +34,7 @@ public abstract class RetrievableTask<T> implements Task<T>{
 	protected abstract void setVal(T obj);
 
 	/**
-	 * Blocks until {@link obj} of type &lt;T&gt; is not null. Returns the {@link obj}.
+	 * Blocks until <code>obj</code> of type &lt;T&gt; is not null. Returns the <code>obj</code>.
 	 * <br><br>
 	 * Note that compile-time type checking is enabled. The usage 
 	 * of Java Generics nullifies the compiler warning "unchecked".
