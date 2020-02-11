@@ -5,7 +5,7 @@
 
 	<groupId>org.jbrew</groupId>
 	<artifactId>concurrent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 
 	<name>JBrew Concurrency Library</name>
 	<description>
@@ -64,7 +64,7 @@
 		<connection>scm:git:git://github.com/nealkumar/Concurrency-Library.git</connection>
 		<developerConnection>scm:git:git@github.com:nealkumar/Concurrency-Library.git</developerConnection>
 		<url>https://github.com/nealkumar/Concurrency-Library</url>
-		<tag>v0.0.0</tag>
+		<tag>v0.0.1</tag>
 	</scm>
 
 	<profiles>
