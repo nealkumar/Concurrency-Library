@@ -1,12 +1,12 @@
-package software.nealk.concurrent_tests.retrievable;
+package org.jbrew.concurrent_tests.retrievable;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.jbrew.Testing;
+import org.jbrew.concurrent.Task;
+import org.jbrew.concurrent.retrievable.ObjectBlockingRetrievableTask;
 import org.junit.Test;
-import software.nealk.Testing;
-import software.nealk.concurrent.Task;
-import software.nealk.concurrent.retrievable.ObjectBlockingRetrievableTask;
 
 @Testing
 public class ObjectBlockingRetrievableTaskUnitTest {

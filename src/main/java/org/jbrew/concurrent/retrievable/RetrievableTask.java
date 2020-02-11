@@ -1,7 +1,7 @@
-package software.nealk.concurrent.retrievable;
+package org.jbrew.concurrent.retrievable;
 
-import software.nealk.concurrent.Task;
-import software.nealk.concurrent.ThreadSafe;
+import org.jbrew.concurrent.Task;
+import org.jbrew.concurrent.ThreadSafe;
 
 public abstract class RetrievableTask<T> implements Task<T>{
 	

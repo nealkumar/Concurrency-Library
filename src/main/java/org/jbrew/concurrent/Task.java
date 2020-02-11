@@ -1,4 +1,4 @@
-package software.nealk.concurrent;
+package org.jbrew.concurrent;
 
 public interface Task<T> extends Runnable{
 	

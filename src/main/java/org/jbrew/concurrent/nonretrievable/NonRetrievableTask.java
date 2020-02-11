@@ -1,6 +1,6 @@
-package software.nealk.concurrent.nonretrievable;
+package org.jbrew.concurrent.nonretrievable;
 
-import software.nealk.concurrent.Task;
+import org.jbrew.concurrent.Task;
 
 public abstract class NonRetrievableTask implements Task<Void>{
 

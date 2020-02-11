@@ -1,9 +1,9 @@
-package software.nealk.concurrent_tests;
+package org.jbrew.concurrent_tests;
 
-import software.nealk.Testing;
-import software.nealk.concurrent.Task;
-import software.nealk.concurrent.retrievable.MethodBlockingRetrievableTask;
-import software.nealk.concurrent.retrievable.ObjectBlockingRetrievableTask;
+import org.jbrew.Testing;
+import org.jbrew.concurrent.Task;
+import org.jbrew.concurrent.retrievable.MethodBlockingRetrievableTask;
+import org.jbrew.concurrent.retrievable.ObjectBlockingRetrievableTask;
 
 /**
  * Simple functional test for Retrievable and NonRetrievable Tasks

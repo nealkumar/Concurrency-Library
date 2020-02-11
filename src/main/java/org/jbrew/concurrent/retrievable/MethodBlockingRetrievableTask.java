@@ -1,4 +1,4 @@
-package software.nealk.concurrent.retrievable;
+package org.jbrew.concurrent.retrievable;
 
 public abstract class MethodBlockingRetrievableTask<T> extends RetrievableTask<T>{
 	

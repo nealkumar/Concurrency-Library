@@ -1,11 +1,10 @@
-package software.nealk.concurrent_tests.nonretrievable;
+package org.jbrew.concurrent_tests.nonretrievable;
 
 import static org.junit.Assert.assertNotNull;
 
+import org.jbrew.Testing;
+import org.jbrew.concurrent.nonretrievable.NonRetrievableTask;
 import org.junit.Test;
-
-import software.nealk.Testing;
-import software.nealk.concurrent.nonretrievable.NonRetrievableTask;
 
 @Testing
 public class NonRetrievableTaskUnitTest {

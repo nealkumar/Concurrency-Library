@@ -1,4 +1,4 @@
-package software.nealk;
+package org.jbrew;
 
 /**
  * This annotation denotes the current class as a Testing class.
