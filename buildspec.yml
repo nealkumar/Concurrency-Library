@@ -3,7 +3,7 @@ version: 2.0
 phases:
   install:
     runtime-versions:
-      -java:"$JAVA_RUNTIME"
+      -java: corretto11
       
   build:
     commands:
