@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.com/nealkumar/Concurrency-Library.svg?branch=master)](https://travis-ci.com/nealkumar/Concurrency-Library)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/nealkumar/Concurrency-Library/master?label=codefactor)](https://www.codefactor.io/repository/github/nealkumar/concurrency-library)
 [![codecov](https://codecov.io/gh/nealkumar/Concurrency-Library/branch/master/graph/badge.svg)](https://codecov.io/gh/nealkumar/Concurrency-Library)
-[![DepShield Badge](https://depshield.sonatype.org/badges/nealkumar/SDK-Concurrency-Library/depshield.svg)](https://depshield.github.io)
 [![DepShield Badge](https://depshield.sonatype.org/badges/nealkumar/Concurrency-Library/depshield.svg)](https://depshield.github.io)
 [![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?style=flat-square)](https://gitter.im/Concurrent-Tasks/community)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
