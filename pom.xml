@@ -5,17 +5,20 @@
 
 	<groupId>org.jbrew</groupId>
 	<artifactId>concurrent</artifactId>
-	<version>0.5.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 
-	<name>NealK Concurrency Library</name>
-	<description>An easy-to-consume concurrency library allowing for "Tasks" to execute business logic in a thread safe manner. This library helps users achieve multi-threading in their applications without worrying about synchronization and blocking for race conditions.</description>
+	<name>JBrew Concurrency Library</name>
+	<description>
+		An easy-to-consume concurrency library allowing for "Tasks" to execute business logic in a thread safe manner. This library helps users achieve multi-threading in their applications without worrying about synchronization and blocking for race conditions.
+	</description>
 	<url>https://github.com/nealkumar/Concurrency-Library</url>
 
 	<developers>
 		<developer>
 			<name>Neal Kumar</name>
 			<email>nealk@nealk.com</email>
-			<organization>nealk.com</organization>
+			<organization>JBrew</organization>
+			<organizationUrl>jbrew.org</organizationUrl>
 		</developer>
 	</developers>
 
@@ -29,8 +32,8 @@
 
 	<distributionManagement>
 		<site>
-			<id>http://nealk.software</id>
-			<url>http://nealk.software</url>
+			<id>http://jbrew.org</id>
+			<url>http://jbrew.org</url>
 		</site>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -166,22 +169,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-				<executions>
-					<execution>
-						<id>attach-javadoc</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			-->
 		</plugins>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
