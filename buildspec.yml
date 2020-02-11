@@ -1,0 +1,10 @@
+version: 2.0
+
+phases:
+  install:
+    runtime-versions:
+      -java:"$JAVA_RUNTIME"
+      
+  build:
+    commands:
+      - mvn clean package
