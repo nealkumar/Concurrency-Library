@@ -1,5 +1,5 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jbrew/concurrent.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22software.nealk%22%20AND%20a:%22concurrent%22)
-[![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiWldraHhlak9XQzVuOVJwS2dlUTI2TGxXRDhOb0RtSEloOEowaU4yS3YzL0t1RWhWRnoyQmIrU2JoUWRGVWcyb1BWZXN0aDZXU2liREhST2VuYjVGMWxRPSIsIml2UGFyYW1ldGVyU3BlYyI6Ijh6aE16OVJmSVhRSDkranYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiWldraHhlak9XQzVuOVJwS2dlUTI2TGxXRDhOb0RtSEloOEowaU4yS3YzL0t1RWhWRnoyQmIrU2JoUWRGVWcyb1BWZXN0aDZXU2liREhST2VuYjVGMWxRPSIsIml2UGFyYW1ldGVyU3BlYyI6Ijh6aE16OVJmSVhRSDkranYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 [![Build Status](https://travis-ci.com/nealkumar/Concurrency-Library.svg?branch=master)](https://travis-ci.com/nealkumar/Concurrency-Library)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/nealkumar/Concurrency-Library/master?label=codefactor)](https://www.codefactor.io/repository/github/nealkumar/concurrency-library)
 [![codecov](https://codecov.io/gh/nealkumar/Concurrency-Library/branch/master/graph/badge.svg)](https://codecov.io/gh/nealkumar/Concurrency-Library)
