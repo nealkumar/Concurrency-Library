@@ -3,19 +3,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>software.nealk</groupId>
+	<groupId>org.jbrew</groupId>
 	<artifactId>concurrent</artifactId>
-	<version>0.6.9-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 
-	<name>NealK Concurrency Library</name>
-	<description>An easy-to-consume concurrency library allowing for "Tasks" to execute business logic in a thread safe manner. This library helps users achieve multi-threading in their applications without worrying about synchronization and blocking for race conditions.</description>
+	<name>JBrew Concurrency Library</name>
+	<description>
+		An easy-to-consume concurrency library allowing for "Tasks" to execute business logic in a thread safe manner. This library helps users achieve multi-threading in their applications without worrying about synchronization and blocking for race conditions.
+	</description>
 	<url>https://github.com/nealkumar/Concurrency-Library</url>
 
 	<developers>
 		<developer>
 			<name>Neal Kumar</name>
 			<email>nealk@nealk.com</email>
-			<organization>nealk.com</organization>
+			<organization>JBrew</organization>
+			<organizationUrl>jbrew.org</organizationUrl>
 		</developer>
 	</developers>
 
@@ -29,8 +32,8 @@
 
 	<distributionManagement>
 		<site>
-			<id>http://nealk.software</id>
-			<url>http://nealk.software</url>
+			<id>http://jbrew.org</id>
+			<url>http://jbrew.org</url>
 		</site>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -61,7 +64,7 @@
 		<connection>scm:git:git://github.com/nealkumar/Concurrency-Library.git</connection>
 		<developerConnection>scm:git:git@github.com:nealkumar/Concurrency-Library.git</developerConnection>
 		<url>https://github.com/nealkumar/Concurrency-Library</url>
-		<tag>v1.3</tag>
+		<tag>v0.0.0</tag>
 	</scm>
 
 	<profiles>
@@ -148,6 +151,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>3.0.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -155,15 +161,6 @@
 							<goal>jar</goal>
 						</goals>
 					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-				<executions>
 					<execution>
 						<id>attach-javadoc</id>
 						<goals>
