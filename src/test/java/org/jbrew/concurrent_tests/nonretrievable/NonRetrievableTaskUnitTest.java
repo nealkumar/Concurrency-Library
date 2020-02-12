@@ -51,6 +51,8 @@ public class NonRetrievableTaskUnitTest {
 	
 	private class NR extends NonRetrievableTask{
 		@Override
-		protected void execute() {}
+		protected void execute() {
+			System.out.println("NonRetrievableTask works correctly.");
+		}
 	}
 }
