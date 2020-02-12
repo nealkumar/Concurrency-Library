@@ -3,7 +3,7 @@ package org.jbrew.concurrent_tests.nonretrievable;
 import static org.junit.Assert.assertNotNull;
 
 import org.jbrew.Testing;
-import org.jbrew.concurrent.nonretrievable.NonRetrievableTask;
+import org.jbrew.concurrent.NonRetrievableTask;
 import org.junit.Test;
 
 @Testing

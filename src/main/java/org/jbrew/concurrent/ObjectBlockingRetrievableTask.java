@@ -1,5 +1,4 @@
-package org.jbrew.concurrent.retrievable;
-
+package org.jbrew.concurrent;
 
 public abstract class ObjectBlockingRetrievableTask<T> extends RetrievableTask<T>{
 	

@@ -1,7 +1,4 @@
-package org.jbrew.concurrent.retrievable;
-
-import org.jbrew.concurrent.Task;
-import org.jbrew.concurrent.ThreadSafe;
+package org.jbrew.concurrent;
 
 public abstract class RetrievableTask<T> implements Task<T>{
 	
@@ -28,13 +25,13 @@ public abstract class RetrievableTask<T> implements Task<T>{
 	
 	/**
 	 * Sets the value of <code>obj</code> in a ThreadSafe manner.
-	 * @param obj
+	 * @param obj The object to set.
 	 */
 	@ThreadSafe
 	protected abstract void setVal(T obj);
 
 	/**
-	 * Blocks until <code>obj</code> of type &lt;T&gt; is not null. Returns the <code>obj</code>.
+	 * Blocks until a condition is met (such as the excute() method completing or <code>obj</code> of type &lt;T&gt; is not null {@link org.jbrew.concurrent.MethodBlockingRetrievableTask} and @see org.jbrew.concurrent.retrievable.ObjectBlockingRetrievableTask. Returns the <code>obj</code>.
 	 * <br><br>
 	 * Note that compile-time type checking is enabled. The usage 
 	 * of Java Generics nullifies the compiler warning "unchecked".

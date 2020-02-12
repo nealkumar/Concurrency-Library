@@ -1,6 +1,4 @@
-package org.jbrew.concurrent.nonretrievable;
-
-import org.jbrew.concurrent.Task;
+package org.jbrew.concurrent;
 
 public abstract class NonRetrievableTask implements Task<Void>{
 
