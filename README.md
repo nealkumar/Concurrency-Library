@@ -6,7 +6,8 @@
 [![DepShield Badge](https://depshield.sonatype.org/badges/nealkumar/Concurrency-Library/depshield.svg)](https://depshield.github.io)
 [![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?style=flat-square)](https://gitter.im/Concurrent-Tasks/community)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
-![github-commit-activity-image](https://img.shields.io/github/commit-activity/m/commonality/getting-started-inner-source.svg?style=flat-square)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nealkumar/Concurrency-Library)
+![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/Concurrency-Library/readme)
 # Maven Central Dependency
 To import this library into Maven, simply insert the following dependency in your pom.xml:
 ```xml
