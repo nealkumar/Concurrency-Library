@@ -16,7 +16,7 @@ To import this library into Maven, simply insert the following dependency in you
     <dependency>
       <groupId>org.jbrew</groupId>
       <artifactId>concurrent</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
     </dependency>
   </dependencies>
 ```

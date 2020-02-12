@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.jbrew.Testing;
+import org.jbrew.concurrent.ObjectBlockingRetrievableTask;
 import org.jbrew.concurrent.Task;
-import org.jbrew.concurrent.retrievable.ObjectBlockingRetrievableTask;
 import org.junit.Test;
 
 @Testing
@@ -24,6 +24,7 @@ public class ObjectBlockingRetrievableTaskUnitTest {
 	 * Tests to make sure ObjectBlockingRetrievableTasks values are appropriately set.
 	 * @throws InterruptedException
 	 */
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetVal() throws InterruptedException{
 		Task<Integer> num = new OBRT<>();
