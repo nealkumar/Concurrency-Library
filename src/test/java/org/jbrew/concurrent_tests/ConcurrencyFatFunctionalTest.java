@@ -1,9 +1,9 @@
 package org.jbrew.concurrent_tests;
 
 import org.jbrew.Testing;
+import org.jbrew.concurrent.MethodBlockingRetrievableTask;
+import org.jbrew.concurrent.ObjectBlockingRetrievableTask;
 import org.jbrew.concurrent.Task;
-import org.jbrew.concurrent.retrievable.MethodBlockingRetrievableTask;
-import org.jbrew.concurrent.retrievable.ObjectBlockingRetrievableTask;
 
 /**
  * Simple functional test for Retrievable and NonRetrievable Tasks
