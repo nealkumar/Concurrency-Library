@@ -1,4 +1,4 @@
-package software.nealk;
+package org.jbrew;
 
 import static org.junit.Assert.assertTrue;
 

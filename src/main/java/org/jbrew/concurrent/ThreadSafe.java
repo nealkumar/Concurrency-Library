@@ -1,4 +1,4 @@
-package software.nealk.concurrent;
+package org.jbrew.concurrent;
 
 /**
  * <h2>Thread Safe Annotation</h2>
