@@ -6,7 +6,7 @@ public interface Task<T> extends Runnable{
 	 * <p>Returns the thread-safe value of Type &lt;?&gt;</p>
 	 * 
 	 * @param <T> Generic of type "T" is explicitly defined at compile-time. 
-	 * <br>&emsp;&emsp;Ex:<br>
+	 * <br>&emsp;&emsp;<i>Example:</i><br>
 	 * <code>
 	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class TaskImplementor&lt;T&gt; implements Task&lt;T&gt;{  }
 	 * </code><br>
