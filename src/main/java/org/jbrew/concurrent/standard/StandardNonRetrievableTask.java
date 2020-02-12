@@ -11,7 +11,6 @@ public class StandardNonRetrievableTask extends NonRetrievableTask{
 
 	@Override
 	protected void execute() {
-		// TODO Auto-generated method stub
 		
 	}
 
