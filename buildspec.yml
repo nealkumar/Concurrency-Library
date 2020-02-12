@@ -16,4 +16,4 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/concurrent-0.0.1-SNAPSHOT.jar
+    - target/concurrent-0.0.2-SNAPSHOT.jar

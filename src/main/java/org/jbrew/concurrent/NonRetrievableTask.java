@@ -1,11 +1,9 @@
-package org.jbrew.concurrent.nonretrievable;
-
-import org.jbrew.concurrent.Task;
+package org.jbrew.concurrent;
 
 public abstract class NonRetrievableTask implements Task<Void>{
 
 	@Override
-	public final synchronized void run() {
+	public final void run() {
 		System.out.println("Thread " 
 				+ Thread.currentThread().getId()
 				+ " is running...");
