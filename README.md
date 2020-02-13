@@ -1,14 +1,14 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jbrew/concurrent.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22org.jbrew%22%20AND%20a:%22concurrent%22)
-![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiWldraHhlak9XQzVuOVJwS2dlUTI2TGxXRDhOb0RtSEloOEowaU4yS3YzL0t1RWhWRnoyQmIrU2JoUWRGVWcyb1BWZXN0aDZXU2liREhST2VuYjVGMWxRPSIsIml2UGFyYW1ldGVyU3BlYyI6Ijh6aE16OVJmSVhRSDkranYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+[![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiWldraHhlak9XQzVuOVJwS2dlUTI2TGxXRDhOb0RtSEloOEowaU4yS3YzL0t1RWhWRnoyQmIrU2JoUWRGVWcyb1BWZXN0aDZXU2liREhST2VuYjVGMWxRPSIsIml2UGFyYW1ldGVyU3BlYyI6Ijh6aE16OVJmSVhRSDkranYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)](https://aws.amazon.com/codebuild/)
 [![Build Status](https://travis-ci.com/nealkumar/Concurrency-Library.svg?branch=master)](https://travis-ci.com/nealkumar/Concurrency-Library)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/nealkumar/Concurrency-Library/master?label=codefactor)](https://www.codefactor.io/repository/github/nealkumar/concurrency-library)
 [![codecov](https://codecov.io/gh/nealkumar/Concurrency-Library/branch/master/graph/badge.svg)](https://codecov.io/gh/nealkumar/Concurrency-Library)
 [![DepShield Badge](https://depshield.sonatype.org/badges/nealkumar/Concurrency-Library/depshield.svg)](https://depshield.github.io)
 [![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?style=flat-square)](https://gitter.im/Concurrent-Tasks/community)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nealkumar/Concurrency-Library)
-![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/Concurrency-Library?color=yellow)
-![JDK 1.7+](https://img.shields.io/badge/jdk-1.7%2B-purple)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nealkumar/Concurrency-Library)](https://github.com/nealkumar/Concurrency-Library/pulse)
+[![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/Concurrency-Library?color=yellow)](https://github.com/Netflix/osstracker)
+[![JDK 1.7+](https://img.shields.io/badge/jdk-1.7%2B-purple)](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
 # Maven Central Dependency
 To import this library into Maven, simply insert the following dependency in your pom.xml:
 ```xml
