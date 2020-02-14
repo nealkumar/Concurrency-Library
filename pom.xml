@@ -64,7 +64,7 @@
 		<connection>scm:git:git://github.com/nealkumar/Concurrency-Library.git</connection>
 		<developerConnection>scm:git:git@github.com:nealkumar/Concurrency-Library.git</developerConnection>
 		<url>https://github.com/nealkumar/Concurrency-Library</url>
-		<tag>v0.0.0</tag>
+		<!--<tag>v0.0.0</tag>-->
 	</scm>
 
 	<profiles>
