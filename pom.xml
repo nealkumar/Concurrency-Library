@@ -41,7 +41,7 @@
 		<sonar.projectKey>nealkumar_Concurrency-Library</sonar.projectKey>
 		<sonar.organization>nealkumar</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>996564069476d7ca6089d60c780e98bdd3b802ac</sonar.login>
+		<sonar.login>3be03b2f5f5836fea13f6643108c9693a32cc2d4</sonar.login>
 	</properties>
 
 	<distributionManagement>
