@@ -5,7 +5,7 @@
 	<packaging>pom</packaging>
 	<groupId>org.jbrew</groupId>
 	<artifactId>jbrew-parent</artifactId>
-	<version>0.0.5</version>
+	<version>0.0.6-SNAPSHOT</version>
 
 	<name>JBrew Parent POM</name>
 	<description>The JBrew Java library collection is a set of helper libraries with features ranging from concurrency to sorting! Be sure to check out the documentation at jbrew.org.</description>
@@ -70,7 +70,7 @@
 		<connection>scm:git:git://github.com/nealkumar/JBrew.git</connection>
 		<developerConnection>scm:git:git@github.com:nealkumar/JBrew.git</developerConnection>
 		<url>https://github.com/nealkumar/JBrew</url>
-		<tag>v0.0.5</tag>
+		<tag>v0.0.3</tag>
 	</scm>
 
 	<profiles>
