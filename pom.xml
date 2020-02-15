@@ -38,10 +38,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
-		<sonar.projectKey>nealkumar_Concurrency-Library</sonar.projectKey>
+		<sonar.projectKey>jbrew.org</sonar.projectKey>
 		<sonar.organization>nealkumar</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>3be03b2f5f5836fea13f6643108c9693a32cc2d4</sonar.login>
+		<sonar.login>1908fcc77a6e9163fe15be7efa2735610a50b8e2</sonar.login>
 	</properties>
 
 	<distributionManagement>
@@ -69,9 +69,9 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:git://github.com/nealkumar/Concurrency-Library.git</connection>
-		<developerConnection>scm:git:git@github.com:nealkumar/Concurrency-Library.git</developerConnection>
-		<url>https://github.com/nealkumar/Concurrency-Library</url>
+		<connection>scm:git:git://github.com/nealkumar/JBrew.git</connection>
+		<developerConnection>scm:git:git@github.com:nealkumar/JBrew.git</developerConnection>
+		<url>https://github.com/nealkumar/JBrew</url>
 		<tag>v0.0.3</tag>
 	</scm>
 
