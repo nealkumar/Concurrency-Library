@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.jbrew</groupId>
 		<artifactId>jbrew-parent</artifactId>
-		<version>0.0.5-SNAPSHOT</version>
+		<version>0.0.6-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>concurrent</artifactId>
@@ -18,5 +18,9 @@
 		and blocking for race conditions.
 	</description>
 	<url>https://github.com/nealkumar/Concurrency-Library</url>
+
+	<properties>
+		<sonar.projectKey>org.jbrew:concurrent</sonar.projectKey>
+	</properties>
 
 </project>
