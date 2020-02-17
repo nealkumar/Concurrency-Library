@@ -40,6 +40,7 @@
 		<sonar.organization>nealkumar</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.login>${env.SONAR_TOKEN}</sonar.login>
+		<!--<sonar.java.libraries>target/dependency</sonar.java.libraries>-->
 	</properties>
 
 	<distributionManagement>
@@ -70,7 +71,7 @@
 		<connection>scm:git:git://github.com/nealkumar/JBrew.git</connection>
 		<developerConnection>scm:git:git@github.com:nealkumar/JBrew.git</developerConnection>
 		<url>https://github.com/nealkumar/JBrew</url>
-		<tag>v0.0.3</tag>
+		<tag>v0.0.6</tag>
 	</scm>
 
 	<profiles>
