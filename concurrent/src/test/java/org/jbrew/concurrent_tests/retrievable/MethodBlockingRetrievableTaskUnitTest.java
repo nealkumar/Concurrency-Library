@@ -14,14 +14,14 @@ public class MethodBlockingRetrievableTaskUnitTest {
 	private String setMessage;
 	
 	@Before
-	private void setup() {
+	public void setup() {
 		this.retrievableTask = new MBRT<String>();
 		this.t = new Thread(retrievableTask);
 		this.setMessage = "MBRT Val has been set.";
 	}
 	
 	@Test
-	private void retrievableTaskRunTest() throws InterruptedException {
+	public void retrievableTaskRunTest() throws InterruptedException {
 		t.run();
 		assertEquals(this.setMessage, this.retrievableTask.getVal());
 	}
