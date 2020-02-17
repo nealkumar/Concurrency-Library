@@ -22,7 +22,7 @@ public class MethodBlockingRetrievableTaskUnitTest {
 	
 	@Test
 	public void retrievableTaskRunTest() throws InterruptedException {
-		t.run();
+		t.start();
 		assertEquals(this.setMessage, this.retrievableTask.getVal());
 	}
 	
