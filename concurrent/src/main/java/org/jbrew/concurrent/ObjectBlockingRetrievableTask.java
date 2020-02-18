@@ -28,7 +28,7 @@ public abstract class ObjectBlockingRetrievableTask<T> extends RetrievableTask<T
 	}
 
 	@Override
-	public synchronized final T getVal() throws InterruptedException {
+	public final synchronized T getVal() throws InterruptedException {
 		while(this.obj == null) {
 			this.wait();
 		}
