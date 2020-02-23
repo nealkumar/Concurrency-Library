@@ -1,6 +1,6 @@
 package org.jbrew.concurrent;
 
-public abstract class NonRetrievableTask implements Task<Void>{
+public abstract class NonRetrievableTask extends BlockingTask<Void>{
 
 	@Override
 	public final void run() {
@@ -10,11 +10,4 @@ public abstract class NonRetrievableTask implements Task<Void>{
 		this.execute();
 	}
 	
-	protected abstract void execute();
-
-	@Override
-	public final <T> T getVal() throws InterruptedException {
-		throw new UnsupportedOperationException();
-	}
-
 }

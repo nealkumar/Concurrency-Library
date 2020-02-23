@@ -18,17 +18,7 @@ public class NonRetrievableTaskUnitTest {
 		assertNotNull("NonRetrievableTask failed to intantiate. "
 				+ "See: src/test/java/software/nealk/concurrent_tests/NonRetrievableTaskTest.java", t);
 	}
-	
-	/**
-	 * Tests to make sure that calling getVal() on a NonRetrievableTask throws 
-	 * an {@link UnsupportedOperationException}.
-	 * @throws InterruptedException
-	 */
-	@Test(expected = UnsupportedOperationException.class)
-	public void checkForUnsupportedOperationExceptionTask() throws InterruptedException {
-		NonRetrievableTask r = new NR();
-		r.getVal();
-	}
+
 	
 	/**
 	 * Ensures than execute() is executed in a NonRetrievableTask.
