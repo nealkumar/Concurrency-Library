@@ -60,6 +60,6 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	 */
 	@SuppressWarnings("hiding")
 	@ThreadSafe
-	public abstract <T> T retrieve() throws InterruptedException;
+	public abstract <T extends Object> T retrieve() throws InterruptedException;
 
 }

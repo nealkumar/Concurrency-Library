@@ -15,7 +15,7 @@ public class MethodBlockingRetrievableTaskUnitTest {
 	
 	@Before
 	public void setup() {
-		this.retrievableTask = new MBRT<String>();
+		this.retrievableTask = new MBRT<>();
 		this.t = new Thread(retrievableTask);
 		this.setMessage = "MBRT Val has been set.";
 	}
