@@ -20,7 +20,6 @@ public class BlockingTaskInstantiationTest {
 	private class BT<T> extends ObjectBlocker<Integer> {
 		@Override
 		protected void execute() {
-			// TODO Auto-generated method stub
 			this.submit(69);
 		}
 	}
