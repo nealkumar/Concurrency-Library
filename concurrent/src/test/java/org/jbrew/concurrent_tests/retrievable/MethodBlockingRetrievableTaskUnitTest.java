@@ -30,7 +30,7 @@ public class MethodBlockingRetrievableTaskUnitTest {
 	private class MBRT<T> extends MethodBlocker<String>{
 		@Override
 		protected void execute() {
-			this.submit(setMessage);
+			this.accept(setMessage);
 		}
 	}
 

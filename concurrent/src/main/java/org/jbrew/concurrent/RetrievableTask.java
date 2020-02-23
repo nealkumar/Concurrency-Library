@@ -5,18 +5,23 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	protected boolean printThreadIdFlag;
 	
 	/**
-	 * Default constructor for RetrievableTask. This can be wrapped inside of a {@link java.lang.Thread} and executed in the same manner as a {@link java.lang.Runnable}.
+	 * <p>
+	 * 	Default constructor for RetrievableTask. This can be wrapped inside of a {@link java.lang.Thread} and executed in the same manner as a {@link java.util.concurrent.Callable}.
+	 * </p>
 	 */
 	protected RetrievableTask() {
-		this.printThreadIdFlag = true;
+		super();
 	}
 	
 	/**
+	 * <p>
 	 * This constructor takes a boolean argument to determine whether the thread number should be printed to the console.
+	 * A {@link RetrievableTask} can be wrapped inside of a {@link java.lang.Thread} and executed in the same manner as a {@link java.util.concurrent.Callable}.
+	 * </p>
 	 * @param printThreadIdFlag Flag which specifies whether thread number should be printed to the console.
 	 */
 	protected RetrievableTask(boolean printThreadIdFlag) {
-		this.printThreadIdFlag = printThreadIdFlag;
+		super(printThreadIdFlag);
 	}
 	
 	/**
@@ -24,7 +29,7 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	 * @param obj The object to set.
 	 */
 	@ThreadSafe
-	protected abstract void submit(T obj);
+	protected abstract void accept(T obj);
 	
 	/**
 	 * <p>

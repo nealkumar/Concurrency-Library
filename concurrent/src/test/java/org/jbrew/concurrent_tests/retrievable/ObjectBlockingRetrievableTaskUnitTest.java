@@ -35,7 +35,7 @@ public class ObjectBlockingRetrievableTaskUnitTest {
 		@Override
 		protected void execute() {
 			System.out.println("Inside OBRT's execute()");
-			this.submit(69);
+			this.accept(69);
 			//simulate long run non-retrievable task
 			try {
 				Thread.sleep(10);

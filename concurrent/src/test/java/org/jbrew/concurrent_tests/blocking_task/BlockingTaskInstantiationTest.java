@@ -20,7 +20,7 @@ public class BlockingTaskInstantiationTest {
 	private class BT<T> extends ObjectBlocker<Integer> {
 		@Override
 		protected void execute() {
-			this.submit(69);
+			this.accept(69);
 		}
 	}
 	

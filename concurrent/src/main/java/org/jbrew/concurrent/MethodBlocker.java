@@ -28,14 +28,14 @@ public abstract class MethodBlocker<T> extends RetrievableTask<T>{
 	
 	protected abstract void execute();
 	
-	protected final void submit(T obj) {
+	protected final void accept(T obj) {
 		this.obj = obj;
 	}
 
 	/**
 	 * <p>
 	 * Returns the value of the object once the {@link MethodBlocker#execute()} method has returned, 
-	 * as set by the {@link MethodBlocker#submit(Object)} method. 
+	 * as set by the {@link MethodBlocker#accept(Object)} method. 
 	 * </p><p>
 	 * From the parent document:
 	 * </p>

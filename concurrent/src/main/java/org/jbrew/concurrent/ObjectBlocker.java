@@ -2,7 +2,7 @@ package org.jbrew.concurrent;
 
 /**
  * This implementation of {@link RetrievableTask} allows for the {@link obj} to
- * be unblocked <i>as soon as</i> the {@link #submit(Object)} method has been
+ * be unblocked <i>as soon as</i> the {@link #accept(Object)} method has been
  * called. Leftover logic in the {@link #execute()} method will still execute in
  * a {@link Threadable} manner. As such, {@link ObjectBlocker} provides
  * fine-grained control for the respective threading operations in downstream
@@ -37,7 +37,7 @@ public abstract class ObjectBlocker<T> extends RetrievableTask<T> {
 	 * </p>
 	 */
 	@Override
-	protected final void submit(T obj) {
+	protected final void accept(T obj) {
 		synchronized (this) {
 			this.obj = obj;
 			this.notifyAll();
@@ -47,7 +47,7 @@ public abstract class ObjectBlocker<T> extends RetrievableTask<T> {
 	/**
 	 * <p>
 	 * Returns the value of the object as soon it has been set by the
-	 * {@link MethodBlocker#submit(Object)} method.
+	 * {@link MethodBlocker#accept(Object)} method.
 	 * </p>
 	 * <p>
 	 * From the parent document:

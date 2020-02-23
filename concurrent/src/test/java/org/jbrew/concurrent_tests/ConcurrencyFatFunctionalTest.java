@@ -30,7 +30,7 @@ public class ConcurrencyFatFunctionalTest {
 		@Override
 		protected void execute() {
 			System.out.println("I am inside OBRT!");
-			this.submit("The obj has been pooopulated!");
+			this.accept("The obj has been pooopulated!");
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
@@ -44,7 +44,7 @@ public class ConcurrencyFatFunctionalTest {
 		@Override
 		protected void execute() {
 			System.out.println("In RT!");
-			this.submit("Retrievable Task'S Object is set!");
+			this.accept("Retrievable Task'S Object is set!");
 		}
 		
 	}
