@@ -1,6 +1,6 @@
 package org.jbrew.concurrent;
 
-public abstract class Threadable extends BlockingTask<Void>{
+public abstract class ThreadableTask extends BlockingTask<Void>{
 
 	@Override
 	public final void run() {

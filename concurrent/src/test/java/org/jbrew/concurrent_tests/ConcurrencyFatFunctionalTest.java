@@ -1,8 +1,8 @@
 package org.jbrew.concurrent_tests;
 
 import org.jbrew.Testing;
-import org.jbrew.concurrent.MethodBlockedObject;
-import org.jbrew.concurrent.BlockedObject;
+import org.jbrew.concurrent.MethodBlockedTask;
+import org.jbrew.concurrent.BlockedTask;
 import org.jbrew.concurrent.RetrievableTask;
 
 /**
@@ -26,7 +26,7 @@ public class ConcurrencyFatFunctionalTest {
 	}
 	
 	
-	private class OBRT<T> extends BlockedObject<String>{
+	private class OBRT<T> extends BlockedTask<String>{
 		@Override
 		protected void execute() {
 			System.out.println("I am inside OBRT!");
@@ -40,7 +40,7 @@ public class ConcurrencyFatFunctionalTest {
 		}
 	}
 	
-	private class RT<T> extends MethodBlockedObject<String>{
+	private class RT<T> extends MethodBlockedTask<String>{
 		@Override
 		protected void execute() {
 			System.out.println("In RT!");

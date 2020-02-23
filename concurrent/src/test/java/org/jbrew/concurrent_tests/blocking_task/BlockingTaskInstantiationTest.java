@@ -7,7 +7,7 @@ public class BlockingTaskInstantiationTest {
 	
 	public void defaultConstructorTest() {
 		//Runnable t = () -> { System.out.println("hi")};};
-		//Threadable task = 
+		//ThreadableTask task = 
 	}
 	
 }
