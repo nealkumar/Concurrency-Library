@@ -15,10 +15,10 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	
 	/**
 	 * <p>
-	 * This constructor takes a boolean argument to determine whether the thread number should be printed to the console.
-	 * A {@link RetrievableTask} can be wrapped inside of a {@link java.lang.Thread} and executed in the same manner as a {@link java.util.concurrent.Callable}.
+	 * 	This constructor takes a boolean argument to determine whether the thread number should be printed to the console.
+	 * 	A {@link RetrievableTask} can be wrapped inside of a {@link java.lang.Thread} and executed in the same manner as a {@link java.util.concurrent.Callable}.
 	 * </p>
-	 * @param printThreadIdFlag Flag which specifies whether thread number should be printed to the console.
+	 * @param printThreadIdFlag - <code>boolean</code> flag which specifies whether thread number should be printed to the console.
 	 */
 	protected RetrievableTask(boolean printThreadIdFlag) {
 		super(printThreadIdFlag);
