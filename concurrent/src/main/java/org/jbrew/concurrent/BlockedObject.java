@@ -3,7 +3,7 @@ package org.jbrew.concurrent;
 /**
  * This implementation of {@link RetrievableTask} allows for the {@link obj} to be unblocked <i>as soon as</i> the 
  * {@link #submit(Object)} method has been called. Leftover logic in the {@link #execute()} method will still execute 
- * in a {@link NonRetrievableTask} manner. As such, {@link BlockedObject} provides fine-grained control for the 
+ * in a {@link Threadable} manner. As such, {@link BlockedObject} provides fine-grained control for the 
  * respective threading operations in downstream applications. 
  * 
  * @author Neal Kumar

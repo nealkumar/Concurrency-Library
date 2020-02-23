@@ -28,7 +28,6 @@ public class ObjectBlockingRetrievableTaskUnitTest {
 	public void testGetVal() throws InterruptedException{
 		RetrievableTask<Integer> num = new OBRT<>();
 		new Thread(num).start();
-		System.out.println(num.retrieve());
 		assertEquals(num.retrieve(), Integer.valueOf(69));
 	}
 	

@@ -1,7 +1,8 @@
 package org.jbrew.concurrent;
 
 /**
- * A {@link MethodBlockedObject} blocks {@link MethodBlockedObject#retrieve()} until the {@link MethodBlockedObject#execute()} method has fully completed and terminated.
+ * A {@link MethodBlockedObject} blocks {@link MethodBlockedObject#retrieve()} until the {@link MethodBlockedObject#execute()} 
+ * method has fully completed and terminated.
  * @author nealk
  *
  * @param <T>

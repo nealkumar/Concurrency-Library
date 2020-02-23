@@ -23,8 +23,6 @@ public class ConcurrencyFatFunctionalTest {
 		RetrievableTask<String> r1 = new RT<>();
 		new Thread(r).start();
 		new Thread(r1).start();
-		System.out.println(r.retrieve());
-		System.out.println(r1.retrieve());
 	}
 	
 	
