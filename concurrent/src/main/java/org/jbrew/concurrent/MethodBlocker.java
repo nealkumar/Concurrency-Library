@@ -47,6 +47,7 @@ public abstract class MethodBlocker<T> extends RetrievableTask<T>{
 	 * of Java Generics nullifies the compiler warning "unchecked".
 	 * </p>
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public final T retrieve() throws InterruptedException {
 		this.objSem.acquire();

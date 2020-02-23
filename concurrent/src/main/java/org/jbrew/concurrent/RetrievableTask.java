@@ -34,7 +34,7 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	 *  {@link org.jbrew.concurrent.MethodBlocker} and {@link org.jbrew.concurrent.ObjectBlocker}.
 	 * </p>
 	 * 
-	 * Note that the generic of type "T" is explicitly defined at compile-time. 
+	 * @param <T> The generic of type "T" is explicitly defined at compile-time. 
 	 * <br>&emsp;&emsp;<i>Example:</i><br>
 	 * <code>
 	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class TaskImplementor&lt;T&gt; implements Task&lt;ConcreteClass&gt;{  }
@@ -43,7 +43,8 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	 * @exception InterruptedException is thrown if the thread is interrupted. 
 	 * @author Neal Kumar
 	 */
+	@SuppressWarnings("hiding")
 	@ThreadSafe
-	public abstract /*<T extends Object>*/ T retrieve() throws InterruptedException;
+	public abstract <T extends Object> T retrieve() throws InterruptedException;
 
 }
