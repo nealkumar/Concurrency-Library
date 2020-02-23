@@ -11,25 +11,26 @@ public abstract class BlockingTask<T> implements Task<T> {
 
 	private String name;
 	private boolean printThreadId, printName, printBoth;
+	private final static String DEFAULT_NAME = "unnamed task";
 	
 	/**
 	 * <p>
 	 * Default constructor for {@link BlockingTask}blocking which assigns {@link BlockingTask#printThreadId} to <code>false</code>
-	 * and the {@link BlockingTask#name} to the {@link BlockingTask#defaultName()}. Invoking this constructor will prevent 
+	 * and the {@link BlockingTask#name} to the {@link BlockingTask#DEFAULT_NAME}. Invoking this constructor will prevent 
 	 * both the {@link BlockingTask#name} and the current thread's ID from printing to the console.
 	 * </p>
 	 * <p>Note that this constructor is the most performance-optimal implementation of a {@link BlockingTask}.</p> 
 	 */
 	protected BlockingTask() {
 		this.printThreadId = false;
-		this.name = defaultName();
+		this.name = DEFAULT_NAME;
 	}
 	
 	/**
 	 * <p>
 	 * A constructor for {@link BlockingTask} which includes an option to assign the <code>boolean</code>  
 	 * {@link BlockingTask#printThreadId}'s value. Invoking this constructor will assign the {@link BlockingTask#name} 
-	 * to the {@link BlockingTask#defaultName()}, and prevent the ID from printing to the console.
+	 * to the {@link BlockingTask#DEFAULT_NAME}, and prevent the ID from printing to the console.
 	 * </p><p>
 	 * 	Please note that this constructor is the <i>not</i> the most performance-optimal implementation of a {@link BlockingTask}.
 	 * 	As such, usage of this constructor for performance-sensitive operations is <i>highly discouraged</i> and is considered
@@ -40,7 +41,7 @@ public abstract class BlockingTask<T> implements Task<T> {
 	 */
 	protected BlockingTask(boolean printThreadId) {
 		this.printThreadId = printThreadId;
-		this.name = this.defaultName();
+		this.name = DEFAULT_NAME;
 	}
 	
 	/**
@@ -80,10 +81,6 @@ public abstract class BlockingTask<T> implements Task<T> {
 		this.name = name;
 		this.printBoth = true;
 		this.printThreadId = false;
-	}
-	
-	private String defaultName() {
-		return "unnamed task.";
 	}
 	
 	/**
