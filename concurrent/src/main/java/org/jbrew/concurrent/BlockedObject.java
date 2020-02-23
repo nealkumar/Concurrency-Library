@@ -29,7 +29,7 @@ public abstract class BlockedObject<T> extends RetrievableTask<T>{
 	 * </p>
 	 */
 	@Override
-	protected void submit(T obj) {
+	protected final void submit(T obj) {
 		synchronized(this) {
 			this.obj = obj;
 			this.notifyAll();

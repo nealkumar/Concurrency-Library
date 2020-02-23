@@ -18,15 +18,6 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	protected RetrievableTask(boolean printThreadIdFlag) {
 		this.printThreadIdFlag = printThreadIdFlag;
 	}
-
-	@Override
-	public void run() {
-		if(printThreadIdFlag) {
-			System.out.println("Thread " 
-							+ Thread.currentThread().getId()
-							+ " is running...");
-		}
-	}
 	
 	/**
 	 * Sets the value of the <code>obj</code> in a {@link ThreadSafe} manner.
