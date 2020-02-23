@@ -1,18 +1,22 @@
 package org.jbrew.concurrent;
 
 /**
- * A {@link MethodBlockedTask} blocks {@link MethodBlockedTask#retrieve()} until the {@link MethodBlockedTask#execute()} 
+ * A {@link MethodBlocker} blocks {@link MethodBlocker#retrieve()} until the {@link MethodBlocker#execute()} 
  * method has fully completed and terminated.
  * @author nealk
  *
- * @param <T>
+ * @param <T> The Java Generic of type "T" is explicitly defined at compile-time. 
+	 * <br>&emsp;&emsp;<i>Example:</i><br>
+	 * <code>
+	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class Implementor&lt;T&gt; extends MethodBlocker&lt;ConcreteClass&gt;{  }
+	 * </code><br>
  */
-public abstract class MethodBlockedTask<T> extends RetrievableTask<T>{
+public abstract class MethodBlocker<T> extends RetrievableTask<T>{
 	
 	private T obj;
 	private java.util.concurrent.Semaphore objSem;
 	
-	protected MethodBlockedTask() {
+	protected MethodBlocker() {
 		this.objSem = new java.util.concurrent.Semaphore(0, false);
 	}
 
@@ -30,8 +34,8 @@ public abstract class MethodBlockedTask<T> extends RetrievableTask<T>{
 
 	/**
 	 * <p>
-	 * Returns the value of the object once the {@link MethodBlockedTask#execute()} method has returned, 
-	 * as set by the {@link MethodBlockedTask#submit(Object)} method. 
+	 * Returns the value of the object once the {@link MethodBlocker#execute()} method has returned, 
+	 * as set by the {@link MethodBlocker#submit(Object)} method. 
 	 * </p><p>
 	 * From the parent document:
 	 * </p>
@@ -43,7 +47,6 @@ public abstract class MethodBlockedTask<T> extends RetrievableTask<T>{
 	 * of Java Generics nullifies the compiler warning "unchecked".
 	 * </p>
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public final T retrieve() throws InterruptedException {
 		this.objSem.acquire();

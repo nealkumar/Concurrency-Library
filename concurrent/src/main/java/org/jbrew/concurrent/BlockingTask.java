@@ -54,7 +54,7 @@ public abstract class BlockingTask<T> implements Task<T> {
 	 * 	As such, usage of this constructor for performance-sensitive operations is <i>highly discouraged</i> and is considered
 	 *  bad practice. Performance-sensitive applications should instead use the default constructor, {@link BlockingTask#BlockingTask()}.
 	 * </p>
-	 * @param name
+	 * @param name - a <code>String</code> for the current {@link org.jbrew.concurrent.Task}'s name.
 	 */
 	protected BlockingTask(String name) {
 		this.printThreadId = false;
@@ -73,8 +73,8 @@ public abstract class BlockingTask<T> implements Task<T> {
 	 * 	As such, usage of this constructor for performance-sensitive operations is <i>highly discouraged</i> and is considered
 	 *  bad practice. Performance-sensitive applications should instead use the default constructor, {@link BlockingTask#BlockingTask()}.
 	 * </p> 
-	 * @param printThreadId
-	 * @param name
+	 * @param printThreadId - <code>boolean</code> flag which enables console printing of the current thread's ID
+	 * @param name - a <code>String</code> for the current {@link org.jbrew.concurrent.Task}'s name.
 	 */
 	protected BlockingTask(boolean printThreadId, String name) {
 		this.printThreadId = printThreadId;

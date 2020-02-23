@@ -25,41 +25,25 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	 */
 	@ThreadSafe
 	protected abstract void submit(T obj);
-
-	/**<p>
-	 * Returns the value of the <code>obj</code> in a {@link ThreadSafe} manner. The method blocks until a condition is met (such as the excute() method returning or the <code>obj</code> of type &lt;T&gt; being set (via the setVal() method). For more information on the way internal contention is handled, please refer to {@link org.jbrew.concurrent.MethodBlockedTask} and {@link org.jbrew.concurrent.BlockedTask}.
-	 * <br><br>
-	 * Note that compile-time type checking is enabled. The usage 
-	 * of Java Generics nullifies the compiler warning "unchecked".
-	 * </p>
-	 */
-	
-	/**
-	 * 
-	 * @param <T>
-	 * @return
-	 * @throws InterruptedException
-	 */
 	
 	/**
 	 * <p>
 	 * 	Returns the value of the <code>obj</code> in a {@link ThreadSafe} manner. The method blocks until a condition is
 	 *  met (such as the excute() method returning or the <code>obj</code> of type &lt;T&gt; being set (via the setVal() 
 	 *  method). For more information on the way internal contention is handled, please refer to 
-	 *  {@link org.jbrew.concurrent.MethodBlockedTask} and {@link org.jbrew.concurrent.BlockedTask}.
+	 *  {@link org.jbrew.concurrent.MethodBlocker} and {@link org.jbrew.concurrent.ObjectBlocker}.
 	 * </p>
 	 * 
-	 * @param <T> Generic of type "T" is explicitly defined at compile-time. 
+	 * Note that the generic of type "T" is explicitly defined at compile-time. 
 	 * <br>&emsp;&emsp;<i>Example:</i><br>
 	 * <code>
-	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class TaskImplementor&lt;T&gt; implements Task&lt;T&gt;{  }
+	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class TaskImplementor&lt;T&gt; implements Task&lt;ConcreteClass&gt;{  }
 	 * </code><br>
 	 * @return 	value of obj - with type &lt;T&gt;
 	 * @exception InterruptedException is thrown if the thread is interrupted. 
 	 * @author Neal Kumar
 	 */
-	@SuppressWarnings("hiding")
 	@ThreadSafe
-	public abstract <T extends Object> T retrieve() throws InterruptedException;
+	public abstract /*<T extends Object>*/ T retrieve() throws InterruptedException;
 
 }

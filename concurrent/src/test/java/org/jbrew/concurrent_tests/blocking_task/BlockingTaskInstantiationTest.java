@@ -3,7 +3,7 @@ package org.jbrew.concurrent_tests.blocking_task;
 import static org.junit.Assert.assertEquals;
 
 import org.jbrew.Testing;
-import org.jbrew.concurrent.BlockedTask;
+import org.jbrew.concurrent.ObjectBlocker;
 import org.jbrew.concurrent.RetrievableTask;
 import org.junit.Test;
 
@@ -17,12 +17,12 @@ public class BlockingTaskInstantiationTest {
 		assertEquals(task.retrieve(), Integer.valueOf(69));
 	}
 
-	private class BT<T> extends BlockedTask<Integer> {
+	private class BT<T> extends ObjectBlocker<Integer> {
 		@Override
 		protected void execute() {
 			// TODO Auto-generated method stub
 			this.submit(69);
 		}
 	}
-
+	
 }
