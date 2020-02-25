@@ -20,7 +20,7 @@ public class BlockingTaskTest {
 	public void setBlockingTaskName(){
 		BlockingTask<Void> basic = new BasicTask<>();
 		basic.setName("Basic Task Name");
-		assertEquals(basic.getName(), "Basic Task Name");
+		assertEquals("Basic Task Name", basic.getName());
 	}
 	
 	private class BasicTask<T> extends BlockingTask<Void>{
