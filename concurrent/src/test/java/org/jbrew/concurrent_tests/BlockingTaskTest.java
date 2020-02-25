@@ -1,5 +1,6 @@
 package org.jbrew.concurrent_tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.jbrew.Testing;
@@ -13,6 +14,13 @@ public class BlockingTaskTest {
 	public void instantiateBlockingTask() {
 		BlockingTask<Void> basic = new BasicTask<>();
 		assertNotNull(basic);
+	}
+	
+	@Test
+	public void setBlockingTaskName(){
+		BlockingTask<Void> basic = new BasicTask<>();
+		basic.setName("Basic Task Name");
+		assertEquals(basic.getName(), "Basic Task Name");
 	}
 	
 	private class BasicTask<T> extends BlockingTask<Void>{
