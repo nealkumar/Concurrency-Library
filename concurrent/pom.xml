@@ -17,7 +17,7 @@
 		This library helps users achieve multi-threading in their applications without worrying about synchronization
 		and blocking for race conditions.
 	</description>
-	<url>https://github.com/nealkumar/Concurrency-Library</url>
+	<url>jbrew.org</url>
 
 	<properties>
 		<sonar.projectKey>org.jbrew:concurrent</sonar.projectKey>
