@@ -4,7 +4,7 @@ package org.jbrew.concurrent;
  * This implementation of {@link RetrievableTask} allows for the {@link obj} to
  * be unblocked <i>as soon as</i> the {@link #accept(Object)} method has been
  * called. Leftover logic in the {@link #execute()} method will still execute in
- * a {@link Threadable} manner. As such, {@link ObjectBlocker} provides
+ * a {@link StandardTask} manner. As such, {@link ObjectBlockingTask} provides
  * fine-grained control for the respective threading operations in downstream
  * applications.
  * 
@@ -13,10 +13,10 @@ package org.jbrew.concurrent;
  * @param <T> The Java Generic of type "T" is explicitly defined at compile-time. 
 	 * <br>&emsp;&emsp;<i>Example:</i><br>
 	 * <code>
-	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class Implementor&lt;T&gt; extends MethodBlocker&lt;ConcreteClass&gt;{  }
+	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class Implementor&lt;T&gt; extends MethodBlockingTask&lt;ConcreteClass&gt;{  }
 	 * </code><br>
  */
-public abstract class ObjectBlocker<T> extends RetrievableTask<T> {
+public abstract class ObjectBlockingTask<T> extends RetrievableTask<T> {
 
 	private T obj;
 
@@ -32,8 +32,8 @@ public abstract class ObjectBlocker<T> extends RetrievableTask<T> {
 	 * {@inheritDoc}
 	 * </p>
 	 * <p>
-	 * Once this method has been called, the {@link ObjectBlocker#obj} is unblocked
-	 * and accessable via the {@link ObjectBlocker#retrieve()} method.
+	 * Once this method has been called, the {@link ObjectBlockingTask#obj} is unblocked
+	 * and accessable via the {@link ObjectBlockingTask#retrieve()} method.
 	 * </p>
 	 */
 	@Override
@@ -47,7 +47,7 @@ public abstract class ObjectBlocker<T> extends RetrievableTask<T> {
 	/**
 	 * <p>
 	 * Returns the value of the object as soon it has been set by the
-	 * {@link MethodBlocker#accept(Object)} method.
+	 * {@link MethodBlockingTask#accept(Object)} method.
 	 * </p>
 	 * <p>
 	 * From the parent document:

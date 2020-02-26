@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.jbrew.Testing;
-import org.jbrew.concurrent.ObjectBlocker;
+import org.jbrew.concurrent.ObjectBlockingTask;
 import org.jbrew.concurrent.RetrievableTask;
 import org.junit.Test;
 
@@ -12,10 +12,19 @@ import org.junit.Test;
 public class ObjectBlockingRetrievableTaskUnitTest {
 	
 	/**
-	 * Tests to make sure that an ObjectBlocker can be instantiated.
+	 * Tests to make sure that an ObjectBlockingTask can be instantiated.
 	 */
 	@Test
 	public void InstantiateOBRT(){
+		RetrievableTask<Integer> task = new OBRT<>();
+		assertNotNull(task);
+	}
+	
+	/**
+	 * Tests to make sure that an ObjectBlockingTask can be instantiated.
+	 */
+	@Test
+	public void InstantiateOBRT2(){
 		RetrievableTask<Integer> task = new OBRT<>();
 		assertNotNull(task);
 	}
@@ -31,7 +40,7 @@ public class ObjectBlockingRetrievableTaskUnitTest {
 		assertEquals(num.retrieve(), Integer.valueOf(69));
 	}
 	
-	private class OBRT<T> extends ObjectBlocker<Integer>{
+	private class OBRT<T> extends ObjectBlockingTask<Integer>{
 		@Override
 		protected void execute() {
 			System.out.println("Inside OBRT's execute()");

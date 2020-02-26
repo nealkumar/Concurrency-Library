@@ -1,22 +1,22 @@
 package org.jbrew.concurrent;
 
 /**
- * A {@link MethodBlocker} blocks {@link MethodBlocker#retrieve()} until the {@link MethodBlocker#execute()} 
+ * A {@link MethodBlockingTask} blocks {@link MethodBlockingTask#retrieve()} until the {@link MethodBlockingTask#execute()} 
  * method has fully completed and terminated.
  * @author nealk
  *
  * @param <T> The Java Generic of type "T" is explicitly defined at compile-time. 
 	 * <br>&emsp;&emsp;<i>Example:</i><br>
 	 * <code>
-	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class Implementor&lt;T&gt; extends MethodBlocker&lt;ConcreteClass&gt;{  }
+	 * &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;public class Implementor&lt;T&gt; extends MethodBlockingTask&lt;ConcreteClass&gt;{  }
 	 * </code><br>
  */
-public abstract class MethodBlocker<T> extends RetrievableTask<T>{
+public abstract class MethodBlockingTask<T> extends RetrievableTask<T>{
 	
 	private T obj;
 	private java.util.concurrent.Semaphore objSem;
 	
-	protected MethodBlocker() {
+	protected MethodBlockingTask() {
 		this.objSem = new java.util.concurrent.Semaphore(0, false);
 	}
 
@@ -34,8 +34,8 @@ public abstract class MethodBlocker<T> extends RetrievableTask<T>{
 
 	/**
 	 * <p>
-	 * Returns the value of the object once the {@link MethodBlocker#execute()} method has returned, 
-	 * as set by the {@link MethodBlocker#accept(Object)} method. 
+	 * Returns the value of the object once the {@link MethodBlockingTask#execute()} method has returned, 
+	 * as set by the {@link MethodBlockingTask#accept(Object)} method. 
 	 * </p><p>
 	 * From the parent document:
 	 * </p>

@@ -2,7 +2,7 @@ package org.jbrew.concurrent_tests.retrievable;
 
 import static org.junit.Assert.assertEquals;
 
-import org.jbrew.concurrent.MethodBlocker;
+import org.jbrew.concurrent.MethodBlockingTask;
 import org.jbrew.concurrent.RetrievableTask;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +27,7 @@ public class MethodBlockingRetrievableTaskUnitTest {
 	}
 	
 	
-	private class MBRT<T> extends MethodBlocker<String>{
+	private class MBRT<T> extends MethodBlockingTask<String>{
 		@Override
 		protected void execute() {
 			this.accept(setMessage);

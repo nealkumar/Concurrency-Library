@@ -36,7 +36,7 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	 * 	Returns the value of the <code>obj</code> in a {@link ThreadSafe} manner. The method blocks until a condition is
 	 *  met (such as the excute() method returning or the <code>obj</code> of type &lt;T&gt; being set (via the setVal() 
 	 *  method). For more information on the way internal contention is handled, please refer to 
-	 *  {@link org.jbrew.concurrent.MethodBlocker} and {@link org.jbrew.concurrent.ObjectBlocker}.
+	 *  {@link org.jbrew.concurrent.MethodBlockingTask} and {@link org.jbrew.concurrent.ObjectBlockingTask}.
 	 * </p>
 	 * 
 	 * @param <T> The generic of type "T" is explicitly defined at compile-time. 
