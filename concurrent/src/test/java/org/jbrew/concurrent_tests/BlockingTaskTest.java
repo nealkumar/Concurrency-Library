@@ -18,6 +18,12 @@ public class BlockingTaskTest {
 	}
 	
 	@Test
+	public void instantiateBlockingTask2() {
+		BlockingTask<Void> basic = new BasicTask<>(true);
+		assertNotNull(basic);
+	}
+	
+	@Test
 	public void setBlockingTaskName(){
 		BlockingTask<Void> basic = new BasicTask<>();
 		basic.setName("Basic Task Name");
@@ -40,6 +46,15 @@ public class BlockingTaskTest {
 	}
 	
 	private class BasicTask<T> extends BlockingTask<Void>{
+		
+		private BasicTask() {
+			super();
+		}
+		
+		private BasicTask(boolean flag) {
+			super(flag);
+		}
+		
 		@Override
 		protected void execute() {
 			System.out.println("Basic Task has executed!");

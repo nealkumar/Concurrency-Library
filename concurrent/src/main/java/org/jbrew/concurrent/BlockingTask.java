@@ -42,7 +42,7 @@ public abstract class BlockingTask<T> implements Task<T> {
 	 * @param printThreadId - a <code>boolean</code> flag which indicates whether or not to print out the current thread id 
 	 * to the console.
 	 */
-	protected BlockingTask(boolean printThreadId) {
+	public BlockingTask(boolean printThreadId) {
 		this.printThreadId = printThreadId;
 		this.name = DEFAULT_NAME;
 	}

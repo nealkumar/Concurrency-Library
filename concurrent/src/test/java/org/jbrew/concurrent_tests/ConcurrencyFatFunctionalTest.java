@@ -4,6 +4,8 @@ import org.jbrew.Testing;
 import org.jbrew.concurrent.MethodBlockingTask;
 import org.jbrew.concurrent.ObjectBlockingTask;
 import org.jbrew.concurrent.RetrievableTask;
+import org.jbrew.concurrent.standard.StandardNonRetrievableTask;
+import org.junit.Test;
 
 /**
  * Simple functional test for Retrievable and NonRetrievable Tasks
@@ -23,6 +25,11 @@ public class ConcurrencyFatFunctionalTest {
 		RetrievableTask<String> r1 = new RT<>();
 		new Thread(r).start();
 		new Thread(r1).start();
+	}
+	
+	@Test(expected = UnsupportedOperationException.class)
+	public void testStandard() {
+		new StandardNonRetrievableTask().run();
 	}
 	
 	

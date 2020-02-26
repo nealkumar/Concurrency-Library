@@ -11,7 +11,7 @@ public class StandardNonRetrievableTask extends StandardTask{
 
 	@Override
 	protected void execute() {
-		
+		throw new UnsupportedOperationException();
 	}
 
 }
