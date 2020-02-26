@@ -47,12 +47,25 @@ public class BlockingTaskTest {
 	
 	@Test
 	public void instantiateBlockingTask3() {
+		BlockingTask<Void> basic = new BasicTask<>("Task Name");
+		assertNotNull(basic);
+	}
+	
+	@Test
+	public void instantiateBlockingTask3_nameTest() {
+		String s = "Task Name";
+		BlockingTask<Void> basic = new BasicTask<>(s);
+		assertEquals(s, basic.getName());
+	}
+	
+	@Test
+	public void instantiateBlockingTask4() {
 		BlockingTask<Void> basic = new BasicTask<>(true, "Task Name for Task Four.");
 		assertNotNull(basic);
 	}
 	
 	@Test
-	public void instantiateBlockingTask3_NameTest() {
+	public void instantiateBlockingTask4_NameTest() {
 		String s = "Task Name for Task Four.";
 		BlockingTask<Void> basic = new BasicTask<>(true, s);
 		assertEquals(s, basic.getName());
@@ -99,6 +112,10 @@ public class BlockingTaskTest {
 		
 		private BasicTask(boolean flag) {
 			super(flag);
+		}
+		
+		private BasicTask(String name) {
+			super(name);
 		}
 		
 		private BasicTask(boolean flag, String name) {
