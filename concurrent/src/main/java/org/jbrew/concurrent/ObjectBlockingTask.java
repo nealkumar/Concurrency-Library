@@ -19,10 +19,6 @@ package org.jbrew.concurrent;
 public abstract class ObjectBlockingTask<T> extends RetrievableTask<T> {
 
 	private T obj;
-	
-//	protected ObjectBlockingTask(boolean printFlag) {
-//		super(printFlag);
-//	}
 
 	@Override
 	public final void run() {
