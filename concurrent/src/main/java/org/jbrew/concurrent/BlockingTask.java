@@ -3,8 +3,7 @@ package org.jbrew.concurrent;
 /**
  * A BlockingTask wraps boilerplate utility code so its implementors can focus on executing their 
  * respective business logic.
- * <br><br>
- * TODO: Add serialization implentation of BlockingTask.
+ * <br>
  * @author Neal Kumar
  *
  * @param <T> - The type parameter for the respective BlockingTask.
