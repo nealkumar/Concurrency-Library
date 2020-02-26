@@ -4,12 +4,34 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.jbrew.Testing;
 import org.jbrew.concurrent.BlockingTask;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 @Testing
 public class BlockingTaskTest {
+	
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+	private final PrintStream originalOut = System.out;
+	private final PrintStream originalErr = System.err;
+	
+	@Before
+	public void setUpStreams() {
+		System.setOut(new PrintStream(outContent));
+		System.setErr(new PrintStream(errContent));
+	}
+	
+	@After
+	public void restoreStreams() {
+		System.setOut(originalOut);
+		System.setErr(originalErr);
+	}
 	
 	@Test
 	public void instantiateBlockingTask() {
@@ -22,6 +44,30 @@ public class BlockingTaskTest {
 		BlockingTask<Void> basic = new BasicTask<>(true);
 		assertNotNull(basic);
 	}
+	
+	@Test
+	public void instantiateBlockingTask3() {
+		BlockingTask<Void> basic = new BasicTask<>(true, "Task Name for Task Four.");
+		assertNotNull(basic);
+	}
+	
+	@Test
+	public void instantiateBlockingTask3_NameTest() {
+		String s = "Task Name for Task Four.";
+		BlockingTask<Void> basic = new BasicTask<>(true, s);
+		assertEquals(s, basic.getName());
+	}
+	
+	/**
+	 * TODO - Finish print unit testing.
+	 */
+//	@Test
+//	public void instantiateBlockingTask3_PrintTest() {
+//		String s = "Task Name for Task Four.";
+//		BlockingTask<Void> basic = new BasicTask<>(true, s);
+//		basic.run();
+//		assertEquals("Thread {ID = " + basic.getId() + ", Name = 'Task Name for Task Four.'} is running...", outContent.toString());
+//	}
 	
 	@Test
 	public void setBlockingTaskName(){
@@ -53,6 +99,10 @@ public class BlockingTaskTest {
 		
 		private BasicTask(boolean flag) {
 			super(flag);
+		}
+		
+		private BasicTask(boolean flag, String name) {
+			super(flag, name);
 		}
 		
 		@Override
