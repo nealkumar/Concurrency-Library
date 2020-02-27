@@ -1,14 +1,15 @@
 package org.jbrew.concurrent;
 
 /**
- * A BlockingTask wraps boilerplate utility code so its implementors can focus on executing their 
- * respective business logic.
+ * A {@link org.jbrew.concurrent.ThreadSafe} implementation of {@link org.jbrew.concurrent.Task}. A BlockingTask wraps boilerplate
+ *  utility code so its implementors can focus on executing their respective business logic. 
  * <br>
  * @author Neal Kumar
  *
  * @param <T> - The type parameter for the respective BlockingTask.
  * 
  */
+@ThreadSafe
 public abstract class BlockingTask<T> implements Task<T> {
 
 	private String name;
