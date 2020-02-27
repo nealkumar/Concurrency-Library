@@ -115,7 +115,7 @@ public abstract class BlockingTask<T> implements Task<T> {
 	 * Returns the id {@code long} of the {@link Task}'s current thread.
 	 */
 	@Override
-	public long getId() {
+	public long getThreadId() {
 		return Thread.currentThread().getId();
 	}
 	

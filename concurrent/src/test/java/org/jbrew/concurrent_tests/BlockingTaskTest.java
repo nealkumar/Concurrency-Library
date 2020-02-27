@@ -93,7 +93,7 @@ public class BlockingTaskTest {
 	public void checkBlockingTaskThreadId() {
 		BlockingTask<Void> basic = new BasicTask<>();
 		basic.run();
-		assertEquals(Thread.currentThread().getId(), basic.getId());
+		assertEquals(Thread.currentThread().getId(), basic.getThreadId());
 	}
 	
 	@Test

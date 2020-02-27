@@ -27,8 +27,8 @@ public interface Task<T> extends Runnable{
 	public void setName(String name);
 	
 	/**
-	 * @return Returns the {@code long} id of the {@link Task}.
+	 * @return Returns the {@code long} id of the {@link Task}'s Thread.
 	 */
-	public long getId();
+	public long getThreadId();
 
 }
