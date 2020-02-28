@@ -2,7 +2,7 @@ package org.jbrew.concurrent_tests.retrievable;
 
 import static org.junit.Assert.assertEquals;
 
-import org.jbrew.concurrent.MethodBlockingRetrievableTask;
+import org.jbrew.concurrent.MethodBlockingTask;
 import org.jbrew.concurrent.RetrievableTask;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +15,7 @@ public class MethodBlockingRetrievableTaskUnitTest {
 	
 	@Before
 	public void setup() {
-		this.retrievableTask = new MBRT<String>();
+		this.retrievableTask = new MBRT<>();
 		this.t = new Thread(retrievableTask);
 		this.setMessage = "MBRT Val has been set.";
 	}
@@ -23,14 +23,13 @@ public class MethodBlockingRetrievableTaskUnitTest {
 	@Test
 	public void retrievableTaskStartTest() throws InterruptedException {
 		t.start();
-		assertEquals(this.setMessage, this.retrievableTask.getVal());
+		assertEquals(this.setMessage, this.retrievableTask.retrieve());
 	}
 	
-	
-	private class MBRT<T> extends MethodBlockingRetrievableTask<String>{
+	private class MBRT<T> extends MethodBlockingTask<String>{
 		@Override
 		protected void execute() {
-			this.setVal(setMessage);
+			this.accept(setMessage);
 		}
 	}
 

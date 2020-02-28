@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.jbrew</groupId>
 		<artifactId>jbrew-parent</artifactId>
-		<version>0.0.7-SNAPSHOT</version>
+		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>concurrent</artifactId>
@@ -14,10 +14,10 @@
 	<name>JBrew Concurrency Library</name>
 	<description>
 		An easy-to-consume concurrency library allowing for "Tasks" to execute business logic in a thread safe manner.
-		This library helps users achieve multi-threading in their applications without worrying about synchronization
-		and blocking for race conditions.
+		This library helps users achieve multi-threading in their applications without needing to control for object 
+		contention in race conditions.
 	</description>
-	<url>https://github.com/nealkumar/Concurrency-Library</url>
+	<url>jbrew.org</url>
 
 	<properties>
 		<sonar.projectKey>org.jbrew:concurrent</sonar.projectKey>

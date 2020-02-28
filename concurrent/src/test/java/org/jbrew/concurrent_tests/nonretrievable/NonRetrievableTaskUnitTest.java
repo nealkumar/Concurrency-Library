@@ -3,35 +3,25 @@ package org.jbrew.concurrent_tests.nonretrievable;
 import static org.junit.Assert.assertNotNull;
 
 import org.jbrew.Testing;
-import org.jbrew.concurrent.NonRetrievableTask;
+import org.jbrew.concurrent.StandardTask;
 import org.junit.Test;
 
 @Testing
 public class NonRetrievableTaskUnitTest {
 	
 	/**
-	 * Tests to make sure a NonRetrievableTask can be instantiated.
+	 * Tests to make sure a StandardTask can be instantiated.
 	 */
 	@Test
 	public void instantiateNonRetrievableTaskTest() {
-		NonRetrievableTask t = new NR();
-		assertNotNull("NonRetrievableTask failed to intantiate. "
+		StandardTask t = new NR();
+		assertNotNull("StandardTask failed to intantiate. "
 				+ "See: src/test/java/software/nealk/concurrent_tests/NonRetrievableTaskTest.java", t);
 	}
+
 	
 	/**
-	 * Tests to make sure that calling getVal() on a NonRetrievableTask throws 
-	 * an {@link UnsupportedOperationException}.
-	 * @throws InterruptedException
-	 */
-	@Test(expected = UnsupportedOperationException.class)
-	public void checkForUnsupportedOperationExceptionTask() throws InterruptedException {
-		NonRetrievableTask r = new NR();
-		r.getVal();
-	}
-	
-	/**
-	 * Ensures than execute() is executed in a NonRetrievableTask.
+	 * Ensures than execute() is executed in a StandardTask.
 	 */
 	@Test
 	public void checkExecuteMethod() {
@@ -40,7 +30,7 @@ public class NonRetrievableTaskUnitTest {
 	}
 	
 	/**
-	 * Ensures that run() is executed in a NonRetrievableTask.
+	 * Ensures that run() is executed in a StandardTask.
 	 */
 	@Test
 	public void checkRunMethod() {
@@ -49,10 +39,11 @@ public class NonRetrievableTaskUnitTest {
 	}
 	
 	
-	private class NR extends NonRetrievableTask{
+	private class NR extends StandardTask{
 		@Override
 		protected void execute() {
-			System.out.println("NonRetrievableTask works correctly.");
+			System.out.println("StandardTask works correctly.");
 		}
 	}
+	
 }
