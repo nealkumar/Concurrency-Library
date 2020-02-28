@@ -71,17 +71,6 @@ public class BlockingTaskTest {
 		assertEquals(s, basic.getName());
 	}
 	
-	/**
-	 * TODO - Finish print unit testing.
-	 */
-//	@Test
-//	public void instantiateBlockingTask3_PrintTest() {
-//		String s = "Task Name for Task Four.";
-//		BlockingTask<Void> basic = new BasicTask<>(true, s);
-//		basic.run();
-//		assertEquals("Thread {ID = " + basic.getId() + ", Name = 'Task Name for Task Four.'} is running...", outContent.toString());
-//	}
-	
 	@Test
 	public void setBlockingTaskName(){
 		BlockingTask<Void> basic = new BasicTask<>();
