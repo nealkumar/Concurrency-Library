@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.jbrew</groupId>
 		<artifactId>jbrew-parent</artifactId>
-		<version>0.0.7</version>
+		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>concurrent</artifactId>
