@@ -12,3 +12,7 @@
 [![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/JBrew?color=yellow)](https://github.com/Netflix/osstracker)
 [![JDK 1.8+](https://img.shields.io/badge/jdk-1.8%2B-purple)](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
 # JBrew Home
+* Please note, the master branch is always live! The latest release is reflected on <code>master</code>.
+* The branch <code>staged-for-release</code> reflects the newest updates to the library which will be officially released in the next release iteration. New contributors should make pull requests into <code>staged-for-release</code>.
+* To dive into the concurrency library's source code, please navigate [here](https://github.com/nealkumar/JBrew/tree/docpatch-010/concurrent). The README.md contains information on how to get started, and full documentation is available at [jbrew.org](https://jbrew.org/).
+* Feedback is always welcome, and can be submitted to [support@jbrew.org](mailto:support@jbrew.org). Thank you!
