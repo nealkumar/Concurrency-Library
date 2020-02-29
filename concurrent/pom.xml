@@ -14,8 +14,8 @@
 	<name>JBrew Concurrency Library</name>
 	<description>
 		An easy-to-consume concurrency library allowing for "Tasks" to execute business logic in a thread safe manner.
-		This library helps users achieve multi-threading in their applications without worrying about synchronization
-		and blocking for race conditions.
+		This library helps users achieve multi-threading in their applications without needing to control for object 
+		contention in race conditions.
 	</description>
 	<url>jbrew.org</url>
 
