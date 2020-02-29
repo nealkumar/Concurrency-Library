@@ -30,5 +30,9 @@ public interface Task<T> extends Runnable{
 	 * @return Returns the {@code long} id of the {@link Task}'s Thread.
 	 */
 	public long getThreadId();
+	
+	public void setPriority(int priority);
+	
+	public int getPriority();
 
 }
