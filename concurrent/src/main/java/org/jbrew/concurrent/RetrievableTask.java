@@ -48,8 +48,8 @@ public abstract class RetrievableTask<T> extends BlockingTask<T>{
 	 * @exception InterruptedException is thrown if the thread is interrupted. 
 	 * @author Neal Kumar
 	 */
-	@SuppressWarnings("hiding")
 	@ThreadSafe
-	public abstract <T extends Object> T retrieve() throws InterruptedException;
+	public abstract T retrieve() throws InterruptedException;
+
 
 }
