@@ -60,7 +60,6 @@ public abstract class ObjectBlockingTask<T> extends RetrievableTask<T> {
 	 * nullifies the compiler warning "unchecked".
 	 * </p>
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public final T retrieve() throws InterruptedException {
 		synchronized (this) {
