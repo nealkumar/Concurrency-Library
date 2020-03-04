@@ -28,9 +28,11 @@ public class MethodBlockingRetrievableTaskUnitTest {
 	
 	
 	private class MBRT<T> extends MethodBlockingTask<String>{
+
 		@Override
 		protected void execute() {
-			this.accept(setMessage);
+			// TODO Auto-generated method stub
+			
 		}
 	}
 
