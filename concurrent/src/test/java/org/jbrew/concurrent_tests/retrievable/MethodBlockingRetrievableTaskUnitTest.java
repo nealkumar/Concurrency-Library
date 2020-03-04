@@ -26,7 +26,6 @@ public class MethodBlockingRetrievableTaskUnitTest {
 		assertEquals(this.setMessage, this.retrievableTask.retrieve());
 	}
 	
-	
 	private class MBRT<T> extends MethodBlockingTask<String>{
 		@Override
 		protected void execute() {
