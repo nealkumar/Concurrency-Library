@@ -1,7 +1,5 @@
 package org.jbrew.concurrent;
 
-import java.awt.event.FocusEvent.Cause;
-
 public class TaskRegister implements Registry {
 	
 	java.util.Queue<Task<?>> priorityTaskQueue;
@@ -27,7 +25,7 @@ public class TaskRegister implements Registry {
 
 	@Override
 	/**
-	 * TODO - Finish interruptAll method.
+	 * TODO - Finish interruptAll() method implementation.
 	 */
 	public void interruptAll() {
 		try{
