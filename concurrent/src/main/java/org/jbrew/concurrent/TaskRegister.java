@@ -1,6 +1,6 @@
 package org.jbrew.concurrent;
 
-public class TaskRegister implements Registry {
+public class TaskRegister implements TaskRegistry {
 	
 	java.util.Queue<Task<?>> priorityTaskQueue;
 	

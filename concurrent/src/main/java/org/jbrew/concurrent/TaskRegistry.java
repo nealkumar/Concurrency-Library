@@ -1,6 +1,6 @@
 package org.jbrew.concurrent;
 
-public interface Registry {
+public interface TaskRegistry {
 	
 	public abstract void offerTask(Task<?> task);
 	public abstract void removeTask(Task<?> task);
