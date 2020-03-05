@@ -1,10 +1,12 @@
 package org.jbrew.concurrent;
 
-public class TaskRegistry implements Registry {
+import java.awt.event.FocusEvent.Cause;
+
+public class TaskRegister implements Registry {
 	
 	java.util.Queue<Task<?>> priorityTaskQueue;
 	
-	public TaskRegistry() {
+	public TaskRegister() {
 		this.priorityTaskQueue = new java.util.PriorityQueue<>(new TaskComparator());
 	}
 
@@ -20,7 +22,6 @@ public class TaskRegistry implements Registry {
 
 	@Override
 	public Task<?> pollTask() {
-		// TODO Auto-generated method stub
 		return this.priorityTaskQueue.poll();
 	}
 
@@ -30,9 +31,9 @@ public class TaskRegistry implements Registry {
 	 */
 	public void interruptAll() {
 		try{
-			throw new InterruptedException();
+			throw new UnsupportedOperationException("See TODO comment @ line 30 in TaskRegister.java.");
 		} catch(Exception e) {
-			System.out.println("TaskRegistry#interruptAll() has NOT been implemented yet!");
+			System.out.println("TaskRegister#interruptAll() has NOT been implemented yet!");
 			e.printStackTrace();
 		}
 	}
