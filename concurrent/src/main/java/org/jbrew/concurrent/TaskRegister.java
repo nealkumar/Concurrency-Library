@@ -4,10 +4,11 @@ import java.util.concurrent.PriorityBlockingQueue;
 
 public class TaskRegister implements TaskRegistry {
 	
-	java.util.AbstractQueue<Task<?>> taskQueue;
+	private java.util.AbstractQueue<Task<?>> taskQueue;
+	private static final int INITIAL_QUEUE_CAPACITY = 11;
 	
 	public TaskRegister() {
-		this.taskQueue = new PriorityBlockingQueue<>();
+		this.taskQueue = new PriorityBlockingQueue<>(INITIAL_QUEUE_CAPACITY, new TaskComparator());
 	}
 
 	@Override
