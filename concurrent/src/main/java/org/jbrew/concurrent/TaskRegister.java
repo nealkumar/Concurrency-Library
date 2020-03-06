@@ -31,12 +31,6 @@ public class TaskRegister implements TaskRegistry {
 	 * TODO - Finish interruptAll() method implementation.
 	 */
 	public void interruptAll() {
-//		try{
-//			throw new UnsupportedOperationException();
-//		} catch(Exception e) {
-//			System.out.println("TaskRegister#interruptAll() has NOT been implemented yet!");
-//			e.printStackTrace();
-//		}
 		throw new UnsupportedOperationException();
 	}
 
