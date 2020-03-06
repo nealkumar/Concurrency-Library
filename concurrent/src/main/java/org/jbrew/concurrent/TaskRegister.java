@@ -35,5 +35,10 @@ public class TaskRegister implements TaskRegistry {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public int registrySize() {
+		return this.priorityTaskQueue.size();
+	}
 	
 }
