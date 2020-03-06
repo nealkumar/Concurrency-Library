@@ -39,6 +39,14 @@ public class TaskRegisterTest {
 	}
 	
 	@Test
+	public void offerAndCheckSizeTest() {
+		TaskRegister register = new TaskRegister();
+		register.offerTask(task);
+		register.offerTask(task);
+		assert register.getRegistrySize() == 2;
+	}
+	
+	@Test
 	public void offerAndPollTaskTest() {
 		TaskRegister register = new TaskRegister();
 		register.offerTask(task);
