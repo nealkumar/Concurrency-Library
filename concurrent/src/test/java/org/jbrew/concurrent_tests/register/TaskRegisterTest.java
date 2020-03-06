@@ -46,11 +46,21 @@ public class TaskRegisterTest {
 		assert register.getRegistrySize() == 2;
 	}
 	
+	/**
+	 * Ensures that {@link org.jbrew.concurrent.TaskRegister#pollTask()} correctly sorts
+	 * ands polls the highest priority Task.
+	 */
 	@Test
 	public void offerAndPollTaskTest() {
 		TaskRegister register = new TaskRegister();
-		register.offerTask(task);
-		assert register.pollTask() == this.task;
+		Task<Integer> lowPTask = new BT<>(), highPTask = new BT<>();
+		highPTask.setPriority(10);
+		highPTask.setName("High Priority");
+		lowPTask.setPriority(1);
+		lowPTask.setName("Low Priority");
+		register.offerTask(lowPTask);
+		register.offerTask(highPTask);
+		assert register.pollTask().getName() == "High Priority";
 	}
 	
 	@Test
