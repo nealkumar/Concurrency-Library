@@ -28,7 +28,8 @@ public class TaskRegister implements TaskRegistry {
 
 	@Override
 	/**
-	 * TODO - Finish interruptAll() method implementation.
+	 * interuptAll() implementation is the subject of (#79), and as such will be
+	 * addressed prior to release of v0.1.0.
 	 */
 	public void interruptAll() {
 		throw new UnsupportedOperationException();
