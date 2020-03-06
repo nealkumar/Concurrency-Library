@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNotNull;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.concurrent.PriorityBlockingQueue;
 
 import org.junit.Test;
 import org.jbrew.concurrent.*;
@@ -34,7 +33,7 @@ public class TaskRegisterTest {
 		Class<?>[] taskParam = {Object.class};
 		Field fieldDefinition = taskRegister.getDeclaredField("taskQueue");
 		fieldDefinition.setAccessible(true);
-		Object fieldValue = fieldDefinition.get(taskRegister.newInstance());
+		Object fieldValue = fieldDefinition.get(taskRegister.getDeclaredConstructor(new Class<?>[] {}).newInstance());
 		Method contains = fieldValue.getClass().getDeclaredMethod("contains", taskParam);
 		assert (Boolean) contains.invoke(fieldValue, this.task) == false;
 	}
@@ -44,6 +43,13 @@ public class TaskRegisterTest {
 		TaskRegister register = new TaskRegister();
 		register.offerTask(task);
 		assert register.pollTask() == this.task;
+	}
+	
+	@Test
+	(expected = UnsupportedOperationException.class)
+	public void interuptAllTest() {
+		TaskRegister register = new TaskRegister();
+		register.interruptAll();
 	}
 	
 	private class BT<T> extends ObjectBlockingTask<Integer>{
