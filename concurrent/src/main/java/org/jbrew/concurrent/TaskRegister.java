@@ -1,26 +1,28 @@
 package org.jbrew.concurrent;
 
+import java.util.concurrent.PriorityBlockingQueue;
+
 public class TaskRegister implements TaskRegistry {
 	
-	java.util.Queue<Task<?>> priorityTaskQueue;
+	java.util.AbstractQueue<Task<?>> taskQueue;
 	
 	public TaskRegister() {
-		this.priorityTaskQueue = new java.util.PriorityQueue<>(new TaskComparator());
+		this.taskQueue = new PriorityBlockingQueue<>();
 	}
 
 	@Override
 	public void offerTask(Task<?> task) {
-		this.priorityTaskQueue.offer(task);
+		this.taskQueue.offer(task);
 	}
 
 	@Override
 	public void removeTask(Task<?> task) {
-		this.priorityTaskQueue.remove(task);
+		this.taskQueue.remove(task);
 	}
 
 	@Override
 	public Task<?> pollTask() {
-		return this.priorityTaskQueue.poll();
+		return this.taskQueue.poll();
 	}
 
 	@Override
@@ -37,8 +39,8 @@ public class TaskRegister implements TaskRegistry {
 	}
 
 	@Override
-	public int registrySize() {
-		return this.priorityTaskQueue.size();
+	public int getRegistrySize() {
+		return this.taskQueue.size();
 	}
 	
 }

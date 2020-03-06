@@ -21,7 +21,12 @@ public class TaskRegisterTest {
 	}
 	
 	@Test
-	public void offerTaskTest() {
+	public void removeTaskTest() {
+		
+	}
+	
+	@Test
+	public void offerAndPollTaskTest() {
 		TaskRegister register = new TaskRegister();
 		register.offerTask(task);
 		assert register.pollTask() == this.task;
