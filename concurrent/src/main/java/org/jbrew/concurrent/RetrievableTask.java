@@ -1,6 +1,6 @@
 package org.jbrew.concurrent;
 
-public abstract class RetrievableTask<T> extends BlockingTask<T>{
+public abstract class RetrievableTask<T> extends AbstractTask<T>{
 	
 	protected boolean printThreadIdFlag;
 	
