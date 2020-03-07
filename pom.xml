@@ -5,7 +5,7 @@
 	<packaging>pom</packaging>
 	<groupId>org.jbrew</groupId>
 	<artifactId>jbrew-parent</artifactId>
-	<version>0.1.0-beta-SNAPSHOT</version>
+	<version>0.1.0-alpha.2-SNAPSHOT</version>
 
 	<name>JBrew :: Parent POM</name>
 	<description>
@@ -220,7 +220,7 @@
 						<skip>true</skip>
 						<skipDeploy>true</skipDeploy>
 					</configuration>
-					<version>3.8.2</version>
+					<version>3.9.0</version>
 					<executions>
 						<execution>
 							<id>default-deploy</id>
