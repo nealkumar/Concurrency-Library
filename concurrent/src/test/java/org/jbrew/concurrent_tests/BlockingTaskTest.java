@@ -3,12 +3,13 @@ package org.jbrew.concurrent_tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import org.jbrew.Testing;
-import org.jbrew.concurrent.BlockingTask;
+import org.jbrew.concurrent.AbstractBlockingTask;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,79 +36,93 @@ public class BlockingTaskTest {
 	
 	@Test
 	public void instantiateBlockingTask() {
-		BlockingTask<Void> basic = new BasicTask<>();
+		AbstractBlockingTask<Void> basic = new MyTask<>();
 		assertNotNull(basic);
 	}
 	
 	@Test
+	public void instantiateBlockingTaskAndTestSysOut() {
+		AbstractBlockingTask<Void> basic = new MyTask<>();
+		basic.run();
+		assertEquals("", outContent.toString());
+	}
+	
+	@Test
 	public void instantiateBlockingTask2() {
-		BlockingTask<Void> basic = new BasicTask<>(true);
+		AbstractBlockingTask<Void> basic = new MyTask<>(true);
 		assertNotNull(basic);
 	}
 	
 	@Test
 	public void instantiateBlockingTask3() {
-		BlockingTask<Void> basic = new BasicTask<>("Task Name");
+		AbstractBlockingTask<Void> basic = new MyTask<>("Task Name");
 		assertNotNull(basic);
+	}
+	
+	@Test
+	public void instantiateBlockingTask3AndTestSysOut() {
+		AbstractBlockingTask<Void> basic = new MyTask<>("Task Name");
+		basic.run();
+		assertTrue(outContent.toString().contains(basic.getName()));
 	}
 	
 	@Test
 	public void instantiateBlockingTask3_nameTest() {
 		String s = "Task Name";
-		BlockingTask<Void> basic = new BasicTask<>(s);
+		AbstractBlockingTask<Void> basic = new MyTask<>(s);
 		assertEquals(s, basic.getName());
 	}
 	
 	@Test
 	public void instantiateBlockingTask4() {
-		BlockingTask<Void> basic = new BasicTask<>(true, "Task Name for Task Four.");
+		AbstractBlockingTask<Void> basic = new MyTask<>(true, "Task Name for Task Four.");
 		assertNotNull(basic);
 	}
 	
 	@Test
 	public void instantiateBlockingTask4_NameTest() {
 		String s = "Task Name for Task Four.";
-		BlockingTask<Void> basic = new BasicTask<>(true, s);
+		AbstractBlockingTask<Void> basic = new MyTask<>(true, s);
 		assertEquals(s, basic.getName());
 	}
 	
 	@Test
 	public void setBlockingTaskName(){
-		BlockingTask<Void> basic = new BasicTask<>();
+		AbstractBlockingTask<Void> basic = new MyTask<>();
 		basic.setName("Basic Task Name");
 		assertEquals("Basic Task Name", basic.getName());
 	}
 	
 	@Test
 	public void checkBlockingTaskThreadId() {
-		BlockingTask<Void> basic = new BasicTask<>();
+		AbstractBlockingTask<Void> basic = new MyTask<>();
 		basic.run();
 		assertEquals(Thread.currentThread().getId(), basic.getThreadId());
 	}
 	
 	@Test
 	public void checkBlockingTaskThreadId2() {
-		BlockingTask<Void> basic = new BasicTask<>();
+		AbstractBlockingTask<Void> basic = new MyTask<>();
 		Thread t = new Thread(basic);
 		t.start();
 		assertNotEquals(t.getId(), Thread.currentThread().getId());
 	}
 	
-	private class BasicTask<T> extends BlockingTask<Void>{
+	private class MyTask<T> extends AbstractBlockingTask<Void>{
 		
-		private BasicTask() {
+		private MyTask() {
 			super();
 		}
 		
-		private BasicTask(boolean flag) {
+		private MyTask(boolean flag) {
 			super(flag);
 		}
 		
-		private BasicTask(String name) {
+		private MyTask(String name) {
 			super(name);
 		}
 		
-		private BasicTask(boolean flag, String name) {
+		private MyTask(boolean flag, String name) {
 			super(flag, name);
 		}
 		

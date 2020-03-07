@@ -1,5 +1,14 @@
 package org.jbrew.concurrent;
 
+/**
+ * A {@link TaskRegistry} is an interface specifying the requirements for a "register" or collection of 
+ * Tasks.
+ * 
+ * @see org.jbrew.concurrent.TaskRegister
+ * 
+ * @author nealk
+ *
+ */
 public interface TaskRegistry {
 	
 	/**
