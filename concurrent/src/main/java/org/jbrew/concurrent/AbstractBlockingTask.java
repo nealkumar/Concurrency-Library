@@ -1,16 +1,16 @@
 package org.jbrew.concurrent;
 
 /**
- * A {@link org.jbrew.concurrent.ThreadSafe} implementation of {@link org.jbrew.concurrent.Task}. A BlockingTask wraps boilerplate
+ * A {@link org.jbrew.concurrent.ThreadSafe} implementation of {@link org.jbrew.concurrent.Task}. A AbstractBlockingTask wraps boilerplate
  *  utility code so its implementors can focus on executing their respective business logic. 
  * <br>
  * @author Neal Kumar
  *
- * @param <T> - The type parameter for the respective BlockingTask.
+ * @param <T> - The type parameter for the respective AbstractBlockingTask.
  * 
  */
 @ThreadSafe
-public abstract class BlockingTask<T> implements Task<T> {
+public abstract class AbstractBlockingTask<T> implements Task<T> {
 
 	private String name;
 	private boolean printThreadId, printName, printBoth;
@@ -19,13 +19,13 @@ public abstract class BlockingTask<T> implements Task<T> {
 	
 	/**
 	 * <p>
-	 * Default constructor for {@link BlockingTask}blocking which assigns {@link BlockingTask#printThreadId} to <code>false</code>
-	 * and the {@link BlockingTask#name} to the {@link BlockingTask#DEFAULT_NAME}. Invoking this constructor will prevent 
-	 * both the {@link BlockingTask#name} and the current thread's ID from printing to the console.
+	 * Default constructor for {@link AbstractBlockingTask}blocking which assigns {@link AbstractBlockingTask#printThreadId} to <code>false</code>
+	 * and the {@link AbstractBlockingTask#name} to the {@link AbstractBlockingTask#DEFAULT_NAME}. Invoking this constructor will prevent 
+	 * both the {@link AbstractBlockingTask#name} and the current thread's ID from printing to the console.
 	 * </p>
-	 * <p>Note that this constructor is the most performance-optimal implementation of a {@link BlockingTask}.</p> 
+	 * <p>Note that this constructor is the most performance-optimal implementation of a {@link AbstractBlockingTask}.</p> 
 	 */
-	protected BlockingTask() {
+	protected AbstractBlockingTask() {
 		this.printThreadId = false;
 		this.name = DEFAULT_NAME;
 		this.setPriority(10);
@@ -33,18 +33,18 @@ public abstract class BlockingTask<T> implements Task<T> {
 	
 	/**
 	 * <p>
-	 * A constructor for {@link BlockingTask} which includes an option to assign the <code>boolean</code>  
-	 * {@link BlockingTask#printThreadId}'s value. Invoking this constructor will assign the {@link BlockingTask#name} 
-	 * to the {@link BlockingTask#DEFAULT_NAME}, and prevent the ID from printing to the console.
+	 * A constructor for {@link AbstractBlockingTask} which includes an option to assign the <code>boolean</code>  
+	 * {@link AbstractBlockingTask#printThreadId}'s value. Invoking this constructor will assign the {@link AbstractBlockingTask#name} 
+	 * to the {@link AbstractBlockingTask#DEFAULT_NAME}, and prevent the ID from printing to the console.
 	 * </p><p>
-	 * 	Please note that this constructor is the <i>not</i> the most performance-optimal implementation of a {@link BlockingTask}.
+	 * 	Please note that this constructor is the <i>not</i> the most performance-optimal implementation of a {@link AbstractBlockingTask}.
 	 * 	As such, usage of this constructor for performance-sensitive operations is <i>highly discouraged</i> and is considered
-	 *  bad practice. Performance-sensitive applications should instead use the default constructor, {@link BlockingTask#BlockingTask()}.
+	 *  bad practice. Performance-sensitive applications should instead use the default constructor, {@link AbstractBlockingTask#BlockingTask()}.
 	 * </p>
 	 * @param printThreadId - a <code>boolean</code> flag which indicates whether or not to print out the current thread id 
 	 * to the console.
 	 */
-	public BlockingTask(boolean printThreadId) {
+	public AbstractBlockingTask(boolean printThreadId) {
 		this.printThreadId = printThreadId;
 		this.name = DEFAULT_NAME;
 		this.setPriority(10);
@@ -52,17 +52,17 @@ public abstract class BlockingTask<T> implements Task<T> {
 	
 	/**
 	 * <p>
-	 * A constructor for {@link BlockingTask} which includes an option to assign the <code>String</code>  
-	 * {@link BlockingTask#name}'s value. Invoking this constructor will prevent the ID from printing to the console. 
+	 * A constructor for {@link AbstractBlockingTask} which includes an option to assign the <code>String</code>  
+	 * {@link AbstractBlockingTask#name}'s value. Invoking this constructor will prevent the ID from printing to the console. 
 	 * </p>
 	 * <p>
-	 * 	Please note that this constructor is the <i>not</i> the most performance-optimal implementation of a {@link BlockingTask}.
+	 * 	Please note that this constructor is the <i>not</i> the most performance-optimal implementation of a {@link AbstractBlockingTask}.
 	 * 	As such, usage of this constructor for performance-sensitive operations is <i>highly discouraged</i> and is considered
-	 *  bad practice. Performance-sensitive applications should instead use the default constructor, {@link BlockingTask#BlockingTask()}.
+	 *  bad practice. Performance-sensitive applications should instead use the default constructor, {@link AbstractBlockingTask#BlockingTask()}.
 	 * </p>
 	 * @param name - a <code>String</code> for the current {@link org.jbrew.concurrent.Task}'s name.
 	 */
-	protected BlockingTask(String name) {
+	protected AbstractBlockingTask(String name) {
 		this.printThreadId = false;
 		this.name = name;
 		this.printName = true;
@@ -71,19 +71,19 @@ public abstract class BlockingTask<T> implements Task<T> {
 	
 	/**
 	 * <p>
-	 * A constructor for {@link BlockingTask} which includes an option to assign the <code>String</code>  
-	 * {@link BlockingTask#name}'s value, as well as the <code>boolean</code> {@link BlockingTask#printThreadId}'s 
+	 * A constructor for {@link AbstractBlockingTask} which includes an option to assign the <code>String</code>  
+	 * {@link AbstractBlockingTask#name}'s value, as well as the <code>boolean</code> {@link AbstractBlockingTask#printThreadId}'s 
 	 * value. Invoking this constructor will automatically print both the name and ID to the console.
 	 * </p>
 	 * <p>
-	 * 	Please note that this constructor is the <i>not</i> the most performance-optimal implementation of a {@link BlockingTask}.
+	 * 	Please note that this constructor is the <i>not</i> the most performance-optimal implementation of a {@link AbstractBlockingTask}.
 	 * 	As such, usage of this constructor for performance-sensitive operations is <i>highly discouraged</i> and is considered
-	 *  bad practice. Performance-sensitive applications should instead use the default constructor, {@link BlockingTask#BlockingTask()}.
+	 *  bad practice. Performance-sensitive applications should instead use the default constructor, {@link AbstractBlockingTask#BlockingTask()}.
 	 * </p> 
 	 * @param printThreadId - <code>boolean</code> flag which enables console printing of the current thread's ID
 	 * @param name - a <code>String</code> for the current {@link org.jbrew.concurrent.Task}'s name.
 	 */
-	protected BlockingTask(boolean printThreadId, String name) {
+	protected AbstractBlockingTask(boolean printThreadId, String name) {
 		this.printThreadId = printThreadId;
 		this.name = name;
 		this.printBoth = true;
