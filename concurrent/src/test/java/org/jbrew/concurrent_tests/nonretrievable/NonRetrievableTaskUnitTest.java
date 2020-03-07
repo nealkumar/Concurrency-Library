@@ -3,25 +3,25 @@ package org.jbrew.concurrent_tests.nonretrievable;
 import static org.junit.Assert.assertNotNull;
 
 import org.jbrew.Testing;
-import org.jbrew.concurrent.StandardTask;
+import org.jbrew.concurrent.BasicTask;
 import org.junit.Test;
 
 @Testing
 public class NonRetrievableTaskUnitTest {
 	
 	/**
-	 * Tests to make sure a StandardTask can be instantiated.
+	 * Tests to make sure a BasicTask can be instantiated.
 	 */
 	@Test
 	public void instantiateNonRetrievableTaskTest() {
-		StandardTask t = new NR();
-		assertNotNull("StandardTask failed to intantiate. "
+		BasicTask t = new NR();
+		assertNotNull("BasicTask failed to intantiate. "
 				+ "See: src/test/java/software/nealk/concurrent_tests/NonRetrievableTaskTest.java", t);
 	}
 
 	
 	/**
-	 * Ensures than execute() is executed in a StandardTask.
+	 * Ensures than execute() is executed in a BasicTask.
 	 */
 	@Test
 	public void checkExecuteMethod() {
@@ -30,7 +30,7 @@ public class NonRetrievableTaskUnitTest {
 	}
 	
 	/**
-	 * Ensures that run() is executed in a StandardTask.
+	 * Ensures that run() is executed in a BasicTask.
 	 */
 	@Test
 	public void checkRunMethod() {
@@ -39,10 +39,10 @@ public class NonRetrievableTaskUnitTest {
 	}
 	
 	
-	private class NR extends StandardTask{
+	private class NR extends BasicTask{
 		@Override
 		protected void execute() {
-			System.out.println("StandardTask works correctly.");
+			System.out.println("BasicTask works correctly.");
 		}
 	}
 	
