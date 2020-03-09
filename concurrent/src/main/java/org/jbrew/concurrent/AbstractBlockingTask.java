@@ -16,6 +16,7 @@ public abstract class AbstractBlockingTask<T> implements Task<T> {
 	private boolean printThreadId, printName, printBoth;
 	private int priority;
 	private final static String DEFAULT_NAME = "unnamed task";
+	private final static int DEFAULT_PRIORITY = 5;
 	
 	/**
 	 * <p>
@@ -28,7 +29,7 @@ public abstract class AbstractBlockingTask<T> implements Task<T> {
 	protected AbstractBlockingTask() {
 		this.printThreadId = false;
 		this.name = DEFAULT_NAME;
-		this.setPriority(10);
+		this.setPriority(DEFAULT_PRIORITY);
 	}
 	
 	/**
@@ -47,7 +48,7 @@ public abstract class AbstractBlockingTask<T> implements Task<T> {
 	public AbstractBlockingTask(boolean printThreadId) {
 		this.printThreadId = printThreadId;
 		this.name = DEFAULT_NAME;
-		this.setPriority(10);
+		this.setPriority(DEFAULT_PRIORITY);
 	}
 	
 	/**
@@ -66,7 +67,7 @@ public abstract class AbstractBlockingTask<T> implements Task<T> {
 		this.printThreadId = false;
 		this.name = name;
 		this.printName = true;
-		this.setPriority(10);
+		this.setPriority(DEFAULT_PRIORITY);
 	}
 	
 	/**
@@ -88,7 +89,7 @@ public abstract class AbstractBlockingTask<T> implements Task<T> {
 		this.name = name;
 		this.printBoth = true;
 		this.printThreadId = false;
-		this.setPriority(10);
+		this.setPriority(DEFAULT_PRIORITY);
 	}
 	
 	/**
