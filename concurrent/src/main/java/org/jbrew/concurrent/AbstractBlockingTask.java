@@ -142,7 +142,6 @@ public abstract class AbstractBlockingTask<T> implements Task<T> {
 			System.out.println("Thread " + getInfo() + " is running...");
 		}
 		protected abstract T getInfo();
-		
 	}
 	
 	private class PrintId extends PrintStrategy<Long>{
