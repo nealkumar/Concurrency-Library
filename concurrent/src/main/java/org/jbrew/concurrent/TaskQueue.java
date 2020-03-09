@@ -1,7 +1,7 @@
 package org.jbrew.concurrent;
 
 /**
- * A TaskQueue is a set of ordered or unordered {@link org.jbrew.concurrent.Task} Tasks placed into a custom
+ * A TaskQueue is a set of ordered or unordered {@link org.jbrew.concurrent.Task}s placed into a custom
  * queue which can be operated by producers or consumers in one or more {@link java.lang.Thread}.
  * @author nealk
  *
