@@ -17,7 +17,11 @@ public class BoundedTaskQueue extends AbstractBlockingTaskQueue{
 
 	@Override
 	public void enqueue(Task<? extends Object> task) throws InterruptedException {
-		throw new UnsupportedOperationException();
+		synchronized(this) {
+			while(this.queue.size() == capacity) this.wait();
+		}
+		this.queue.offer(task);
+		synchronized(this) {notifyAll();}
 	}
 
 	/**
