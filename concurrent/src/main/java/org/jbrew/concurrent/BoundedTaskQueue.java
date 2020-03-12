@@ -7,6 +7,24 @@ package org.jbrew.concurrent;
  * @author nealk
  */
 @ThreadSafe
-public class BoundedTaskQueue{
+public class BoundedTaskQueue extends AbstractBlockingTaskQueue{
+	
+	private final int capacity;
+	
+	public BoundedTaskQueue(int capacity) {
+		this.capacity = capacity;
+	}
+
+	@Override
+	public void enqueue(Task<? extends Object> task) throws InterruptedException {
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * @return the capacity of this {@link org.jbrew.concurrent.AbstractBlockingTaskQueue}.
+	 */
+	public int getCapacity() {
+		return capacity;
+	}
 
 }
