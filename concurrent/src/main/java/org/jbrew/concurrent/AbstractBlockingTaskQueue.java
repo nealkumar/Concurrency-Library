@@ -7,7 +7,7 @@ package org.jbrew.concurrent;
  * @author nealk
  *
  */
-public abstract class AbstractTaskQueue implements TaskQueue<Task<?>>{
+public abstract class AbstractTaskQueue implements TaskQueue<Task<? extends Object>>{
 	
 	protected java.util.Queue<Task<? extends Object>> queue;
 	

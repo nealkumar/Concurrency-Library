@@ -7,6 +7,11 @@ package org.jbrew.concurrent;
  * @author nealk
  */
 @ThreadSafe
-public class UnboundedTaskQueue {
+public class UnboundedTaskQueue extends AbstractTaskQueue{
+
+	@Override
+	public void enqueue(Task<? extends Object> task) throws InterruptedException {
+		queue.offer(task);
+	}
 
 }
