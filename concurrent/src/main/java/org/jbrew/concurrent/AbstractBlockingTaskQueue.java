@@ -30,7 +30,12 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 	}
 	
 	/**
-	 * Development implementation of the {@link #dequeue()} method to test the functional
+	 * Development implementation of the {@link #dequeue()} method to test the functional application and 
+	 * performance overhead of using Optionals for the Task Type.
+	 * 
+	 * This will serve to benefit {@link org.jbrew.concurrent.BasicTask}s, as they presently require a 
+	 * "Void" param type when operated on, which is clunky.
+	 * 
 	 * @return
 	 */
 	@UnderDevelopmentInvestigation
