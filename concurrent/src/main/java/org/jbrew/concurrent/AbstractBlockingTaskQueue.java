@@ -26,6 +26,7 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 		} catch(InterruptedException e) {
 			System.out.println("TaskQueue was interrupted!");
 			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
 		return task;
 	}
