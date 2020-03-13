@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.lang.reflect.Field;
-import java.util.LinkedList;
 import java.util.Queue;
 
 import org.jbrew.Testing;
@@ -17,7 +16,7 @@ import org.jbrew.concurrent.Task;
 public class UnboundedTaskQueueTest {
 	
 	private UnboundedTaskQueue singleInstance = new UnboundedTaskQueue();
-	private Queue<Task<?>> testQueue = new LinkedList<>();
+	//private Queue<Task<?>> testQueue = new LinkedList<>();
 	
 	@Test
 	public void instantiateTaskQueue() {
