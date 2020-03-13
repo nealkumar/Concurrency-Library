@@ -145,7 +145,7 @@ public class AbstractBlockingTaskQueueTest {
 		t.start();
 		t.join(10);
 		// check internal queue size to ensure its size == 1
-		assertEquals(2, queue.size());
+		assertEquals(1, queue.size());
 	}
 
 	@Test
