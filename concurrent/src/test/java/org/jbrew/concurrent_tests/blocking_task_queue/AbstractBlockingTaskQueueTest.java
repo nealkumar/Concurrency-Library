@@ -128,7 +128,7 @@ public class AbstractBlockingTaskQueueTest {
 		queue.offer(opTask);
 		queue.offer(opTask);
 		queue.offer(opTask);
-		// dequeue one task... there should now only be one task in the internal queue.
+		// dequeue one task... there should now only be two tasks in the internal queue.
 		Thread t = new Thread(() -> {
 			try {
 				method = clazz.getDeclaredMethod("dequeueDev");
@@ -146,6 +146,70 @@ public class AbstractBlockingTaskQueueTest {
 		t.join(10);
 		// check internal queue size to ensure its size == 1
 		assertEquals(2, queue.size());
+	}
+
+	@Test
+	public void devDequeueBlockingAtSize0Test() throws NoSuchFieldException, SecurityException,
+			IllegalArgumentException, IllegalAccessException, InterruptedException {
+		AbstractBlockingTaskQueue dummy = new UnboundedTaskQueue();
+		SpinTask task = new SpinTask();
+		SpinTaskOptional<Optional<?>> opTask = new SpinTaskOptional<>();
+		Class<?> clazz = AbstractBlockingTaskQueue.class;
+		Field field = clazz.getDeclaredField("devQueue");
+		field.setAccessible(true);
+		@SuppressWarnings("unchecked")
+		Queue<Task<Optional<?>>> queue = (Queue<Task<Optional<?>>>) field.get(dummy);
+		// dequeue one task... this should permanently block, as no new tasks are getting enqueued.
+		Thread t = new Thread(() -> {
+			try {
+				method = clazz.getDeclaredMethod("dequeueDev");
+			} catch (NoSuchMethodException | SecurityException e) {
+				e.printStackTrace();
+			}
+			method.setAccessible(true);
+			try {
+				method.invoke(dummy);
+			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+				e.printStackTrace();
+			}
+		});
+		t.start();
+		t.join(10);
+		// check internal queue size to ensure its size == 1
+		assertEquals(0, queue.size());
+	}
+	
+	@Test
+	public void devDequeueBlockingAtSize0Test2() throws NoSuchFieldException, SecurityException,
+			IllegalArgumentException, IllegalAccessException, InterruptedException {
+		AbstractBlockingTaskQueue dummy = new UnboundedTaskQueue();
+		SpinTask task = new SpinTask();
+		SpinTaskOptional<Optional<?>> opTask = new SpinTaskOptional<>();
+		Class<?> clazz = AbstractBlockingTaskQueue.class;
+		Field field = clazz.getDeclaredField("devQueue");
+		field.setAccessible(true);
+		@SuppressWarnings("unchecked")
+		Queue<Task<Optional<?>>> queue = (Queue<Task<Optional<?>>>) field.get(dummy);
+		// dequeue one task... this should permanently block, as no new tasks are getting enqueued.
+		Thread t = new Thread(() -> {
+			try {
+				method = clazz.getDeclaredMethod("dequeueDev");
+			} catch (NoSuchMethodException | SecurityException e) {
+				e.printStackTrace();
+			}
+			method.setAccessible(true);
+			try {
+				method.invoke(dummy);
+			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+				e.printStackTrace();
+			}
+		});
+		t.start();
+		long start = System.currentTimeMillis();
+		t.join(100);
+		long end = System.currentTimeMillis();
+		// check internal queue size to ensure its size == 1
+		assert((end-start) >= 100);
 	}
 
 	@Test // (expected = InterruptedException.class)
@@ -220,8 +284,8 @@ public class AbstractBlockingTaskQueueTest {
 			}
 		}
 	}
-	
-	private class SpinTaskOptional<T> extends MethodBlockingTask<Optional<?>>{
+
+	private class SpinTaskOptional<T> extends MethodBlockingTask<Optional<?>> {
 		@Override
 		protected void execute() {
 			for (int i = 0; i < 100; i++) {
