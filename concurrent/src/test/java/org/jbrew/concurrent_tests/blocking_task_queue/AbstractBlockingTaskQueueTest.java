@@ -169,7 +169,7 @@ public class AbstractBlockingTaskQueueTest {
 	private class SpinTask extends BasicTask{
 		@Override
 		protected void execute() {
-			for(int i=0;i<100;i++) /** intentionally empty */;
+			for(int i=0;i<100;i++) {/** intentionally empty */}
 		}
 	}
 
