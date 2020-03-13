@@ -54,6 +54,13 @@ public class BlockingTaskTest {
 	}
 	
 	@Test
+	public void instantiateBlockingTask2AndTestSysOut() {
+		AbstractTask<Void> basic = new MyTask<>(true);
+		basic.run();
+		assert !outContent.toString().isEmpty();
+	}
+	
+	@Test
 	public void instantiateBlockingTask3() {
 		AbstractTask<Void> basic = new MyTask<>("Task Name");
 		assertNotNull(basic);
