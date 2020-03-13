@@ -23,11 +23,7 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 				task = queue.poll();
 				this.notifyAll();
 			}
-		} catch(NullPointerException npe){
-			System.out.println("TaskQueue class has NOT been initialized! You first need to instantiate your "
-					+ "TaskQueue object before attempting your operation.");
-			npe.printStackTrace();
-		} catch(Exception e) {
+		} catch(InterruptedException e) {
 			e.printStackTrace();
 		}
 		return task;
@@ -45,11 +41,7 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 				task = devQueue.poll();
 				this.notifyAll();
 			}
-		} catch(NullPointerException npe){
-			System.out.println("TaskQueue class has NOT been initialized! You first need to instantiate your "
-					+ "TaskQueue object before attempting your operation.");
-			npe.printStackTrace();
-		} catch(Exception e) {
+		} catch(InterruptedException e) {
 			e.printStackTrace();
 		}
 		return task;

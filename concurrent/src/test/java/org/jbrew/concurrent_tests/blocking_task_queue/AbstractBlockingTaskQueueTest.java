@@ -37,6 +37,11 @@ public class AbstractBlockingTaskQueueTest {
 		assertNotNull(queue);
 	}
 	
+	/**
+	 * Tests the ability for the {@link org.jbrew.concurrent.AbstractBlockingTaskQueue#dequeue()} to block while 
+	 * its internal queue size is empty.
+	 * @throws InterruptedException 
+	 */
 	@Test
 	public void dequeueBlockingAtSize0Test() throws InterruptedException {
 		UnboundedTaskQueue dummy = new UnboundedTaskQueue();
