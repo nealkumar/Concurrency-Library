@@ -33,7 +33,8 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 	 * Development implementation of the {@link #dequeue()} method to test the functional
 	 * @return
 	 */
-	public final Task<Optional<? extends Object>> dequeueDev(){
+	@UnderDevelopmentInvestigation
+	private final Task<Optional<? extends Object>> dequeueDev(){
 		Task<java.util.Optional<?>> task = devQueue.poll();
 		try {
 			synchronized(this) {

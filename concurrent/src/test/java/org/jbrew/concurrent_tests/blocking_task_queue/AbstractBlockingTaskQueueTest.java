@@ -50,10 +50,10 @@ public class AbstractBlockingTaskQueueTest {
 		});
 		t.start();
 		long start = System.nanoTime();
-		t.join(1000);
+		t.join(1000);	//force-terminate the thread after 1 second and return back its state as-is
 		long end = System.nanoTime();
 		long delta = start-end;
-		double delta_d = (double) delta / 1_000_000_000.0;
+		double delta_d = (double) delta / 1_000_000_000.0;	//convert from nanoseconds to milliseconds
 		assert 1.0 >= delta_d;
 	}
 	
