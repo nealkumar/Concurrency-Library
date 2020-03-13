@@ -133,24 +133,18 @@ public class AbstractBlockingTaskQueueTest {
 			try {
 				method = clazz.getDeclaredMethod("dequeueDev");
 			} catch (NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			method.setAccessible(true);
 			try {
 				method.invoke(dummy);
 			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
 		t.start();
 		t.join(10);
-		// check internal queue size via reflection to ensure its size == 1
-		//Field devQueue = clazz.getDeclaredField("devQueue");
-		//field.setAccessible(true);
-		//@SuppressWarnings("unchecked")
-		//Queue<Task<?>> queue = (Queue<Task<?>>) field.get(dummy);
+		// check internal queue size to ensure its size == 1
 		assertEquals(2, queue.size());
 	}
 
