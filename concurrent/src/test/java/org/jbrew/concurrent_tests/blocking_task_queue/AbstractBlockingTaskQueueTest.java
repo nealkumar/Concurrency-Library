@@ -117,7 +117,6 @@ public class AbstractBlockingTaskQueueTest {
 	public void dequeueDevBasicTest() throws InterruptedException, IllegalArgumentException, IllegalAccessException,
 			NoSuchFieldException, SecurityException, NoSuchMethodException, InvocationTargetException {
 		AbstractBlockingTaskQueue dummy = new UnboundedTaskQueue();
-		SpinTask task = new SpinTask();
 		SpinTaskOptional<Optional<?>> opTask = new SpinTaskOptional<>();
 		Class<?> clazz = AbstractBlockingTaskQueue.class;
 		Field field = clazz.getDeclaredField("devQueue");
@@ -152,8 +151,6 @@ public class AbstractBlockingTaskQueueTest {
 	public void devDequeueBlockingAtSize0Test() throws NoSuchFieldException, SecurityException,
 			IllegalArgumentException, IllegalAccessException, InterruptedException {
 		AbstractBlockingTaskQueue dummy = new UnboundedTaskQueue();
-		SpinTask task = new SpinTask();
-		SpinTaskOptional<Optional<?>> opTask = new SpinTaskOptional<>();
 		Class<?> clazz = AbstractBlockingTaskQueue.class;
 		Field field = clazz.getDeclaredField("devQueue");
 		field.setAccessible(true);
@@ -183,13 +180,9 @@ public class AbstractBlockingTaskQueueTest {
 	public void devDequeueBlockingAtSize0Test2() throws NoSuchFieldException, SecurityException,
 			IllegalArgumentException, IllegalAccessException, InterruptedException {
 		AbstractBlockingTaskQueue dummy = new UnboundedTaskQueue();
-		SpinTask task = new SpinTask();
-		SpinTaskOptional<Optional<?>> opTask = new SpinTaskOptional<>();
 		Class<?> clazz = AbstractBlockingTaskQueue.class;
 		Field field = clazz.getDeclaredField("devQueue");
 		field.setAccessible(true);
-		@SuppressWarnings("unchecked")
-		Queue<Task<Optional<?>>> queue = (Queue<Task<Optional<?>>>) field.get(dummy);
 		// dequeue one task... this should permanently block, as no new tasks are getting enqueued.
 		Thread t = new Thread(() -> {
 			try {
