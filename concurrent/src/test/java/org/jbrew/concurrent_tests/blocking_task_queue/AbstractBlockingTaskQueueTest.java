@@ -143,6 +143,33 @@ public class AbstractBlockingTaskQueueTest {
 		assert errContent.toString().contains("InterruptedException");
 	}
 	
+	@Test
+	public void dequeueDevBasicBasicTest() throws InterruptedException, NoSuchMethodException, SecurityException{
+		//Invoke method via reflection.
+		AbstractBlockingTaskQueue taskQueue = new BoundedTaskQueue(3);
+		Thread t = new Thread(() -> {
+			Class<?> clazz = AbstractBlockingTaskQueue.class;
+			Method method = null;
+			try {
+				method = clazz.getDeclaredMethod("dequeueDev");
+			} catch (NoSuchMethodException | SecurityException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			method.setAccessible(true);
+			try {
+				method.invoke(taskQueue);
+			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		t.start();
+		t.interrupt();
+		t.join();
+		assert errContent.toString().contains("InterruptedException");
+	}
+	
 	private class SpinTask extends BasicTask{
 		@Override
 		protected void execute() {
