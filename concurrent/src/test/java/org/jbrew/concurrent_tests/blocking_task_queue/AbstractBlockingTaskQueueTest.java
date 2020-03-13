@@ -3,6 +3,8 @@ package org.jbrew.concurrent_tests.blocking_task_queue;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.lang.reflect.Field;
 import java.util.Queue;
 
@@ -11,11 +13,25 @@ import org.jbrew.concurrent.BasicTask;
 import org.jbrew.concurrent.BoundedTaskQueue;
 import org.jbrew.concurrent.Task;
 import org.jbrew.concurrent.UnboundedTaskQueue;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class AbstractBlockingTaskQueueTest {
 	
 	private Task<? extends Object> shouldBeNull;
+	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+	private final PrintStream originalErr = System.err;
+	
+	@Before
+	public void setUpStreams() {
+		System.setErr(new PrintStream(errContent));
+	}
+
+	@After
+	public void restoreStreams() {
+		System.setErr(originalErr);
+	}
 	
 	@SuppressWarnings("unchecked")
 	@Test
@@ -84,6 +100,18 @@ public class AbstractBlockingTaskQueueTest {
 		@SuppressWarnings("unchecked")
 		Queue<Task<?>> queue = (Queue<Task<?>>) field.get(dummy);
 		assert queue.size() == 1;
+	}
+	
+	@Test//(expected = InterruptedException.class)
+	public void dequeueBasicInterruptedExceptionTest() throws InterruptedException{
+		UnboundedTaskQueue dummy = new UnboundedTaskQueue();
+		Thread t = new Thread(() ->{
+			shouldBeNull = dummy.dequeue();
+		});
+		t.start();
+		t.interrupt();
+		t.join();
+		assert errContent.toString().contains("InterruptedException");
 	}
 	
 	private class SpinTask extends BasicTask{

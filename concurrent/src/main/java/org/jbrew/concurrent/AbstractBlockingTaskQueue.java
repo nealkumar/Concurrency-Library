@@ -11,8 +11,8 @@ import java.util.Optional;
  */
 public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? extends Object>>{
 	
-	protected java.util.Queue<Task<? extends Object>> queue = new java.util.LinkedList<>();
-	protected java.util.Queue<Task<Optional<?>>> devQueue = new java.util.LinkedList<>();
+	protected final java.util.Queue<Task<? extends Object>> queue = new java.util.LinkedList<>();
+	protected final java.util.Queue<Task<Optional<?>>> devQueue = new java.util.LinkedList<>();
 	
 	@Override
 	public final Task<? extends Object> dequeue(){
@@ -24,6 +24,7 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 				this.notifyAll();
 			}
 		} catch(InterruptedException e) {
+			System.out.println("TaskQueue was interrupted!");
 			e.printStackTrace();
 		}
 		return task;
