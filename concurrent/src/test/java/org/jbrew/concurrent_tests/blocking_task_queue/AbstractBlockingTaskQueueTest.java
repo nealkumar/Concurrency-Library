@@ -126,14 +126,12 @@ public class AbstractBlockingTaskQueueTest {
 			try {
 				method = clazz.getDeclaredMethod("dequeueDev");
 			} catch (NoSuchMethodException | SecurityException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			method.setAccessible(true);
 			try {
 				method.invoke(taskQueue);
 			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
@@ -153,14 +151,12 @@ public class AbstractBlockingTaskQueueTest {
 			try {
 				method = clazz.getDeclaredMethod("dequeueDev");
 			} catch (NoSuchMethodException | SecurityException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			method.setAccessible(true);
 			try {
 				method.invoke(taskQueue);
 			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
@@ -173,7 +169,7 @@ public class AbstractBlockingTaskQueueTest {
 	private class SpinTask extends BasicTask{
 		@Override
 		protected void execute() {
-			for(int i=0;i<100;i++);
+			for(int i=0;i<100;i++) /** intentionally empty */;
 		}
 	}
 
