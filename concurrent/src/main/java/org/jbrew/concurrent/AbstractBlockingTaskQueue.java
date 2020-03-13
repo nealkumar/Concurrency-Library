@@ -44,7 +44,7 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 		Task<java.util.Optional<?>> task = devQueue.poll();
 		try {
 			synchronized(this) {
-				while(this.queue.size() <= 0) this.wait();
+				while(this.devQueue.size() <= 0) this.wait();
 				task = devQueue.poll();
 				this.notifyAll();
 			}
