@@ -2,6 +2,8 @@ package org.jbrew.concurrent;
 
 import java.util.Optional;
 
+import org.apache.log4j.Logger;
+
 /**
  * A {@link AbstractBlockingTaskQueue} provides a skeletal implementation of the {@link org.jbrew.concurrent.TaskQueue} interface.
  * To implement an un/bounded queue of {@link org.jbrew.concurrent.Task}, the programmer only needs to extend this class
@@ -12,7 +14,7 @@ import java.util.Optional;
 public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? extends Object>>{
 	
 	protected final java.util.Queue<Task<? extends Object>> queue = new java.util.LinkedList<>();
-	protected final java.util.Queue<Task<Optional<?>>> devQueue = new java.util.LinkedList<>();
+	private final java.util.Queue<Task<Optional<?>>> devQueue = new java.util.LinkedList<>();
 	
 	@Override
 	public final Task<? extends Object> dequeue(){
@@ -24,9 +26,8 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 				this.notifyAll();
 			}
 		} catch(InterruptedException e) {
-			System.out.println("TaskQueue was interrupted!");
-			e.printStackTrace();
-			Thread.currentThread().interrupt();
+			Logger.getLogger(AbstractBlockingTaskQueue.class).error("TaskQueue was interrupted!", e);
+			Thread.currentThread().interrupt();	//re-interrupt Thread.currentThread()
 		}
 		return task;
 	}
@@ -50,8 +51,8 @@ public abstract class AbstractBlockingTaskQueue implements TaskQueue<Task<? exte
 				this.notifyAll();
 			}
 		} catch(InterruptedException e) {
-			e.printStackTrace();
-			Thread.currentThread().interrupt();
+			Logger.getLogger(AbstractBlockingTaskQueue.class).error("TaskQueue(DEV) was interrupted!", e);
+			Thread.currentThread().interrupt();	//re-interrupt Thread.currentThread()
 		}
 		return task;
 	}
