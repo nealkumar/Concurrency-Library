@@ -1,1 +1,5 @@
 /target/
+/src/main/resources/JBrew.log
+/concurrent/target/
+/LOG/
+/concurrent/LOG/
