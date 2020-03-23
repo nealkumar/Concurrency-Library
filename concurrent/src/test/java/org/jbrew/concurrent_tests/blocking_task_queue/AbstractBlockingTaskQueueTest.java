@@ -9,9 +9,16 @@ import java.io.PrintStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Queue;
 
+import org.apache.log4j.AppenderSkeleton;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.spi.LoggingEvent;
 import org.jbrew.concurrent.AbstractBlockingTaskQueue;
 import org.jbrew.concurrent.BasicTask;
 import org.jbrew.concurrent.BoundedTaskQueue;
@@ -28,15 +35,21 @@ public class AbstractBlockingTaskQueueTest {
 	private Method method;
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 	private final PrintStream originalErr = System.err;
+	private final TestAppender appender = new TestAppender();
+	private final Logger logger = Logger.getRootLogger();
 
 	@Before
 	public void setUpStreams() {
 		System.setErr(new PrintStream(errContent));
+		BasicConfigurator.configure();
+		logger.addAppender(appender);
+		
 	}
 
 	@After
 	public void restoreStreams() {
 		System.setErr(originalErr);
+		BasicConfigurator.resetConfiguration();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -205,8 +218,8 @@ public class AbstractBlockingTaskQueueTest {
 		assert((end-start) >= 100);
 	}
 
-	@Test // (expected = InterruptedException.class)
-	public void dequeueBasicInterruptedExceptionTest() throws InterruptedException {
+	@Test
+	public void dequeueBasicInterruptedExceptionLoggingTest() throws InterruptedException {
 		UnboundedTaskQueue dummy = new UnboundedTaskQueue();
 		Thread t = new Thread(() -> {
 			shouldBeNull = dummy.dequeue();
@@ -214,7 +227,26 @@ public class AbstractBlockingTaskQueueTest {
 		t.start();
 		t.interrupt();
 		t.join();
-		assert errContent.toString().contains("InterruptedException");
+		logger.removeAllAppenders();
+		final List<LoggingEvent> log = appender.getList();
+		final LoggingEvent firstEntry = log.get(0);
+		assertEquals(Level.ERROR, firstEntry.getLevel());
+	}
+	
+	@Test
+	public void dequeueBasicInterruptedExceptionLoggingTest2() throws InterruptedException {
+		//BasicConfigurator.configure();
+		UnboundedTaskQueue dummy = new UnboundedTaskQueue();
+		Thread t = new Thread(() -> {
+			shouldBeNull = dummy.dequeue();
+		});
+		t.start();
+		t.interrupt();
+		t.join();
+		logger.removeAllAppenders();
+		final List<LoggingEvent> log = appender.getList();
+		final LoggingEvent firstEntry = log.get(0);
+		assertEquals("TaskQueue was interrupted!", firstEntry.getMessage());
 	}
 
 	@Test
@@ -240,11 +272,14 @@ public class AbstractBlockingTaskQueueTest {
 		t.start();
 		t.interrupt();
 		t.join();
-		assert errContent.toString().contains("InterruptedException");
+		logger.removeAllAppenders();
+		final List<LoggingEvent> log = appender.getList();
+		final LoggingEvent firstEntry = log.get(0);
+		assertEquals(Level.ERROR, firstEntry.getLevel());
 	}
 
 	@Test
-	public void dequeueDevBasicBasicInterruptedExceptionTest()
+	public void dequeueDevBasicInterruptedExceptionTest2()
 			throws InterruptedException, NoSuchMethodException, SecurityException {
 		// Invoke method via reflection.
 		AbstractBlockingTaskQueue taskQueue = new BoundedTaskQueue(3);
@@ -266,7 +301,10 @@ public class AbstractBlockingTaskQueueTest {
 		t.start();
 		t.interrupt();
 		t.join();
-		assert errContent.toString().contains("InterruptedException");
+		logger.removeAllAppenders();
+		final List<LoggingEvent> log = appender.getList();
+		final LoggingEvent firstEntry = log.get(0);
+		assertEquals("TaskQueue(DEV) was interrupted!", firstEntry.getMessage());
 	}
 
 	private class SpinTask extends BasicTask {
@@ -285,5 +323,27 @@ public class AbstractBlockingTaskQueueTest {
 				/** intentionally empty */
 			}
 		}
+	}
+	
+	private class TestAppender extends AppenderSkeleton{
+		private final List<LoggingEvent> log = new ArrayList<>();
+		
+		@Override
+		public void close() {/* intentionally empty*/}
+
+		@Override
+		public boolean requiresLayout() {
+			return false;
+		}
+
+		@Override
+		protected void append(LoggingEvent event) {
+			log.add(event);
+		}
+		
+		public List<LoggingEvent> getList(){
+			return new ArrayList<>(log);
+		}
+		
 	}
 }
