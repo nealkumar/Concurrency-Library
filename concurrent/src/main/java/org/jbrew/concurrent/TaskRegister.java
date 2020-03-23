@@ -12,12 +12,12 @@ public class TaskRegister implements TaskRegistry {
 	}
 
 	@Override
-	public void offerTask(Task<?> task) {
+	public void offer(Task<?> task) {
 		this.taskQueue.offer(task);
 	}
 
 	@Override
-	public void removeTask(Task<?> task) {
+	public void remove(Task<?> task) {
 		this.taskQueue.remove(task);
 	}
 

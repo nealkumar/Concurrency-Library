@@ -27,7 +27,7 @@ public class TaskRegisterTest {
 	@Test
 	public void removeTaskTest() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, InstantiationException {
 		TaskRegister register = new TaskRegister();
-		register.offerTask(task);
+		register.offer(task);
 		//add reflection to test whether the actual PriorityBlockingQueue removes the Task<?>.
 		Class<? extends Object> taskRegister = register.getClass();
 		Class<?>[] taskParam = {Object.class};
@@ -41,8 +41,8 @@ public class TaskRegisterTest {
 	@Test
 	public void offerAndCheckSizeTest() {
 		TaskRegister register = new TaskRegister();
-		register.offerTask(task);
-		register.offerTask(task);
+		register.offer(task);
+		register.offer(task);
 		assert register.getRegistrySize() == 2;
 	}
 	
@@ -58,8 +58,8 @@ public class TaskRegisterTest {
 		highPTask.setName("High Priority");
 		lowPTask.setPriority(1);
 		lowPTask.setName("Low Priority");
-		register.offerTask(lowPTask);
-		register.offerTask(highPTask);
+		register.offer(lowPTask);
+		register.offer(highPTask);
 		assert register.pollTask().getName() == "High Priority";
 	}
 	

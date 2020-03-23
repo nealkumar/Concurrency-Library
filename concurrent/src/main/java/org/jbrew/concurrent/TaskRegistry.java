@@ -16,7 +16,7 @@ public interface TaskRegistry {
 	 * 
 	 * @param task - The {@link org.jbrew.concurrent.Task} to be inserted.
 	 */
-	public abstract void offerTask(Task<?> task);
+	public abstract void offer(Task<?> task);
 	/**
 	 * Removes a single instance of the specified {@link org.jbrew.concurrent.Task} from this {@link TaskRegistry}, 
 	 * if it is present. More formally, removes a <code>Task task</code> such that <code>task</code> is no longer 
@@ -24,7 +24,7 @@ public interface TaskRegistry {
 	 * 
 	 * @param task - The {@link org.jbrew.concurrent.Task} to be removed.
 	 */
-	public abstract void removeTask(Task<?> task);
+	public abstract void remove(Task<?> task);
 	public abstract int getRegistrySize();
 	public abstract Task<?> pollTask();
 	public abstract void interruptAll();
