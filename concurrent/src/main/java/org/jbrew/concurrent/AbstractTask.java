@@ -3,15 +3,21 @@ package org.jbrew.concurrent;
 import org.apache.log4j.Logger;
 
 /**
- * A {@link org.jbrew.concurrent.ThreadSafe} implementation of
- * {@link org.jbrew.concurrent.Task}. A AbstractTask wraps boilerplate utility
+ * This class provides a skeletal, implementation of the {@link org.jbrew.concurrent.Task} interface,
+ * to minimize the effort required to implement this interface. The programmer should generally provide
+ * a void (no argument) constructor. In general, an <code>AbstractTask</code> wraps boilerplate utility
  * code so its implementors can focus on executing their respective business
- * logic. <br>
+ * logic. 
+ * <br><br>
+ * The documentation for each non-abstract method in this class
+ * describes its implementation in detail. Each of these methods may be overriden if the 
+ * <code>AbstractTask</code> being implemented admits a more efficient implementation. 
  * 
  * @author Neal Kumar
  *
- * @param <T> - The type parameter for the respective AbstractTask.
- * 
+ * @param <T> - The type of the <code>AbstractTask</code>
+ * @see org.jbrew.concurrent.BasicTask
+ * @see org.jbrew.concurrent.RetrievableTask
  */
 @ThreadSafe
 public abstract class AbstractTask<T> implements Task<T> {
