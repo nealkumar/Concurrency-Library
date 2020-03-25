@@ -24,7 +24,7 @@ public class TaskRegister implements TaskRegistry {
 	/**
 	 * {@inheritDoc}
 	 * <br><br>
-	 * This implementation also prevents a un-intialized {@link org.jbrew.concurrent.Task} from 
+	 * This implementation also prevents a non-initialized {@link org.jbrew.concurrent.Task} from 
 	 * entering the <code>TaskRegistry</code>. The reason for this inclusion is to prevent a null {@link org.jbrew.concurrent.Task}
 	 * from consuming computing resources, including worker threads and memory. Note that this scan and check
 	 * may spawn 0 or more worker threads to achieve efficient, high-performance checking. As a result of this scan,
