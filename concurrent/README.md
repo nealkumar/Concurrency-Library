@@ -18,7 +18,7 @@ To import this library into Maven, simply insert the following dependency in you
     <dependency>
       <groupId>org.jbrew</groupId>
       <artifactId>concurrent</artifactId>
-      <version>0.1.0-alpha.2</version>
+      <version>0.1.0-alpha.3</version>
     </dependency>
   </dependencies>
 ```
@@ -49,8 +49,8 @@ Finally to return the value, one simple has to set the value for <code>obj</code
       }
   }
 ```
-### Non-Retrievable Tasks
-Once <code>NonRetrievableTask</code> has been extended, this allows for simple concurrent execution where the business logic executed <i>does <b>not</b></i> need to return back an object. As a result, calling the getVal() method for a NonRetrievableTask throws an <code>java.lang.UnsupportedOperationException</code>. 
+### Non-Retrievable or Basic Tasks
+Once <code>NonRetrievableTask</code> or <code>BasicTask</code> has been extended, this allows for simple concurrent execution where the business logic executed <i>does <b>not</b></i> need to return back an object. As a result, calling the getVal() method for a NonRetrievableTask throws an <code>java.lang.UnsupportedOperationException</code>. 
 </br></br>
 Example usages: initializers, message dispatchers, or any standalone time-consuming task which you would like to execute concurrently.
 # Client Usage Examples
