@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
+import org.jbrew.jni.SayHi;
 
 import static org.junit.Assert.assertTrue;
 

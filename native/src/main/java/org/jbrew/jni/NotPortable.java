@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.jbrew.cbrew;
+package org.jbrew.jni;
 
 import static java.lang.annotation.ElementType.PACKAGE;
 

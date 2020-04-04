@@ -1,0 +1,19 @@
+package org.jbrew.jni;
+
+/**
+ * A demonstration class which simply prints a char** to the console.
+ * @author Neal Kumar
+ *
+ */
+public class SayHi {
+	static {
+		System.loadLibrary("hello");
+	}
+	
+	public void sayHiJava() {
+		org.apache.log4j.Logger.getLogger(getClass()).info("Hello console! Called from Java!");
+	}
+	
+	public native void sayHi();
+
+}
