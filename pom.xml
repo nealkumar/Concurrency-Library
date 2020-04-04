@@ -24,7 +24,7 @@
 
 	<modules>
 		<module>concurrent</module>
-		<module>cbrew</module>
+		<module>native</module>
 	</modules>
 
 	<developers>
@@ -215,6 +215,12 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.1</version>
+					<configuration>
+						<compilerArgs>
+							<compilerArg>-h</compilerArg>
+							<compilerArg>native/target/headers</compilerArg>
+						</compilerArgs>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>

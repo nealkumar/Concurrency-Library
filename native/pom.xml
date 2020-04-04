@@ -9,9 +9,9 @@
 		<version>0.1.0-beta.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>cbrew</artifactId>
+	<artifactId>native</artifactId>
 
-	<name>JBrew :: CBrew</name>
+	<name>JBrew :: Native</name>
 	<description>
 		This library contains native facade implementations of the JBrew utility libraries with the Java Native Interface
 		(JNI). This set of libraries features specific optimizations for Unix-based systems in terms of performance 
@@ -21,7 +21,7 @@
 	<url>https://jbrew.org</url>
 
 	<properties>
-		<sonar.projectKey>org.jbrew:cbrew</sonar.projectKey>
+		<sonar.projectKey>org.jbrew:native</sonar.projectKey>
 	</properties>
 
 </project>

@@ -9,5 +9,5 @@
  * 
  * @author Neal Kumar
  */
-@org.jbrew.cbrew.NotPortable 
-package org.jbrew.cbrew;
+@org.jbrew.jni.NotPortable 
+package org.jbrew.jni;
