@@ -24,6 +24,7 @@
 
 	<modules>
 		<module>concurrent</module>
+		<module>cbrew</module>
 	</modules>
 
 	<developers>
