@@ -1,12 +1,12 @@
-package org.jbrew.cbrew;
+package org.jbrew.jni.examples;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
-import org.jbrew.jni.SayHi;
 
 import static org.junit.Assert.assertTrue;
 
@@ -24,6 +24,7 @@ public class SayHiTest {
 		logger.addAppender(appender);
 	}
 	
+	@Ignore
 	@Test
 	public void sayHiJavaTest() {
 		hi.sayHiJava();
@@ -31,6 +32,16 @@ public class SayHiTest {
 		final List<LoggingEvent> log = appender.getList();
 		final LoggingEvent headLog = log.get(0);
 		assertTrue(headLog.getMessage().toString().toLowerCase().contains("called from java"));
+	}
+	
+	@Test
+	public void sayHiJavaConsoleTest() {
+		hi.sayHiJava();
+	}
+	
+	@Test
+	public void sayHiNativeConsoleTest() {
+		hi.sayHi();
 	}
 	
 	private class TestAppender extends AppenderSkeleton{
