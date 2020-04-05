@@ -225,7 +225,7 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.2</version>
 					<configuration>
-						<argLine>-Djava.library.path=/home/nealk/JBrew/JBrew/native/src/main/java/org/jbrew/jni/</argLine>
+						<argLine>-Djava.library.path=${user.dir}/native/src/main/java/org/jbrew/jni/</argLine>
 					</configuration>
 				</plugin>
 				<plugin>
