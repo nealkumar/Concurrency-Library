@@ -11,7 +11,7 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nealkumar/JBrew)](https://github.com/nealkumar/JBrew/pulse)
 [![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/JBrew?color=yellow)](https://github.com/Netflix/osstracker)
 [![JDK 1.8+](https://img.shields.io/badge/jdk-1.8%2B-purple)](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
-# Welcome to CBrew
+# Welcome to Native JBrew
 This library contains native facade implementations of the JBrew utility libraries with the Java Native Interface
 (JNI). This set of libraries features specific optimizations for Unix-based systems in terms of performance 
 and memory. This is achieved through careful tuning using the C programming language to not only control for 
