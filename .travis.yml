@@ -2,7 +2,7 @@ language: java
 install: true
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - mvn verify sonar:sonar
+  - mvn verify -Dsonar.c.file.suffixes=- sonar:sonar
 
 addons:
   sonarcloud:
