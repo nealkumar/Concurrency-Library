@@ -1,4 +1,4 @@
-package org.jbrew.cbrew;
+package org.jbrew.jni_test;
 
 import static org.junit.Assert.assertTrue;
 
