@@ -11,35 +11,14 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nealkumar/JBrew)](https://github.com/nealkumar/JBrew/pulse)
 [![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/JBrew?color=yellow)](https://github.com/Netflix/osstracker)
 [![JDK 1.8+](https://img.shields.io/badge/jdk-1.8%2B-purple)](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
-# JBrew Home
-* Please note, the master branch is always live! The latest release is reflected on <code>master</code>.
-* The branch <code>staged-for-release</code> reflects the newest updates to the library which will be officially released in the next release iteration. New contributors should make pull requests into <code>staged-for-release</code>.
-* To dive into the concurrency library's source code, please navigate [here](https://github.com/nealkumar/JBrew/tree/docpatch-010/concurrent). The README.md contains information on how to get started, and full documentation is available at [jbrew.org](https://jbrew.org/).
-* Feedback is always welcome, and can be submitted to [support@jbrew.org](mailto:support@jbrew.org). Thank you!
+# Welcome to Native JBrew
+This library contains native facade implementations of the JBrew utility libraries with the Java Native Interface
+(JNI). This set of libraries features specific optimizations for Unix-based systems in terms of performance 
+and memory. This is achieved through careful tuning using the C programming language to not only control for 
+garbage collection, but also to ensure maximum performance for elected library features.
 
-# JBrew Maven Dependencies
-### The following libraries are available as Maven depdendencies, which can be inserted into your project's <code>pom.xml</code>.
-## Concurrency Library
-```xml
-  <dependencies>
-    <dependency>
-      <groupId>org.jbrew</groupId>
-      <artifactId>concurrent</artifactId>
-      <version>0.1.0-beta.1</version>
-    </dependency>
-  </dependencies>
-```
-## Native Libary Validators
-```xml
-  <dependencies>
-    <dependency>
-      <groupId>org.jbrew.native</groupId>
-      <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.1</version>
-    </dependency>
-  </dependencies>
-```
-## Native Library Home
+# Maven Central Dependency
+To import this library into Maven, simply insert the following dependency in your pom.xml:
 ```xml
   <dependencies>
     <dependency>

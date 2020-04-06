@@ -5,12 +5,13 @@
 	<packaging>pom</packaging>
 	<groupId>org.jbrew</groupId>
 	<artifactId>jbrew-parent</artifactId>
-	<version>v0.1.0-beta.1-SNAPSHOT</version>
+	<version>0.1.0-beta.2-SNAPSHOT</version>
 
 	<name>JBrew :: Parent POM</name>
 	<description>
-		The JBrew Java library collection is a set of helper libraries with features ranging from concurrency to Swing! The 
-		official documentation is available at jbrew.org.
+		The JBrew Java library collection is a set of uitility libraries with features ranging from concurrency to the 
+		Java Native Interface, carefully tuned for high performance Linux systems using OpenJDK versions 8 or greater!
+		The official documentation can be found at jbrew.org.
 	</description>
 	<url>https://jbrew.org</url>
 
@@ -24,6 +25,7 @@
 
 	<modules>
 		<module>concurrent</module>
+		<module>native</module>
 	</modules>
 
 	<developers>
@@ -43,6 +45,7 @@
 		<sonar.organization>nealkumar</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.login>${env.SONAR_TOKEN}</sonar.login>
+		<sonar.c.file.suffixes>-</sonar.c.file.suffixes>
 		<!--<sonar.java.libraries>target/dependency</sonar.java.libraries> -->
 	</properties>
 
@@ -73,14 +76,15 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
+
 	</dependencies>
 
 	<scm>
 		<connection>scm:git:git://github.com/nealkumar/JBrew.git</connection>
 		<developerConnection>scm:git:git@github.com:nealkumar/JBrew.git</developerConnection>
 		<url>https://github.com/nealkumar/JBrew</url>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 
 	<profiles>
 		<!-- GPG Signature on release -->
@@ -214,10 +218,15 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.1</version>
+					<!--<configuration> <compilerArgs> <compilerArg>-h</compilerArg> <compilerArg>native/target/headers</compilerArg> 
+						</compilerArgs> </configuration> -->
 				</plugin>
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.2</version>
+					<configuration>
+						<argLine>-Djava.library.path=${user.dir}/native/src/main/jni/bin/</argLine>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
@@ -277,6 +286,10 @@
 						</reports>
 					</reportSet>
 				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>native-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</reporting>
