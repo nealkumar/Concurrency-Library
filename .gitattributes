@@ -1,0 +1,5 @@
+*.so linguist-language=C
+
+*.h linguist-language=Shell
+
+*.class linguist-language=Shell
