@@ -2,6 +2,7 @@ package org.jbrew.jni.examples;
 
 import static org.junit.Assert.assertEquals;
 
+import org.jbrew.jni.verifier.DoMath;
 import org.junit.Test;
 
 public class DoMathTest {

@@ -1,4 +1,4 @@
-package org.jbrew.jni.examples;
+package org.jbrew.jni.verifier;
 
 /**
  * A demonstration class which simply prints a char* to the console.

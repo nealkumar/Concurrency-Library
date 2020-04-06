@@ -1,4 +1,4 @@
-package org.jbrew.jni.examples;
+package org.jbrew.jni.verifier;
 
 public class DoMath {
 	
