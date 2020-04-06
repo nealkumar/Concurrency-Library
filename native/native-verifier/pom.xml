@@ -10,11 +10,11 @@
 	</parent>
 	
 	<!--<groupId>org.jbrew.native.examples</groupId> -->
-	<artifactId>native-examples</artifactId>
+	<artifactId>native-verifier</artifactId>
 	
 	<!-- <packaging>jar</packaging> -->
 
-	<name>JBrew :: Native :: Examples</name>
+	<name>JBrew :: Native :: Verifier</name>
 	<description>
 		This library contains native facade implementations of the JBrew utility libraries with the Java Native Interface
 		(JNI). This set of libraries features specific optimizations for Unix-based systems in terms of performance 
@@ -25,7 +25,7 @@
 	<url>https://jbrew.org</url>
 
 	<properties>
-		<sonar.projectKey>org.jbrew:native-examples</sonar.projectKey>
+		<sonar.projectKey>org.jbrew:native-verifier</sonar.projectKey>
 	</properties>
 	
 	

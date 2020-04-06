@@ -15,7 +15,7 @@
 	<artifactId>native</artifactId>
 
 	<modules>
-		<module>native-examples</module>
+		<module>native-verifier</module>
 	</modules>
 
 	<name>JBrew :: Native</name>
@@ -41,7 +41,7 @@
 				</os>
 			</activation>
 			<modules>
-				<module>native-examples</module>
+				<module>native-verifier</module>
 			</modules>
 		</profile>
 	</profiles>
