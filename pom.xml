@@ -11,8 +11,9 @@
 
 	<name>JBrew :: Parent POM</name>
 	<description>
-		The JBrew Java library collection is a set of helper libraries with features ranging from concurrency to Swing! The 
-		official documentation is available at jbrew.org.
+		The JBrew Java library collection is a set of uitility libraries with features ranging from concurrency to the Java Native
+		Interface, carefully tuned for high performance Linux systems using OpenJDK versions 8 or greater! The official 
+		documentation can be found at jbrew.org.
 	</description>
 	<url>https://jbrew.org</url>
 
