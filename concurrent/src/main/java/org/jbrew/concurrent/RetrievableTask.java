@@ -1,5 +1,7 @@
 package org.jbrew.concurrent;
 
+import org.jbrew.core.annotations.ThreadSafe;
+
 /**
  * A {@link org.jbrew.concurrent.AbstractTask} that returns a result. Implementors must define a single method
  * with no arguments called <code>execute</code>. In these manners, a <code>RetrievableTask</code> is similar to a 

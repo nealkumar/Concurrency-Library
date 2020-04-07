@@ -1,10 +1,10 @@
 package org.jbrew.concurrent_tests;
 
-import org.jbrew.Testing;
 import org.jbrew.concurrent.MethodBlockingTask;
 import org.jbrew.concurrent.ObjectBlockingTask;
 import org.jbrew.concurrent.RetrievableTask;
 import org.jbrew.concurrent.standard.StandardNonRetrievableTask;
+import org.jbrew.core.annotations.Testing;
 import org.junit.Test;
 
 /**

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<parent>
+		<groupId>org.jbrew</groupId>
+		<artifactId>jbrew-parent</artifactId>
+		<version>0.1.0-beta.3-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.jbrew.core</groupId>
+	<artifactId>jbrew-core</artifactId>
+
+	<modules>
+		<module>annotations</module>
+	</modules>
+
+	<name>JBrew :: Core</name>
+	<description>
+		This library contains the JBrew core lbiraries
+	</description>
+	<url>https://jbrew.org</url>
+
+	<properties>
+		<sonar.projectKey>org.jbrew.core:jbrew-core</sonar.projectKey>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>unix</id>
+			<activation>
+				<os>
+					<family>unix</family>
+					<name>Linux</name>
+				</os>
+			</activation>
+			<modules>
+				<module>annotations</module>
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

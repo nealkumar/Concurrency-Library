@@ -1,6 +1,7 @@
 package org.jbrew.concurrent;
 
 import org.apache.log4j.Logger;
+import org.jbrew.core.annotations.ThreadSafe;
 
 /**
  * This class provides a skeletal, implementation of the {@link org.jbrew.concurrent.Task} interface,

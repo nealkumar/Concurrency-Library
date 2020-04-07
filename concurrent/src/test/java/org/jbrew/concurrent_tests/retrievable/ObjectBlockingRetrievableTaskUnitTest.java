@@ -3,9 +3,9 @@ package org.jbrew.concurrent_tests.retrievable;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.jbrew.Testing;
 import org.jbrew.concurrent.ObjectBlockingTask;
 import org.jbrew.concurrent.RetrievableTask;
+import org.jbrew.core.annotations.Testing;
 import org.junit.Test;
 
 @Testing

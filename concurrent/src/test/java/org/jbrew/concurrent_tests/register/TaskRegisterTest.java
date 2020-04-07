@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import org.jbrew.concurrent.*;
 
-@org.jbrew.Testing
+@org.jbrew.core.annotations.Testing
 public class TaskRegisterTest {
 
 	private Task<Integer> task;

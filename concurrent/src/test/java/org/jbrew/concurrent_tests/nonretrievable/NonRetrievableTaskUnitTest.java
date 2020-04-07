@@ -2,8 +2,8 @@ package org.jbrew.concurrent_tests.nonretrievable;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.jbrew.Testing;
 import org.jbrew.concurrent.BasicTask;
+import org.jbrew.core.annotations.Testing;
 import org.junit.Test;
 
 @Testing
