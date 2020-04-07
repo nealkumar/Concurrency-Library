@@ -18,14 +18,35 @@
 * Feedback is always welcome, and can be submitted to [support@jbrew.org](mailto:support@jbrew.org). Thank you!
 
 # JBrew Maven Dependencies
-### The following libraries are available as Maven depdendencies, which can be inserted into your project's <code>pom.xml</code>.
+<p>The following libraries are available as Maven depdendencies, which can be inserted into your project's <code>pom.xml</code>.</p>
+
 ## Concurrency Library
 ```xml
   <dependencies>
     <dependency>
       <groupId>org.jbrew</groupId>
       <artifactId>concurrent</artifactId>
-      <version>0.1.0-beta.1</version>
+      <version>0.1.0-beta.2</version>
+    </dependency>
+  </dependencies>
+```
+## CBrew JNI Library
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>org.jbrew.native</groupId>
+      <artifactId>native-core</artifactId>
+      <version>0.1.0-beta.2</version>
+    </dependency>
+  </dependencies>
+```
+## CBrew Libary Validators
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>org.jbrew.native</groupId>
+      <artifactId>native-validators</artifactId>
+      <version>0.1.0-beta.2</version>
     </dependency>
   </dependencies>
 ```
@@ -35,17 +56,37 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.1</version>
+      <version>0.1.0-beta.2</version>
     </dependency>
   </dependencies>
 ```
-## Native Library Home
+## Native Library Core
 ```xml
   <dependencies>
     <dependency>
       <groupId>org.jbrew.native</groupId>
-      <artifactId>native</artifactId>
-      <version>0.1.0-beta.1</version>
+      <artifactId>native-core</artifactId>
+      <version>0.1.0-beta.2</version>
+    </dependency>
+  </dependencies>
+```
+## JBrew Core Annotations
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>org.jbrew.core</groupId>
+      <artifactId>annotations</artifactId>
+      <version>0.1.0-beta.2</version>
+    </dependency>
+  </dependencies>
+```
+## JBrew Core
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>org.jbrew.core</groupId>
+      <artifactId>jbrew-core</artifactId>
+      <version>0.1.0-beta.2</version>
     </dependency>
   </dependencies>
 ```

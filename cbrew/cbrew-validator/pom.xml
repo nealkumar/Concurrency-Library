@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.jbrew.cbrew</groupId>
+		<artifactId>cbrew</artifactId>
+		<version>0.1.0-beta.3-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>cbrew-validator</artifactId>
+	
+	<name>JBrew :: CBrew :: Validator</name>
+	<description>
+		This library contains native facade implementations of the JBrew utility libraries with the Java Native Interface
+		(JNI). This set of libraries features specific optimizations for Unix-based systems in terms of performance 
+		and memory. This is achieved through careful tuning using the C programming language to not only control for 
+		garbage collection, but also to ensure maximum performance for elected library features. This library in particular
+		features example usages of the JNI in order to test hardware for usability.
+	</description>
+	<url>https://jbrew.org</url>
+
+	<properties>
+		<sonar.projectKey>org.jbrew.cbrew:cbrew-validator</sonar.projectKey>
+	</properties>
+	
+	
+
+</project>

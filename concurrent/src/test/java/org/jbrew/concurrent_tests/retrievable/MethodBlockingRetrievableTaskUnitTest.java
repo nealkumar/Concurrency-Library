@@ -2,9 +2,9 @@ package org.jbrew.concurrent_tests.retrievable;
 
 import static org.junit.Assert.assertEquals;
 
-import org.jbrew.Testing;
 import org.jbrew.concurrent.MethodBlockingTask;
 import org.jbrew.concurrent.RetrievableTask;
+import org.jbrew.core.annotations.Testing;
 import org.junit.Before;
 import org.junit.Test;
 

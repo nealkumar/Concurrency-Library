@@ -6,14 +6,14 @@
 	<parent>
 		<groupId>org.jbrew</groupId>
 		<artifactId>jbrew-parent</artifactId>
-		<version>0.1.0-beta.2-SNAPSHOT</version>
+		<version>0.1.0-beta.3-SNAPSHOT</version>
 	</parent>
 
 	<groupId>org.jbrew.native</groupId>
 	<artifactId>native-core</artifactId>
 
 	<modules>
-		<module>native-verifier</module>
+		<module>native-validator</module>
 	</modules>
 
 	<name>JBrew :: Native</name>
@@ -39,7 +39,7 @@
 				</os>
 			</activation>
 			<modules>
-				<module>native-verifier</module>
+				<module>native-validator</module>
 			</modules>
 		</profile>
 	</profiles>

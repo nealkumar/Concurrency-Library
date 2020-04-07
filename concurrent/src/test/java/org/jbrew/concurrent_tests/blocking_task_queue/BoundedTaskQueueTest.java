@@ -7,11 +7,11 @@ import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import org.jbrew.Testing;
 import org.jbrew.concurrent.BasicTask;
 import org.jbrew.concurrent.BoundedTaskQueue;
 import org.jbrew.concurrent.MethodBlockingTask;
 import org.jbrew.concurrent.Task;
+import org.jbrew.core.annotations.Testing;
 import org.junit.Test;
 
 @Testing

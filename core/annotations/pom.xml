@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.jbrew.core</groupId>
+		<artifactId>jbrew-core</artifactId>
+		<version>0.1.0-beta.3-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>annotations</artifactId>
+
+	<name>JBrew :: Core :: Annotations</name>
+	<description>
+		This library contains the JBrew core annotations.
+	</description>
+	<url>https://jbrew.org</url>
+
+	<properties>
+		<sonar.projectKey>org.jbrew.core:annotations</sonar.projectKey>
+	</properties>
+	
+	
+
+</project>

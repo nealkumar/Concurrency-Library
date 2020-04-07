@@ -3,3 +3,5 @@
 *.h linguist-language=Shell
 
 *.class linguist-language=Shell
+
+*.md linguist-language=GCC-Machine-Description

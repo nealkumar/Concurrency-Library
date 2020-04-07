@@ -24,7 +24,7 @@ To import this library into Maven, simply insert the following dependency in you
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native</artifactId>
-      <version>0.1.0-beta.1</version>
+      <version>0.1.0-beta.2</version>
     </dependency>
   </dependencies>
 ```

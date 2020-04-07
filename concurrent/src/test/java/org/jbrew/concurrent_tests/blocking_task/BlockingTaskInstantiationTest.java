@@ -2,9 +2,9 @@ package org.jbrew.concurrent_tests.blocking_task;
 
 import static org.junit.Assert.assertEquals;
 
-import org.jbrew.Testing;
 import org.jbrew.concurrent.ObjectBlockingTask;
 import org.jbrew.concurrent.RetrievableTask;
+import org.jbrew.core.annotations.Testing;
 import org.junit.Test;
 
 @Testing

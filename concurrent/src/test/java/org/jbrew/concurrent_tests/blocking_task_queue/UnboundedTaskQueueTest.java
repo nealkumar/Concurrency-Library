@@ -6,8 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import java.lang.reflect.Field;
 import java.util.Queue;
 
-import org.jbrew.Testing;
 import org.jbrew.concurrent.UnboundedTaskQueue;
+import org.jbrew.core.annotations.Testing;
 import org.junit.Test;
 import org.jbrew.concurrent.MethodBlockingTask;
 import org.jbrew.concurrent.Task;
