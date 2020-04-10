@@ -12,7 +12,7 @@
 [![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/JBrew?color=yellow)](https://github.com/Netflix/osstracker)
 [![JDK 1.8+](https://img.shields.io/badge/jdk-1.8%2B-purple)](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
 # Welcome to the JBrew Core Library
-This library contains the core libaries which are used across JBrew libraries. 
+This library contains the core annotations which are used across JBrew libraries. 
 
 # Maven Central Dependency
 To import this library into Maven, simply insert the following dependency in your pom.xml:
@@ -20,7 +20,7 @@ To import this library into Maven, simply insert the following dependency in you
   <dependencies>
     <dependency>
       <groupId>org.jbrew.core</groupId>
-      <artifactId>jbrew-core</artifactId>
+      <artifactId>annotations</artifactId>
       <version>0.1.0-beta.3</version>
     </dependency>
   </dependencies>

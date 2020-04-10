@@ -26,7 +26,7 @@
     <dependency>
       <groupId>org.jbrew</groupId>
       <artifactId>concurrent</artifactId>
-      <version>0.1.0-beta.2</version>
+      <version>0.1.0-beta.3</version>
     </dependency>
   </dependencies>
 ```
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-core</artifactId>
-      <version>0.1.0-beta.2</version>
+      <version>0.1.0-beta.3</version>
     </dependency>
   </dependencies>
 ```
@@ -46,7 +46,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.2</version>
+      <version>0.1.0-beta.3</version>
     </dependency>
   </dependencies>
 ```
@@ -56,7 +56,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.2</version>
+      <version>0.1.0-beta.3</version>
     </dependency>
   </dependencies>
 ```
@@ -66,7 +66,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-core</artifactId>
-      <version>0.1.0-beta.2</version>
+      <version>0.1.0-beta.3</version>
     </dependency>
   </dependencies>
 ```
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>annotations</artifactId>
-      <version>0.1.0-beta.2</version>
+      <version>0.1.0-beta.3</version>
     </dependency>
   </dependencies>
 ```
@@ -86,7 +86,7 @@
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>jbrew-core</artifactId>
-      <version>0.1.0-beta.2</version>
+      <version>0.1.0-beta.3</version>
     </dependency>
   </dependencies>
 ```

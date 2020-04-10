@@ -1,4 +1,4 @@
-package org.jbrew.jni.examples;
+package org.jbrew.nativ.validator_tests;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
-import org.jbrew.jni.validator.SayHi;
+import org.jbrew.nativ.validator.SayHi;
 
 import static org.junit.Assert.assertTrue;
 
@@ -41,8 +41,8 @@ public class SayHiTest {
 	}
 	
 	@Test
-	public void sayHiNativeConsoleTest() {
-		hi.sayHi();
+	public void sayHiCNativeConsoleTest() {
+		hi.sayHiC();
 	}
 	
 	private class TestAppender extends AppenderSkeleton{
