@@ -19,7 +19,7 @@ public class BasicMathTest {
 	public void subTest() {
 		System.out.println("LIbrary path = " + System.getProperty("java.library.path"));
 		int ans = new BasicMathValidator().subtract(20, 7);
-		System.out.println("Should be 27 from C = " + ans);
+		System.out.println("Should be 13 from C = " + ans);
 		assertEquals(13, ans);
 	}
 	
@@ -27,7 +27,7 @@ public class BasicMathTest {
 	public void multTest() {
 		System.out.println("LIbrary path = " + System.getProperty("java.library.path"));
 		int ans = new BasicMathValidator().multiply(111, 7);
-		System.out.println("Should be 27 from C = " + ans);
+		System.out.println("Should be 777 from C = " + ans);
 		assertEquals(777, ans);
 	}
 

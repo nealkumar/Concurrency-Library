@@ -41,8 +41,8 @@ public class SayHiTest {
 	}
 	
 	@Test
-	public void sayHiNativeConsoleTest() {
-		hi.sayHi();
+	public void sayHiCNativeConsoleTest() {
+		hi.sayHiC();
 	}
 	
 	private class TestAppender extends AppenderSkeleton{

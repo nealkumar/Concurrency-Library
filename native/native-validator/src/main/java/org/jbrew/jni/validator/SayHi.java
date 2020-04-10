@@ -7,14 +7,20 @@ package org.jbrew.jni.validator;
  */
 public class SayHi {
 	static {
-		System.loadLibrary("hi");
+		//System.loadLibrary("hi_c");
+	}
+	
+	private native void sayHi();
+	
+	public void sayHiC() {
+		new org.jbrew.cbrew.validator.SayHiCBrew().sayHi();
 	}
 	
 	public void sayHiJava() {
-		System.out.println("Hello console! Called from Java!");
-		//org.apache.log4j.Logger.getLogger(getClass()).info("Hello console! Called from Java!");
+		//System.out.println("Hello console! Called from Java!");
+		new org.jbrew.cbrew.validator.SayHiCBrew().sayHi();
 	}
 	
-	public native void sayHi();
+	
 
 }
