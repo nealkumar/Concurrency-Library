@@ -1,4 +1,4 @@
-package org.jbrew.jni.examples;
+package org.jbrew.nativ_test;
 
 import static org.junit.Assert.assertTrue;
 

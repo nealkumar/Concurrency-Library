@@ -1,4 +1,4 @@
-package org.jbrew.jni_test;
+package org.jbrew.nativ.validator_tests;
 
 import static org.junit.Assert.assertTrue;
 

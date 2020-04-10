@@ -5,8 +5,8 @@
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>org.jbrew.native</groupId>
-		<artifactId>native-core</artifactId>
-		<version>0.1.0-beta.3-SNAPSHOT</version>
+		<artifactId>native</artifactId>
+		<version>0.1.0-beta.4-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>native-validator</artifactId>
@@ -25,6 +25,12 @@
 		<sonar.projectKey>org.jbrew.native:native-validator</sonar.projectKey>
 	</properties>
 	
-	
+	<dependencies>
+		<dependency>
+			<groupId>org.jbrew.cbrew</groupId>
+			<artifactId>cbrew-validator</artifactId>
+			<version>0.1.0-beta.2</version>
+		</dependency>
+	</dependencies>
 
 </project>

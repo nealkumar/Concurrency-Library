@@ -1,9 +1,9 @@
-package org.jbrew.jni.validator;
+package org.jbrew.nativ.validator;
 
 public class BasicMathValidator {
 	
 	static {
-		System.loadLibrary("basicmath");
+		//System.loadLibrary("basicmath");
 	}
 	
 	private native int addNative(int num1, int num2);
@@ -17,7 +17,8 @@ public class BasicMathValidator {
 	 * @return - the sum of the parameters.
 	 */
 	public int add(int num1, int num2) {
-		return this.addNative(num1, num2);
+		//return this.addNative(num1, num2);
+		return new org.jbrew.cbrew.validator.BasicMathValidatorCBrew().addCBrew(num1, num2);
 	}
 	
 	/**
@@ -27,7 +28,8 @@ public class BasicMathValidator {
 	 * @return - the subtraction result of the parameters.
 	 */
 	public int subtract(int num1, int num2) {
-		return this.subNative(num1, num2);
+		//return this.subNative(num1, num2);
+		return new org.jbrew.cbrew.validator.BasicMathValidatorCBrew().subtractCBrew(num1, num2);
 	}
 	
 	/**
@@ -37,7 +39,8 @@ public class BasicMathValidator {
 	 * @return - the multiplication result of the parameters.
 	 */
 	public int multiply(int num1, int num2) {
-		return this.multNative(num1, num2);
+		//return this.multNative(num1, num2);
+		return new org.jbrew.cbrew.validator.BasicMathValidatorCBrew().multiplyCBrew(num1, num2);
 	}
 
 }
