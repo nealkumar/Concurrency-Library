@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.jbrew</groupId>
 		<artifactId>jbrew-parent</artifactId>
-		<version>0.1.0-beta.4-SNAPSHOT</version>
+		<version>0.1.0-beta.5-SNAPSHOT</version>
 	</parent>
 
 	<groupId>org.jbrew.core</groupId>

@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.com/nealkumar/JBrew.svg?branch=master)](https://travis-ci.com/nealkumar/JBrew)
 [![DepShield Badge](https://depshield.sonatype.org/badges/nealkumar/JBrew/depshield.svg)](https://depshield.github.io)
 [![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?style=flat-square)](https://gitter.im/Concurrent-Tasks/community)
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](https://opensource.org/licenses/BSD-2-Clause)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nealkumar/JBrew)](https://github.com/nealkumar/JBrew/pulse)
 [![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/JBrew?color=yellow)](https://github.com/Netflix/osstracker)
 [![JDK 1.8+](https://img.shields.io/badge/jdk-1.8%2B-purple)](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
@@ -26,7 +26,7 @@
     <dependency>
       <groupId>org.jbrew</groupId>
       <artifactId>concurrent</artifactId>
-      <version>0.1.0-beta.3</version>
+      <version>0.1.0-beta.4</version>
     </dependency>
   </dependencies>
 ```
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-core</artifactId>
-      <version>0.1.0-beta.3</version>
+      <version>0.1.0-beta.4</version>
     </dependency>
   </dependencies>
 ```
@@ -46,7 +46,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.3</version>
+      <version>0.1.0-beta.4</version>
     </dependency>
   </dependencies>
 ```
@@ -56,7 +56,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.3</version>
+      <version>0.1.0-beta.4</version>
     </dependency>
   </dependencies>
 ```
@@ -66,7 +66,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-core</artifactId>
-      <version>0.1.0-beta.3</version>
+      <version>0.1.0-beta.4</version>
     </dependency>
   </dependencies>
 ```
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>annotations</artifactId>
-      <version>0.1.0-beta.3</version>
+      <version>0.1.0-beta.4</version>
     </dependency>
   </dependencies>
 ```
@@ -86,7 +86,28 @@
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>jbrew-core</artifactId>
-      <version>0.1.0-beta.3</version>
+      <version>0.1.0-beta.4</version>
     </dependency>
   </dependencies>
 ```
+# Installation
+To install the JBrew library locally, simple clone this libary from <code>master</code> or any other branch needed for development. Next, run "mvn package" at the project's
+root directory. If you receive errors, please proceed to follow the installation steps below for your specific operating system.
+## Linux 
+Linux is supported as the primary development for JBrew. As such, no additional configuration is needed for most Linux distros. JBrew is actively tested on the 
+following Linux distrubtions:
+* RHEL 8.1/8.2, CentOS, Fedora
+* RHEL 7.0+
+* CentOS
+* Fedora
+* Ubuntu
+## FreeBSD 12.1+
+As of release v0.1.0-beta.4, FreeBSD is now supported as part of the CBrew and Native libraries! TO configure JBrew for BSD, simply update the <code>java.library.path</code>
+from <code>$(user.home}/bin/</code> to <code>${user.home}/binbsd/</code>. The reason for this configuration is that by default, C executables are packaged for 
+Linux systems. There are slight variances for FreeBSD systems which must be accounted for, and as such a seperate binaries folder was created to house all FreeBSD
+C libraries for CBrew and Native.
+## Windows 10+
+As of release v0.1.0-beta.3, Windows 10+ is now supported as part of the CBrew and Native libraries! No additional configuration is needed, as windows dynamically
+linked libraries are packaged as part of the standard release process.
+## Solaris OS
+At the moment, SolarisOS is <i>not</i> supported by JBrew. If you would like Solaris support, please open an issue detailing your request.
