@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.com/nealkumar/JBrew.svg?branch=master)](https://travis-ci.com/nealkumar/JBrew)
 [![DepShield Badge](https://depshield.sonatype.org/badges/nealkumar/JBrew/depshield.svg)](https://depshield.github.io)
 [![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?style=flat-square)](https://gitter.im/Concurrent-Tasks/community)
-[![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](https://opensource.org/licenses/BSD-2-Clause)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause%20Clear-blue)](https://spdx.org/licenses/BSD-3-Clause-Clear.html)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nealkumar/JBrew)](https://github.com/nealkumar/JBrew/pulse)
 [![OSS Lifecycle (branch)](https://img.shields.io/osslifecycle/nealkumar/JBrew?color=yellow)](https://github.com/Netflix/osstracker)
 [![JDK 1.8+](https://img.shields.io/badge/jdk-1.8%2B-purple)](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
@@ -26,7 +26,7 @@
     <dependency>
       <groupId>org.jbrew</groupId>
       <artifactId>concurrent</artifactId>
-      <version>0.1.0-beta.4</version>
+      <version>0.1.0-beta.5</version>
     </dependency>
   </dependencies>
 ```
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-core</artifactId>
-      <version>0.1.0-beta.4</version>
+      <version>0.1.0-beta.5</version>
     </dependency>
   </dependencies>
 ```
@@ -46,7 +46,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.4</version>
+      <version>0.1.0-beta.5</version>
     </dependency>
   </dependencies>
 ```
@@ -56,7 +56,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.4</version>
+      <version>0.1.0-beta.5</version>
     </dependency>
   </dependencies>
 ```
@@ -66,7 +66,7 @@
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-core</artifactId>
-      <version>0.1.0-beta.4</version>
+      <version>0.1.0-beta.5</version>
     </dependency>
   </dependencies>
 ```
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>annotations</artifactId>
-      <version>0.1.0-beta.4</version>
+      <version>0.1.0-beta.5</version>
     </dependency>
   </dependencies>
 ```
@@ -86,7 +86,7 @@
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>jbrew-core</artifactId>
-      <version>0.1.0-beta.4</version>
+      <version>0.1.0-beta.5</version>
     </dependency>
   </dependencies>
 ```
