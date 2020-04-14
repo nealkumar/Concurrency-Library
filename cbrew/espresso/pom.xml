@@ -19,4 +19,11 @@
 	<properties>
 		<sonar.projectKey>org.jbrew.cbrew:espresso</sonar.projectKey>
 	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.jbrew.core</groupId>
+			<artifactId>annotations</artifactId>
+			<version>0.1.0-beta.5</version>
+		</dependency>
+	</dependencies>
 </project>
