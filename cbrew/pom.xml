@@ -13,6 +13,7 @@
 	<artifactId>cbrew</artifactId>
 
 	<modules>
+		<module>espresso</module>
 		<module>cbrew-validator</module>
 	</modules>
 
