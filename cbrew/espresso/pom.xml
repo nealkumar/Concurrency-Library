@@ -12,11 +12,11 @@
   <name>JBrew :: CBrew :: Espresso</name>
   <description>
 		The Espresso library provides aggregate collections operations implemented through the JNI. For large datasets, this 
-		library 
+		library provides performance enhancements over using the Java language due to pointer and address manipulation
 	</description>
 	<url>https://jbrew.org</url>
 
 	<properties>
-		<sonar.projectKey>org.jbrew.cbrew:cbrew-validator</sonar.projectKey>
+		<sonar.projectKey>org.jbrew.cbrew:espresso</sonar.projectKey>
 	</properties>
 </project>
