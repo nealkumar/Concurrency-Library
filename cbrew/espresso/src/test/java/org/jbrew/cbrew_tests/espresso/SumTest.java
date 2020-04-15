@@ -15,7 +15,7 @@ import org.junit.Test;
 public class SumTest {
 	
 	@Test
-	public void sumSeqBasicTest() {
+	public void sumRecBasicTest() {
 		int[] arr = {100, 50, 50};
 		SumOperation op = new SumOperation();
 		int sum = op.performOperation(arr);
@@ -23,7 +23,7 @@ public class SumTest {
 	}
 	
 	@Test
-	public void sumSeqMedTest() {
+	public void sumRecMedTest() {
 		int[] arr = new int[1000];
 		for(int index=0; index<arr.length; index++) {
 			arr[index] = new Random().nextInt();
@@ -36,7 +36,7 @@ public class SumTest {
 	}
 	
 	@Test
-	public void sumSeqMed2Test() {
+	public void sumStreamsMed2Test() {
 		int[] arr = new int[10_000];
 		for(int index=0; index<arr.length; index++) {
 			arr[index] = new Random().nextInt();
@@ -49,7 +49,7 @@ public class SumTest {
 	}
 	
 	@Test
-	public void sumSeqMed3Test() {
+	public void sumStreamsMed3Test() {
 		int[] arr = new int[15_000];
 		for(int index=0; index<arr.length; index++) {
 			arr[index] = new Random().nextInt();
@@ -62,7 +62,7 @@ public class SumTest {
 	}
 	
 	@Test
-	public void sumLargeTest() {
+	public void sumStreamsLargeTest() {
 		int[] arr = new int[100_000];
 		for(int index=0; index<arr.length; index++) {
 			arr[index] = new Random().nextInt();
@@ -75,7 +75,7 @@ public class SumTest {
 	}
 	
 	@Test
-	public void sumLarge2Test() {
+	public void sumStreamsLarge2Test() {
 		int[] arr = new int[1_000_000];
 		for(int index=0; index<arr.length; index++) {
 			arr[index] = new Random().nextInt();
@@ -88,7 +88,7 @@ public class SumTest {
 	}
 	
 	@Test
-	public void sumLarge3Test() {
+	public void sumStreamsLarge3Test() {
 		int[] arr = new int[10_000_000];
 		for(int index=0; index<arr.length; index++) {
 			arr[index] = new Random().nextInt();
@@ -102,7 +102,7 @@ public class SumTest {
 	
 	@Ignore /*Ignored because it takes >40 seconds to complete...*/
 	@Test
-	public void sumLarge4Test() {
+	public void sumStreamsLarge4Test() {
 		int[] arr = new int[100_000_000];
 		for(int index=0; index<arr.length; index++) {
 			arr[index] = new Random().nextInt();
@@ -116,7 +116,7 @@ public class SumTest {
 	
 	@Ignore /*Ignored because it takes >10 minutes to complete...*/
 	@Test
-	public void sumLarge5Test() {
+	public void sumStreamsLarge5Test() {
 		int[] arr = new int[1_000_000_000];
 		for(int index=0; index<arr.length; index++) {
 			arr[index] = new Random().nextInt();
