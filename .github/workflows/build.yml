@@ -1,4 +1,4 @@
-name: JBrew Maven Clean 
+name: JBrew Maven Clean
 on: push
 
 jobs:
