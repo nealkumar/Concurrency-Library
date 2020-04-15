@@ -128,6 +128,20 @@ public class SumTest {
 		assertEquals(trueSum, testSum);
 	}
 	
+	@Ignore /*Ignored because it takes >10 minutes to complete...*/
+	@Test
+	public void sumStreamsLarge6Test() {
+		int[] arr = new int[1_000_000_001];
+		for(int index=0; index<arr.length; index++) {
+			arr[index] = new Random().nextInt();
+		}
+		int trueSum = findSumStreams(arr);
+		SumOperation op = new SumOperation();
+		int testSum = op.performOperation(arr);
+		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
+		assertEquals(trueSum, testSum);
+	}
+	
 	private int findSum(int[] arr) {
 		return helper(arr, 0, 0, arr.length);
 	}
