@@ -1,0 +1,1590 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f6db0afb4e3, pid=8506, tid=0x00007f6db224a700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_242-b08) (build 1.8.0_242-b08)
+# Java VM: OpenJDK 64-Bit Server VM (25.242-b08 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x6894e3]  ThreadStateTransition::transition_from_native(JavaThread*, JavaThreadState) [clone .constprop.168]+0x13
+#
+# Core dump written. Default location: /home/nealk/JBrew/JBrew/cbrew/espresso/core or core.8506
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f6da804c800):  JavaThread "main" [_thread_in_native, id=8510, stack(0x00007f6db214b000,0x00007f6db224b000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00000000000002d8
+
+Registers:
+RAX=0x00007f6db141640c, RBX=0x0000000000000000, RCX=0x00007f6db22487a0, RDX=0x00007f6db22487b0
+RSP=0x00007f6db2248640, RBP=0x00007f6db2248650, RSI=0x0000000000000000, RDI=0x0000000000000000
+R8 =0x0000000000000009, R9 =0x00007f6da82d42e0, R10=0x00007f6d990183fb, R11=0x00007f6db0dddce0
+R12=0x0000000000000000, R13=0x00007f6db22487b0, R14=0x00007f6db22487a0, R15=0x00007f6da804c800
+RIP=0x00007f6db0afb4e3, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000006
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f6db2248640)
+0x00007f6db2248640:   0000000000000000 0000000000000000
+0x00007f6db2248650:   00007f6db22486c0 00007f6db0afe115
+0x00007f6db2248660:   0000000000000000 ad8cecb829ce7700
+0x00007f6db2248670:   00007f6db22487b0 00007f6da804c800
+0x00007f6db2248680:   00007f6d98c8bff0 ad8cecb829ce7700
+0x00007f6db2248690:   00007f6d98c8bff0 00007f6d98c8bff0
+0x00007f6db22486a0:   0000000000000000 00007f6d98c8bff0
+0x00007f6db22486b0:   00007f6db22487b0 00007f6da804c800
+0x00007f6db22486c0:   00007f6db2248710 00007f6d5b3c4667
+0x00007f6db22486d0:   00007f6db22487a0 0000000329ce7700
+0x00007f6db22486e0:   00007f6db22487b0 00007f6da804ca60
+0x00007f6db22486f0:   00007f6d98c8bff0 00007f6db22487b0
+0x00007f6db2248700:   00007f6db2248780 00000000990182a3
+0x00007f6db2248710:   00007f6db2248780 00007f6d99018427
+0x00007f6db2248720:   00007f6db2248780 00007f6d99018179
+0x00007f6db2248730:   fffffffe00000000 00007f6d99018142
+0x00007f6db2248740:   00007f6db2248740 00007f6d98c8bff0
+0x00007f6db2248750:   00007f6db22487b0 00007f6d98c8c238
+0x00007f6db2248760:   0000000000000000 00007f6d98c8bff0
+0x00007f6db2248770:   0000000000000000 00007f6db22487a0
+0x00007f6db2248780:   00007f6db22487f8 00007f6d99007a40
+0x00007f6db2248790:   0000000000000000 00007f6d99011a56
+0x00007f6db22487a0:   000000071bb91e30 0000000000000003
+0x00007f6db22487b0:   000000071bb9b058 00007f6db22487b8
+0x00007f6db22487c0:   00007f6d98c8c1bb 00007f6db2248818
+0x00007f6db22487d0:   00007f6d98c8c238 0000000000000000
+0x00007f6db22487e0:   00007f6d98c8c1c8 00007f6db22487a0
+0x00007f6db22487f0:   00007f6db2248808 00007f6db2248860
+0x00007f6db2248800:   00007f6d99007a40 000000071bb91e30
+0x00007f6db2248810:   0000000000000003 000000071bb9b058
+0x00007f6db2248820:   00007f6db2248820 00007f6d98c8ba04
+0x00007f6db2248830:   00007f6db2248878 00007f6d98c8bc28 
+
+Instructions: (pc=0x00007f6db0afb4e3)
+0x00007f6db0afb4c3:   e8 c8 56 03 00 48 89 c2 eb cd 0f 1f 00 55 48 89
+0x00007f6db0afb4d3:   e5 53 48 89 fb 48 83 ec 08 48 8d 05 29 af 91 00
+0x00007f6db0afb4e3:   c7 87 d8 02 00 00 05 00 00 00 83 38 01 74 6e 48
+0x00007f6db0afb4f3:   8d 05 ce 52 91 00 80 38 00 75 52 48 8d 15 0b af 
+
+Register to memory mapping:
+
+RAX=0x00007f6db141640c: <offset 0xfa440c> in /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/server/libjvm.so at 0x00007f6db0472000
+RBX=0x0000000000000000 is an unknown value
+RCX=0x00007f6db22487a0 is pointing into the stack for thread: 0x00007f6da804c800
+RDX=0x00007f6db22487b0 is pointing into the stack for thread: 0x00007f6da804c800
+RSP=0x00007f6db2248640 is pointing into the stack for thread: 0x00007f6da804c800
+RBP=0x00007f6db2248650 is pointing into the stack for thread: 0x00007f6da804c800
+RSI=0x0000000000000000 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x0000000000000009 is an unknown value
+R9 =0x00007f6da82d42e0 is an unknown value
+R10=0x00007f6d990183fb is at code_begin+859 in an Interpreter codelet
+method entry point (kind = native)  [0x00007f6d990180a0, 0x00007f6d99018a40]  2464 bytes
+R11=0x00007f6db0dddce0: <offset 0x96bce0> in /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/server/libjvm.so at 0x00007f6db0472000
+R12=0x0000000000000000 is an unknown value
+R13=0x00007f6db22487b0 is pointing into the stack for thread: 0x00007f6da804c800
+R14=0x00007f6db22487a0 is pointing into the stack for thread: 0x00007f6da804c800
+R15=0x00007f6da804c800 is a thread
+
+
+Stack: [0x00007f6db214b000,0x00007f6db224b000],  sp=0x00007f6db2248640,  free space=1013k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x6894e3]  ThreadStateTransition::transition_from_native(JavaThread*, JavaThreadState) [clone .constprop.168]+0x13
+V  [libjvm.so+0x68c115]  jni_GetIntArrayElements+0x65
+C  [libagg_summer.so+0x667]  Java_org_jbrew_cbrew_espresso_SumOperation_00024NativeAdapter_sumSequential+0x3e
+j  org.jbrew.cbrew.espresso.SumOperation$NativeAdapter.sumSequential(I[I)I+0
+j  org.jbrew.cbrew.espresso.SumOperation$NativeAdapter.access$1(Lorg/jbrew/cbrew/espresso/SumOperation$NativeAdapter;I[I)I+3
+j  org.jbrew.cbrew.espresso.SumOperation.performOperation([I)I+12
+j  org.jbrew.cbrew_tests.espresso.SumTest.sumTest()V+29
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x67abd5]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0xc55
+V  [libjvm.so+0x94b87c]  Reflection::invoke(instanceKlassHandle, methodHandle, Handle, bool, objArrayHandle, BasicType, objArrayHandle, bool, Thread*)+0xd8c
+V  [libjvm.so+0x94c629]  Reflection::invoke_method(oopDesc*, Handle, objArrayHandle, Thread*)+0x139
+V  [libjvm.so+0x6cbb98]  JVM_InvokeMethod+0x138
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.junit.runners.model.FrameworkMethod$1.runReflectiveCall()Ljava/lang/Object;+15
+j  org.junit.internal.runners.model.ReflectiveCallable.run()Ljava/lang/Object;+1
+j  org.junit.runners.model.FrameworkMethod.invokeExplosively(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.junit.internal.runners.statements.InvokeMethod.evaluate()V+12
+j  org.junit.runners.ParentRunner$3.evaluate()V+4
+j  org.junit.runners.BlockJUnit4ClassRunner$1.evaluate()V+11
+j  org.junit.runners.ParentRunner.runLeaf(Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;Lorg/junit/runner/notification/RunNotifier;)V+17
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V+38
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Ljava/lang/Object;Lorg/junit/runner/notification/RunNotifier;)V+6
+j  org.junit.runners.ParentRunner$4.run()V+12
+j  org.junit.runners.ParentRunner$1.schedule(Ljava/lang/Runnable;)V+1
+j  org.junit.runners.ParentRunner.runChildren(Lorg/junit/runner/notification/RunNotifier;)V+44
+j  org.junit.runners.ParentRunner.access$100(Lorg/junit/runners/ParentRunner;Lorg/junit/runner/notification/RunNotifier;)V+2
+j  org.junit.runners.ParentRunner$2.evaluate()V+8
+j  org.junit.runners.ParentRunner$3.evaluate()V+4
+j  org.junit.runners.ParentRunner.run(Lorg/junit/runner/notification/RunNotifier;)V+24
+j  org.apache.maven.surefire.junit4.JUnit4Provider.execute(Ljava/lang/Class;Lorg/apache/maven/surefire/common/junit4/Notifier;Lorg/junit/runner/manipulation/Filter;)V+58
+j  org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(Ljava/lang/Class;Lorg/apache/maven/surefire/common/junit4/Notifier;)V+60
+j  org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(Ljava/lang/Class;Lorg/apache/maven/surefire/report/RunListener;Lorg/apache/maven/surefire/common/junit4/Notifier;)V+34
+j  org.apache.maven.surefire.junit4.JUnit4Provider.invoke(Ljava/lang/Object;)Lorg/apache/maven/surefire/suite/RunResult;+200
+j  org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(Lorg/apache/maven/surefire/booter/ForkingReporterFactory;)Lorg/apache/maven/surefire/suite/RunResult;+9
+j  org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess()Lorg/apache/maven/surefire/suite/RunResult;+7
+j  org.apache.maven.surefire.booter.ForkedBooter.execute()V+1
+j  org.apache.maven.surefire.booter.ForkedBooter.main([Ljava/lang/String;)V+35
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x67abd5]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0xc55
+V  [libjvm.so+0x6977b4]  jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*) [clone .isra.110] [clone .constprop.165]+0x2c4
+V  [libjvm.so+0x69a20d]  jni_CallStaticVoidMethod+0x17d
+C  [libjli.so+0x387f]  JavaMain+0x46f
+C  [libpthread.so.0+0x82de]  start_thread+0xfe
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.jbrew.cbrew.espresso.SumOperation$NativeAdapter.sumSequential(I[I)I+0
+j  org.jbrew.cbrew.espresso.SumOperation$NativeAdapter.access$1(Lorg/jbrew/cbrew/espresso/SumOperation$NativeAdapter;I[I)I+3
+j  org.jbrew.cbrew.espresso.SumOperation.performOperation([I)I+12
+j  org.jbrew.cbrew_tests.espresso.SumTest.sumTest()V+29
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.junit.runners.model.FrameworkMethod$1.runReflectiveCall()Ljava/lang/Object;+15
+j  org.junit.internal.runners.model.ReflectiveCallable.run()Ljava/lang/Object;+1
+j  org.junit.runners.model.FrameworkMethod.invokeExplosively(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.junit.internal.runners.statements.InvokeMethod.evaluate()V+12
+j  org.junit.runners.ParentRunner$3.evaluate()V+4
+j  org.junit.runners.BlockJUnit4ClassRunner$1.evaluate()V+11
+j  org.junit.runners.ParentRunner.runLeaf(Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;Lorg/junit/runner/notification/RunNotifier;)V+17
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V+38
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Ljava/lang/Object;Lorg/junit/runner/notification/RunNotifier;)V+6
+j  org.junit.runners.ParentRunner$4.run()V+12
+j  org.junit.runners.ParentRunner$1.schedule(Ljava/lang/Runnable;)V+1
+j  org.junit.runners.ParentRunner.runChildren(Lorg/junit/runner/notification/RunNotifier;)V+44
+j  org.junit.runners.ParentRunner.access$100(Lorg/junit/runners/ParentRunner;Lorg/junit/runner/notification/RunNotifier;)V+2
+j  org.junit.runners.ParentRunner$2.evaluate()V+8
+j  org.junit.runners.ParentRunner$3.evaluate()V+4
+j  org.junit.runners.ParentRunner.run(Lorg/junit/runner/notification/RunNotifier;)V+24
+j  org.apache.maven.surefire.junit4.JUnit4Provider.execute(Ljava/lang/Class;Lorg/apache/maven/surefire/common/junit4/Notifier;Lorg/junit/runner/manipulation/Filter;)V+58
+j  org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(Ljava/lang/Class;Lorg/apache/maven/surefire/common/junit4/Notifier;)V+60
+j  org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(Ljava/lang/Class;Lorg/apache/maven/surefire/report/RunListener;Lorg/apache/maven/surefire/common/junit4/Notifier;)V+34
+j  org.apache.maven.surefire.junit4.JUnit4Provider.invoke(Ljava/lang/Object;)Lorg/apache/maven/surefire/suite/RunResult;+200
+j  org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(Lorg/apache/maven/surefire/booter/ForkingReporterFactory;)Lorg/apache/maven/surefire/suite/RunResult;+9
+j  org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess()Lorg/apache/maven/surefire/suite/RunResult;+7
+j  org.apache.maven.surefire.booter.ForkedBooter.execute()V+1
+j  org.apache.maven.surefire.booter.ForkedBooter.main([Ljava/lang/String;)V+35
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f6cec04f000 JavaThread "process reaper" daemon [_thread_blocked, id=8545, stack(0x00007f6d9000d000,0x00007f6d90046000)]
+  0x00007f6da843e000 JavaThread "surefire-forkedjvm-ping-30s" daemon [_thread_blocked, id=8543, stack(0x00007f6d5b5c6000,0x00007f6d5b6c7000)]
+  0x00007f6da8422800 JavaThread "surefire-forkedjvm-command-thread" daemon [_thread_in_native, id=8542, stack(0x00007f6d5b8d1000,0x00007f6d5b9d2000)]
+  0x00007f6da8331000 JavaThread "Service Thread" daemon [_thread_blocked, id=8540, stack(0x00007f6d5beff000,0x00007f6d5c000000)]
+  0x00007f6da832e000 JavaThread "C1 CompilerThread11" daemon [_thread_blocked, id=8539, stack(0x00007f6d6005a000,0x00007f6d6015a000)]
+  0x00007f6da832c800 JavaThread "C1 CompilerThread10" daemon [_thread_blocked, id=8538, stack(0x00007f6d6015b000,0x00007f6d6025b000)]
+  0x00007f6da832a000 JavaThread "C1 CompilerThread9" daemon [_thread_blocked, id=8537, stack(0x00007f6d6025c000,0x00007f6d6035c000)]
+  0x00007f6da8328000 JavaThread "C1 CompilerThread8" daemon [_thread_blocked, id=8536, stack(0x00007f6d6035d000,0x00007f6d6045d000)]
+  0x00007f6da8326000 JavaThread "C2 CompilerThread7" daemon [_thread_blocked, id=8535, stack(0x00007f6d6045e000,0x00007f6d6055e000)]
+  0x00007f6da8324000 JavaThread "C2 CompilerThread6" daemon [_thread_blocked, id=8534, stack(0x00007f6d6055f000,0x00007f6d6065f000)]
+  0x00007f6da8322000 JavaThread "C2 CompilerThread5" daemon [_thread_blocked, id=8533, stack(0x00007f6d60660000,0x00007f6d60760000)]
+  0x00007f6da831f800 JavaThread "C2 CompilerThread4" daemon [_thread_blocked, id=8532, stack(0x00007f6d90047000,0x00007f6d90147000)]
+  0x00007f6da831d800 JavaThread "C2 CompilerThread3" daemon [_thread_blocked, id=8531, stack(0x00007f6d90148000,0x00007f6d90248000)]
+  0x00007f6da831b800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=8530, stack(0x00007f6d90249000,0x00007f6d90349000)]
+  0x00007f6da8319800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=8529, stack(0x00007f6d9034a000,0x00007f6d9044a000)]
+  0x00007f6da830a800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=8528, stack(0x00007f6d9044b000,0x00007f6d9054b000)]
+  0x00007f6da8308800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8527, stack(0x00007f6d9054b000,0x00007f6d9064c000)]
+  0x00007f6da82de000 JavaThread "Finalizer" daemon [_thread_blocked, id=8526, stack(0x00007f6d9064c000,0x00007f6d9074d000)]
+  0x00007f6da82d9800 JavaThread "Reference Handler" daemon [_thread_blocked, id=8525, stack(0x00007f6d9074d000,0x00007f6d9084e000)]
+=>0x00007f6da804c800 JavaThread "main" [_thread_in_native, id=8510, stack(0x00007f6db214b000,0x00007f6db224b000)]
+
+Other Threads:
+  0x00007f6da82cf800 VMThread [stack: 0x00007f6d9084f000,0x00007f6d9094f000] [id=8524]
+  0x00007f6da8333800 WatcherThread [stack: 0x00007f6d5bdff000,0x00007f6d5beff000] [id=8541]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000005cec00000, size: 7956 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 148992K, used 25600K [0x000000071a400000, 0x0000000724a00000, 0x00000007c0000000)
+  eden space 128000K, 20% used [0x000000071a400000,0x000000071bd00128,0x0000000722100000)
+  from space 20992K, 0% used [0x0000000723580000,0x0000000723580000,0x0000000724a00000)
+  to   space 20992K, 0% used [0x0000000722100000,0x0000000722100000,0x0000000723580000)
+ ParOldGen       total 339968K, used 0K [0x00000005cec00000, 0x00000005e3800000, 0x000000071a400000)
+  object space 339968K, 0% used [0x00000005cec00000,0x00000005cec00000,0x00000005e3800000)
+ Metaspace       used 7506K, capacity 7652K, committed 7808K, reserved 1056768K
+  class space    used 789K, capacity 868K, committed 896K, reserved 1048576K
+
+Card table byte_map: [0x00007f6dad59a000,0x00007f6dae525000] byte_map_base: 0x00007f6daa724000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f6db141a160
+ Begin Bits: [0x00007f6d60760000, 0x00007f6d683b0000)
+ End Bits:   [0x00007f6d683b0000, 0x00007f6d70000000)
+
+Polling page: 0x00007f6db226b000
+
+CodeCache: size=245760Kb used=4128Kb max_used=4128Kb free=241631Kb
+ bounds [0x00007f6d99000000, 0x00007f6d99410000, 0x00007f6da8000000]
+ total_blobs=873 nmethods=559 adapters=226
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 0.086 Thread 0x00007f6da832a000 nmethod 430 0x00007f6d99394610 code [0x00007f6d99394760, 0x00007f6d99394870]
+Event: 0.086 Thread 0x00007f6da832c800 nmethod 426 0x00007f6d99394b90 code [0x00007f6d99394e40, 0x00007f6d99396148]
+Event: 0.087 Thread 0x00007f6da8328000  431       3       sun.reflect.generics.parser.SignatureParser::advance (37 bytes)
+Event: 0.087 Thread 0x00007f6da832a000  432       3       java.lang.Character::isWhitespace (5 bytes)
+Event: 0.087 Thread 0x00007f6da8328000 nmethod 431 0x00007f6d993942d0 code [0x00007f6d99394440, 0x00007f6d993945b0]
+Event: 0.087 Thread 0x00007f6da8328000  433       3       java.lang.Character::isWhitespace (9 bytes)
+Event: 0.087 Thread 0x00007f6da832e000  434       3       java.lang.CharacterDataLatin1::isWhitespace (23 bytes)
+Event: 0.087 Thread 0x00007f6da8328000 nmethod 433 0x00007f6d99393e50 code [0x00007f6d99393fc0, 0x00007f6d993941f8]
+Event: 0.087 Thread 0x00007f6da832a000 nmethod 432 0x00007f6d99393910 code [0x00007f6d99393aa0, 0x00007f6d99393d38]
+Event: 0.087 Thread 0x00007f6da832e000 nmethod 434 0x00007f6d99393410 code [0x00007f6d99393580, 0x00007f6d993937d0]
+Event: 0.087 Thread 0x00007f6da832e000  435       3       sun.misc.ProxyGenerator$ConstantPool$IndirectEntry::<init> (21 bytes)
+Event: 0.087 Thread 0x00007f6da832e000 nmethod 435 0x00007f6d99396bd0 code [0x00007f6d99396d40, 0x00007f6d99396fb0]
+Event: 0.087 Thread 0x00007f6da832e000  437  s    3       java.io.DataOutputStream::write (16 bytes)
+Event: 0.087 Thread 0x00007f6da832c800  438       3       java.io.DataOutputStream::writeUTF (435 bytes)
+Event: 0.087 Thread 0x00007f6da8328000  436       3       sun.misc.ProxyGenerator$ConstantPool$IndirectEntry::<init> (21 bytes)
+Event: 0.087 Thread 0x00007f6da832e000 nmethod 437 0x00007f6d993970d0 code [0x00007f6d99397260, 0x00007f6d993976a8]
+Event: 0.087 Thread 0x00007f6da8328000 nmethod 436 0x00007f6d99397810 code [0x00007f6d99397980, 0x00007f6d99397bf0]
+Event: 0.088 Thread 0x00007f6da8319800 nmethod 429 0x00007f6d99392f50 code [0x00007f6d993930a0, 0x00007f6d993932b8]
+Event: 0.088 Thread 0x00007f6da832a000  440       3       java.net.URL::isBuiltinStreamHandler (32 bytes)
+Event: 0.088 Thread 0x00007f6da832c800 nmethod 438 0x00007f6d9939ab90 code [0x00007f6d9939aea0, 0x00007f6d9939cb88]
+Event: 0.088 Thread 0x00007f6da832c800  441       3       java.net.URL::isBuiltinStreamHandler (7 bytes)
+Event: 0.088 Thread 0x00007f6da832c800 nmethod 441 0x00007f6d9939a610 code [0x00007f6d9939a780, 0x00007f6d9939aa88]
+Event: 0.088 Thread 0x00007f6da832c800  443       3       sun.net.util.IPAddressUtil::scan (92 bytes)
+Event: 0.088 Thread 0x00007f6da832e000  442       3       sun.net.util.IPAddressUtil::checkHostString (53 bytes)
+Event: 0.088 Thread 0x00007f6da8328000  444   !   3       java.util.zip.Inflater::ended (32 bytes)
+Event: 0.088 Thread 0x00007f6da8328000 nmethod 444 0x00007f6d99399f90 code [0x00007f6d9939a100, 0x00007f6d9939a4d0]
+Event: 0.088 Thread 0x00007f6da832e000 nmethod 442 0x00007f6d99398e50 code [0x00007f6d99399060, 0x00007f6d99399af8]
+Event: 0.088 Thread 0x00007f6da832c800 nmethod 443 0x00007f6d99397e50 code [0x00007f6d99398040, 0x00007f6d993988c8]
+Event: 0.088 Thread 0x00007f6da832a000 nmethod 440 0x00007f6d9939da90 code [0x00007f6d9939dcc0, 0x00007f6d9939ec98]
+Event: 0.089 Thread 0x00007f6da8328000  445       3       sun.misc.SharedSecrets::javaUtilJarAccess (18 bytes)
+Event: 0.089 Thread 0x00007f6da8328000 nmethod 445 0x00007f6d9939f390 code [0x00007f6d9939f500, 0x00007f6d9939f748]
+Event: 0.090 Thread 0x00007f6da832e000  450       3       sun.misc.URLClassPath::getResource (83 bytes)
+Event: 0.090 Thread 0x00007f6da832c800  446   !   3       java.net.URLClassLoader::findClass (47 bytes)
+Event: 0.090 Thread 0x00007f6da832a000  447       3       java.net.URLClassLoader$1::<init> (15 bytes)
+Event: 0.090 Thread 0x00007f6da8328000  448       3       java.net.URLClassLoader$1::run (5 bytes)
+Event: 0.090 Thread 0x00007f6da832a000 nmethod 447 0x00007f6d9939f7d0 code [0x00007f6d9939f940, 0x00007f6d9939fb30]
+Event: 0.090 Thread 0x00007f6da832a000  449   !   3       java.net.URLClassLoader$1::run (63 bytes)
+Event: 0.090 Thread 0x00007f6da8328000 nmethod 448 0x00007f6d9939fbd0 code [0x00007f6d9939fd40, 0x00007f6d9939fee8]
+Event: 0.090 Thread 0x00007f6da8328000  451  s    3       sun.misc.URLClassPath::getLookupCache (98 bytes)
+Event: 0.090 Thread 0x00007f6da832e000 nmethod 450 0x00007f6d9939ff90 code [0x00007f6d993a0140, 0x00007f6d993a0508]
+Event: 0.090 Thread 0x00007f6da832c800 nmethod 446 0x00007f6d993a0690 code [0x00007f6d993a0840, 0x00007f6d993a0ea8]
+Event: 0.090 Thread 0x00007f6da832c800  452       1       java.util.jar.Manifest::getMainAttributes (5 bytes)
+Event: 0.090 Thread 0x00007f6da832c800 nmethod 452 0x00007f6d993a1110 code [0x00007f6d993a1260, 0x00007f6d993a1370]
+Event: 0.090 Thread 0x00007f6da8328000 nmethod 451 0x00007f6d993a13d0 code [0x00007f6d993a1560, 0x00007f6d993a1ad8]
+Event: 0.090 Thread 0x00007f6da832a000 nmethod 449 0x00007f6d993a1c50 code [0x00007f6d993a1e20, 0x00007f6d993a2368]
+Event: 0.090 Thread 0x00007f6da832a000  453       3       java.util.Hashtable$Enumerator::hasMoreElements (53 bytes)
+Event: 0.090 Thread 0x00007f6da8328000  454       3       java.util.Hashtable$Enumerator::nextElement (111 bytes)
+Event: 0.090 Thread 0x00007f6da832a000 nmethod 453 0x00007f6d993a2650 code [0x00007f6d993a27c0, 0x00007f6d993a2ab0]
+Event: 0.090 Thread 0x00007f6da832a000  455       3       java.util.StringTokenizer::scanToken (179 bytes)
+Event: 0.090 Thread 0x00007f6da8328000 nmethod 454 0x00007f6d993a2bd0 code [0x00007f6d993a2d60, 0x00007f6d993a31e8]
+Event: 0.090 Thread 0x00007f6da832e000  456       1       java.util.jar.Manifest::getEntries (5 bytes)
+Event: 0.090 Thread 0x00007f6da832c800  457       1       java.util.jar.JarFile::access$300 (5 bytes)
+Event: 0.090 Thread 0x00007f6da832c800 nmethod 457 0x00007f6d993a33d0 code [0x00007f6d993a3520, 0x00007f6d993a3610]
+Event: 0.090 Thread 0x00007f6da832e000 nmethod 456 0x00007f6d993a3690 code [0x00007f6d993a37e0, 0x00007f6d993a38f0]
+Event: 0.090 Thread 0x00007f6da8328000  458  s!   3       java.net.URLStreamHandler::getHostAddress (54 bytes)
+Event: 0.090 Thread 0x00007f6da832e000  459       3       java.util.HashMap$HashIterator::hasNext (13 bytes)
+Event: 0.090 Thread 0x00007f6da8328000 nmethod 458 0x00007f6d993a3b50 code [0x00007f6d993a3d00, 0x00007f6d993a43d8]
+Event: 0.091 Thread 0x00007f6da832a000 nmethod 455 0x00007f6d993a4550 code [0x00007f6d993a47e0, 0x00007f6d993a5b38]
+Event: 0.091 Thread 0x00007f6da830a800  460 %     4       sun.nio.cs.UTF_8$Encoder::encode @ 20 (359 bytes)
+Event: 0.091 Thread 0x00007f6da832c800  462   !   3       java.net.URL::<init> (543 bytes)
+Event: 0.091 Thread 0x00007f6da8328000  461       3       java.net.URL::<init> (8 bytes)
+Event: 0.091 Thread 0x00007f6da832a000  463       3       java.net.URLStreamHandler::setURL (73 bytes)
+Event: 0.091 Thread 0x00007f6da8328000 nmethod 461 0x00007f6d993a6310 code [0x00007f6d993a6480, 0x00007f6d993a6608]
+Event: 0.091 Thread 0x00007f6da8328000  464   !   3       java.net.URL::set (114 bytes)
+Event: 0.091 Thread 0x00007f6da832e000 nmethod 459 0x00007f6d993a6690 code [0x00007f6d993a6800, 0x00007f6d993a69b0]
+Event: 0.091 Thread 0x00007f6da832e000  465       3       java.util.jar.Attributes::get (11 bytes)
+Event: 0.091 Thread 0x00007f6da832e000 nmethod 465 0x00007f6d993a6a10 code [0x00007f6d993a6b80, 0x00007f6d993a6da8]
+Event: 0.091 Thread 0x00007f6da832e000  466       3       java.util.jar.Attributes::getValue (9 bytes)
+Event: 0.091 Thread 0x00007f6da8328000 nmethod 464 0x00007f6d993a6e50 code [0x00007f6d993a7040, 0x00007f6d993a7b98]
+Event: 0.091 Thread 0x00007f6da832e000 nmethod 466 0x00007f6d993a81d0 code [0x00007f6d993a8360, 0x00007f6d993a86c8]
+Event: 0.091 Thread 0x00007f6da832a000 nmethod 463 0x00007f6d993a8810 code [0x00007f6d993a8a60, 0x00007f6d993a99b8]
+Event: 0.091 Thread 0x00007f6da8328000  467       1       java.io.File::getPath (5 bytes)
+Event: 0.091 Thread 0x00007f6da8328000 nmethod 467 0x00007f6d993aa0d0 code [0x00007f6d993aa220, 0x00007f6d993aa330]
+Event: 0.092 Thread 0x00007f6da832a000  468       3       java.lang.StringCoding::safeTrim (24 bytes)
+Event: 0.092 Thread 0x00007f6da832a000 nmethod 468 0x00007f6d993aa390 code [0x00007f6d993aa520, 0x00007f6d993aa9e8]
+Event: 0.092 Thread 0x00007f6da832c800 nmethod 462 0x00007f6d993aab90 code [0x00007f6d993ab060, 0x00007f6d993ae2c8]
+Event: 0.093 Thread 0x00007f6da8328000  469       3       sun.util.locale.LocaleUtils::isUpper (18 bytes)
+Event: 0.093 Thread 0x00007f6da8328000 nmethod 469 0x00007f6d993b0850 code [0x00007f6d993b09c0, 0x00007f6d993b0b90]
+Event: 0.093 Thread 0x00007f6da830a800 nmethod 460% 0x00007f6d993b3c10 code [0x00007f6d993b3d80, 0x00007f6d993b4178]
+Event: 0.094 Thread 0x00007f6da832e000  470       3       java.io.BufferedInputStream::getBufIfOpen (21 bytes)
+Event: 0.094 Thread 0x00007f6da8328000  471  s    3       java.io.BufferedInputStream::read (49 bytes)
+Event: 0.094 Thread 0x00007f6da832a000  472       3       java.io.DataInputStream::readInt (72 bytes)
+Event: 0.094 Thread 0x00007f6da832e000 nmethod 470 0x00007f6d993b3790 code [0x00007f6d993b3900, 0x00007f6d993b3b48]
+Event: 0.094 Thread 0x00007f6da832a000 nmethod 472 0x00007f6d993b2dd0 code [0x00007f6d993b2fa0, 0x00007f6d993b3548]
+Event: 0.094 Thread 0x00007f6da831b800  473       4       java.util.Arrays::copyOfRange (63 bytes)
+Event: 0.094 Thread 0x00007f6da8328000 nmethod 471 0x00007f6d993b2490 code [0x00007f6d993b2640, 0x00007f6d993b2bb8]
+Event: 0.094 Thread 0x00007f6da8328000  474       3       java.util.StringTokenizer::skipDelimiters (116 bytes)
+Event: 0.094 Thread 0x00007f6da832c800  475       3       java.util.StringTokenizer::hasMoreTokens (29 bytes)
+Event: 0.094 Thread 0x00007f6da832e000  476       3       java.util.HashSet::add (20 bytes)
+Event: 0.094 Thread 0x00007f6da832c800 nmethod 475 0x00007f6d993b2090 code [0x00007f6d993b2200, 0x00007f6d993b2408]
+Event: 0.094 Thread 0x00007f6da832c800  477       3       java.util.StringTokenizer::nextToken (92 bytes)
+Event: 0.095 Thread 0x00007f6da832e000 nmethod 476 0x00007f6d993b1810 code [0x00007f6d993b19a0, 0x00007f6d993b1eb8]
+Event: 0.095 Thread 0x00007f6da832c800 nmethod 477 0x00007f6d993b1090 code [0x00007f6d993b1240, 0x00007f6d993b1678]
+Event: 0.095 Thread 0x00007f6da8328000 nmethod 474 0x00007f6d993b4390 code [0x00007f6d993b45a0, 0x00007f6d993b5178]
+Event: 0.095 Thread 0x00007f6da831b800 nmethod 473 0x00007f6d993b8490 code [0x00007f6d993b85e0, 0x00007f6d993b8818]
+Event: 0.095 Thread 0x00007f6da832a000  479       3       java.lang.StringCoding::access$000 (6 bytes)
+Event: 0.095 Thread 0x00007f6da832e000  478       3       java.io.UnixFileSystem::prefixLength (25 bytes)
+Event: 0.095 Thread 0x00007f6da832a000 nmethod 479 0x00007f6d993b7c90 code [0x00007f6d993b7e00, 0x00007f6d993b7fb0]
+Event: 0.095 Thread 0x00007f6da8324000  480       4       sun.nio.cs.UTF_8$Encoder::encode (359 bytes)
+Event: 0.095 Thread 0x00007f6da832e000 nmethod 478 0x00007f6d993b7010 code [0x00007f6d993b71a0, 0x00007f6d993b76a8]
+Event: 0.096 Thread 0x00007f6da832c800  481       3       java.util.regex.Pattern::has (15 bytes)
+Event: 0.096 Thread 0x00007f6da832c800 nmethod 481 0x00007f6d993b6c90 code [0x00007f6d993b6e00, 0x00007f6d993b6fb0]
+Event: 0.097 Thread 0x00007f6da8324000 nmethod 480 0x00007f6d993ba2d0 code [0x00007f6d993ba420, 0x00007f6d993ba678]
+Event: 0.098 Thread 0x00007f6da8328000  482       3       sun.net.www.protocol.file.Handler::parseURL (18 bytes)
+Event: 0.098 Thread 0x00007f6da832e000  483       3       java.net.URLStreamHandler::parseURL (1193 bytes)
+Event: 0.098 Thread 0x00007f6da832a000  484   !   3       java.lang.StringCoding::encode (120 bytes)
+Event: 0.098 Thread 0x00007f6da832c800  485       3       java.lang.StringCoding::access$300 (8 bytes)
+Event: 0.098 Thread 0x00007f6da8328000 nmethod 482 0x00007f6d993b6790 code [0x00007f6d993b6900, 0x00007f6d993b6b78]
+Event: 0.098 Thread 0x00007f6da8328000  486   !   3       java.lang.StringCoding$StringEncoder::encode (179 bytes)
+Event: 0.098 Thread 0x00007f6da832c800 nmethod 485 0x00007f6d993b5e50 code [0x00007f6d993b6000, 0x00007f6d993b6528]
+Event: 0.098 Thread 0x00007f6da832c800  487       3       java.io.File::isInvalid (47 bytes)
+Event: 0.098 Thread 0x00007f6da832c800 nmethod 487 0x00007f6d993b5790 code [0x00007f6d993b5920, 0x00007f6d993b5d48]
+Event: 0.098 Thread 0x00007f6da832c800  488       3       java.lang.String::getBytes (27 bytes)
+Event: 0.098 Thread 0x00007f6da832c800 nmethod 488 0x00007f6d993b9d90 code [0x00007f6d993b9f20, 0x00007f6d993ba1b8]
+Event: 0.099 Thread 0x00007f6da832c800  489       3       sun.misc.ASCIICaseInsensitiveComparator::compare (126 bytes)
+Event: 0.099 Thread 0x00007f6da831d800  490       4       java.lang.String::<init> (82 bytes)
+Event: 0.099 Thread 0x00007f6da832a000 nmethod 484 0x00007f6d993ba7d0 code [0x00007f6d993bab20, 0x00007f6d993bc558]
+Event: 0.099 Thread 0x00007f6da8328000 nmethod 486 0x00007f6d993bd410 code [0x00007f6d993bd780, 0x00007f6d993bf498]
+Event: 0.099 Thread 0x00007f6da832c800 nmethod 489 0x00007f6d993c0650 code [0x00007f6d993c0860, 0x00007f6d993c14d8]
+Event: 0.099 Thread 0x00007f6da832c800  491   !   3       java.lang.ClassLoader::getPackage (118 bytes)
+Event: 0.099 Thread 0x00007f6da832a000  492   !   3       java.util.zip.InflaterInputStream::read (138 bytes)
+Event: 0.099 Thread 0x00007f6da8328000  493       3       java.util.zip.InflaterInputStream::ensureOpen (18 bytes)
+Event: 0.099 Thread 0x00007f6da8328000 nmethod 493 0x00007f6d993b9910 code [0x00007f6d993b9a80, 0x00007f6d993b9cc8]
+Event: 0.100 Thread 0x00007f6da832c800 nmethod 491 0x00007f6d993c1b90 code [0x00007f6d993c1da0, 0x00007f6d993c2af8]
+Event: 0.100 Thread 0x00007f6da8328000  494       3       java.lang.ClassLoader::checkPackageAccess (111 bytes)
+Event: 0.100 Thread 0x00007f6da832a000 nmethod 492 0x00007f6d993c3090 code [0x00007f6d993c3320, 0x00007f6d993c4428]
+Event: 0.100 Thread 0x00007f6da832c800  495       3       sun.misc.PerfCounter::addElapsedTimeFrom (10 bytes)
+Event: 0.100 Thread 0x00007f6da8328000 nmethod 494 0x00007f6d993c4d10 code [0x00007f6d993c4f40, 0x00007f6d993c5a58]
+Event: 0.100 Thread 0x00007f6da832c800 nmethod 495 0x00007f6d993b8cd0 code [0x00007f6d993b8e80, 0x00007f6d993b95b8]
+Event: 0.101 Thread 0x00007f6da831d800 nmethod 490 0x00007f6d993c8f10 code [0x00007f6d993c9080, 0x00007f6d993c93b8]
+Event: 0.101 Thread 0x00007f6da832a000  496   !   3       java.net.URL::<init> (543 bytes)
+Event: 0.102 Thread 0x00007f6da832e000 nmethod 483 0x00007f6d993c95d0 code [0x00007f6d993ca120, 0x00007f6d993d3ee8]
+Event: 0.102 Thread 0x00007f6da8328000  497  s    3       sun.misc.Resource::cachedInputStream (20 bytes)
+Event: 0.103 Thread 0x00007f6da832c800  498       3       java.security.CodeSource::getCertificates (98 bytes)
+Event: 0.103 Thread 0x00007f6da8328000 nmethod 497 0x00007f6d993c8910 code [0x00007f6d993c8a80, 0x00007f6d993c8e68]
+Event: 0.103 Thread 0x00007f6da832a000 nmethod 496 0x00007f6d993da6d0 code [0x00007f6d993daba0, 0x00007f6d993dde38]
+Event: 0.103 Thread 0x00007f6da832a000  499       3       java.io.File::getName (42 bytes)
+Event: 0.103 Thread 0x00007f6da832c800 nmethod 498 0x00007f6d993c76d0 code [0x00007f6d993c7900, 0x00007f6d993c84f8]
+Event: 0.103 Thread 0x00007f6da832a000 nmethod 499 0x00007f6d993c6ed0 code [0x00007f6d993c7060, 0x00007f6d993c7528]
+Event: 0.103 Thread 0x00007f6da8322000  502       4       java.lang.AbstractStringBuilder::append (50 bytes)
+Event: 0.103 Thread 0x00007f6da832c800  500       3       java.io.UnixFileSystem::getBooleanAttributes (49 bytes)
+Event: 0.104 Thread 0x00007f6da832c800 nmethod 500 0x00007f6d993c6450 code [0x00007f6d993c6600, 0x00007f6d993c6be8]
+Event: 0.105 Thread 0x00007f6da832e000  503       1       java.util.HashMap$Node::getKey (5 bytes)
+Event: 0.105 Thread 0x00007f6da832e000 nmethod 503 0x00007f6d993e03d0 code [0x00007f6d993e0520, 0x00007f6d993e0630]
+Event: 0.105 Thread 0x00007f6da832e000  504       3       java.util.Vector::ensureCapacityHelper (16 bytes)
+Event: 0.105 Thread 0x00007f6da832e000 nmethod 504 0x00007f6d993e0690 code [0x00007f6d993e0800, 0x00007f6d993e09e8]
+Event: 0.106 Thread 0x00007f6da8328000  505       3       java.io.File::exists (43 bytes)
+Event: 0.106 Thread 0x00007f6da8322000 nmethod 502 0x00007f6d993e3b10 code [0x00007f6d993e3c80, 0x00007f6d993e40f8]
+Event: 0.106 Thread 0x00007f6da8328000 nmethod 505 0x00007f6d993e3390 code [0x00007f6d993e3540, 0x00007f6d993e39c8]
+Event: 0.106 Thread 0x00007f6da832a000  508       3       java.io.UnixFileSystem::resolve (103 bytes)
+Event: 0.106 Thread 0x00007f6da8328000  509  s    3       java.util.Vector::addElement (38 bytes)
+Event: 0.106 Thread 0x00007f6da832e000  507       3       java.lang.ClassNotFoundException::<init> (7 bytes)
+Event: 0.107 Thread 0x00007f6da8328000 nmethod 509 0x00007f6d993e2750 code [0x00007f6d993e28e0, 0x00007f6d993e2e08]
+Event: 0.107 Thread 0x00007f6da832e000 nmethod 507 0x00007f6d993e2290 code [0x00007f6d993e2400, 0x00007f6d993e2648]
+Event: 0.107 Thread 0x00007f6da832c800  510       3       java.io.File::<init> (113 bytes)
+Event: 0.107 Thread 0x00007f6da832a000 nmethod 508 0x00007f6d993e4450 code [0x00007f6d993e47a0, 0x00007f6d993e6508]
+Event: 0.107 Thread 0x00007f6da832c800 nmethod 510 0x00007f6d993e1050 code [0x00007f6d993e12a0, 0x00007f6d993e1d98]
+Event: 0.107 Thread 0x00007f6da8328000  511       3       java.util.AbstractMap::<init> (5 bytes)
+Event: 0.107 Thread 0x00007f6da8328000 nmethod 511 0x00007f6d993e0c90 code [0x00007f6d993e0e00, 0x00007f6d993e0fb0]
+Event: 0.107 Thread 0x00007f6da831b800  512       4       java.lang.StringBuilder::append (8 bytes)
+Event: 0.108 Thread 0x00007f6da832c800  516       3       java.util.HashMap::resize (359 bytes)
+Event: 0.108 Thread 0x00007f6da8328000  514       3       sun.misc.ProxyGenerator$ConstantPool::addEntry (46 bytes)
+Event: 0.108 Thread 0x00007f6da832e000  515       3       sun.misc.ProxyGenerator$ConstantPool::getClass (21 bytes)
+Event: 0.108 Thread 0x00007f6da832a000  513       1       java.lang.reflect.Method::getDeclaringClass (5 bytes)
+Event: 0.108 Thread 0x00007f6da832a000 nmethod 513 0x00007f6d993e7250 code [0x00007f6d993e73a0, 0x00007f6d993e74b0]
+Event: 0.108 Thread 0x00007f6da832a000  517  s    1       java.io.ByteArrayOutputStream::size (5 bytes)
+Event: 0.108 Thread 0x00007f6da8328000 nmethod 514 0x00007f6d993e7510 code [0x00007f6d993e76c0, 0x00007f6d993e7b78]
+Event: 0.108 Thread 0x00007f6da832a000 nmethod 517 0x00007f6d993e7d10 code [0x00007f6d993e7e60, 0x00007f6d993e80d0]
+Event: 0.108 Thread 0x00007f6da832c800 nmethod 516 0x00007f6d993e8150 code [0x00007f6d993e83a0, 0x00007f6d993e95e8]
+Event: 0.108 Thread 0x00007f6da832e000 nmethod 515 0x00007f6d993e9d50 code [0x00007f6d993e9f20, 0x00007f6d993ea428]
+Event: 0.110 Thread 0x00007f6da8328000  518       3       java.lang.StringBuffer::<init> (6 bytes)
+Event: 0.110 Thread 0x00007f6da832a000  519  s    3       java.lang.Throwable::fillInStackTrace (29 bytes)
+Event: 0.110 Thread 0x00007f6da832c800  521       3       java.util.zip.ZipFile::getZipEntry (251 bytes)
+Event: 0.110 Thread 0x00007f6da8328000 nmethod 518 0x00007f6d993eb710 code [0x00007f6d993eb880, 0x00007f6d993ebb30]
+Event: 0.110 Thread 0x00007f6da8328000  522       3       java.io.FilterInputStream::<init> (10 bytes)
+Event: 0.110 Thread 0x00007f6da8328000 nmethod 522 0x00007f6d993ebc50 code [0x00007f6d993ebdc0, 0x00007f6d993ec010]
+Event: 0.110 Thread 0x00007f6da832a000 nmethod 519 0x00007f6d993ec110 code [0x00007f6d993ec280, 0x00007f6d993ec628]
+Event: 0.110 Thread 0x00007f6da831b800 nmethod 512 0x00007f6d993ef750 code [0x00007f6d993ef8c0, 0x00007f6d993efd38]
+Event: 0.110 Thread 0x00007f6da832c800 nmethod 521 0x00007f6d993ee4d0 code [0x00007f6d993ee720, 0x00007f6d993ef308]
+Event: 0.110 Thread 0x00007f6da832e000  523       3       java.net.URL::toString (5 bytes)
+Event: 0.110 Thread 0x00007f6da832e000 nmethod 523 0x00007f6d993edf90 code [0x00007f6d993ee100, 0x00007f6d993ee3e8]
+Event: 0.110 Thread 0x00007f6da832e000  524       3       java.net.URL::toExternalForm (9 bytes)
+Event: 0.110 Thread 0x00007f6da832e000 nmethod 524 0x00007f6d993edb50 code [0x00007f6d993edcc0, 0x00007f6d993edee8]
+Event: 0.110 Thread 0x00007f6da832e000  525       3       java.net.URLStreamHandler::toExternalForm (219 bytes)
+Event: 0.111 Thread 0x00007f6da832c800  526       3       sun.net.www.protocol.jar.Handler::checkNestedProtocol (18 bytes)
+Event: 0.111 Thread 0x00007f6da832c800 nmethod 526 0x00007f6d993ed690 code [0x00007f6d993ed800, 0x00007f6d993eda88]
+Event: 0.111 Thread 0x00007f6da832a000  527   !   3       sun.misc.URLClassPath$FileLoader::getResource (164 bytes)
+Event: 0.111 Thread 0x00007f6da832c800  528       3       java.nio.charset.CharsetDecoder::reset (11 bytes)
+Event: 0.111 Thread 0x00007f6da832c800 nmethod 528 0x00007f6d993ed250 code [0x00007f6d993ed3c0, 0x00007f6d993ed5f0]
+Event: 0.111 Thread 0x00007f6da832c800  529       3       java.nio.charset.CharsetDecoder::implReset (1 bytes)
+Event: 0.111 Thread 0x00007f6da832c800 nmethod 529 0x00007f6d993ecf50 code [0x00007f6d993ed0a0, 0x00007f6d993ed1f0]
+Event: 0.111 Thread 0x00007f6da8328000  530       3       java.util.WeakHashMap::put (162 bytes)
+Event: 0.111 Thread 0x00007f6da832c800  531       3       java.util.WeakHashMap$Entry::<init> (24 bytes)
+Event: 0.111 Thread 0x00007f6da832e000 nmethod 525 0x00007f6d993f0110 code [0x00007f6d993f0480, 0x00007f6d993f3a68]
+Event: 0.111 Thread 0x00007f6da832e000  537       3       java.lang.Character::charCount (12 bytes)
+Event: 0.111 Thread 0x00007f6da830a800  538       4       java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)
+Event: 0.111 Thread 0x00007f6da832e000 nmethod 537 0x00007f6d993ecbd0 code [0x00007f6d993ecd40, 0x00007f6d993eced0]
+Event: 0.111 Thread 0x00007f6da832e000  532       3       java.util.zip.ZipFile$ZipFileInflaterInputStream::fill (80 bytes)
+Event: 0.112 Thread 0x00007f6da832c800 nmethod 531 0x00007f6d993f4b50 code [0x00007f6d993f4cc0, 0x00007f6d993f5010]
+Event: 0.112 Thread 0x00007f6da832c800  533   !   3       java.util.zip.ZipFile$ZipFileInputStream::read (131 bytes)
+Event: 0.112 Thread 0x00007f6da832a000 nmethod 527 0x00007f6d993f5190 code [0x00007f6d993f5520, 0x00007f6d993f7218]
+Event: 0.112 Thread 0x00007f6da832a000  534       3       java.util.zip.ZipFile::access$1300 (5 bytes)
+Event: 0.112 Thread 0x00007f6da830a800 nmethod 538 0x00007f6d993ec9d0 code [0x00007f6d993ecb00, 0x00007f6d993ecb58]
+Event: 0.112 Thread 0x00007f6da832e000 nmethod 532 0x00007f6d993fa810 code [0x00007f6d993fa9c0, 0x00007f6d993fade8]
+Event: 0.112 Thread 0x00007f6da832e000  535       3       java.util.zip.ZipFile::ensureOpenOrZipException (18 bytes)
+Event: 0.112 Thread 0x00007f6da832a000 nmethod 534 0x00007f6d993fa2d0 code [0x00007f6d993fa460, 0x00007f6d993fa6c8]
+Event: 0.112 Thread 0x00007f6da832a000  536       3       java.util.regex.Pattern::peek (26 bytes)
+Event: 0.112 Thread 0x00007f6da832e000 nmethod 535 0x00007f6d993f9e90 code [0x00007f6d993fa000, 0x00007f6d993fa208]
+Event: 0.112 Thread 0x00007f6da8328000 nmethod 530 0x00007f6d993f8710 code [0x00007f6d993f8940, 0x00007f6d993f97f8]
+Event: 0.112 Thread 0x00007f6da832a000 nmethod 536 0x00007f6d993fafd0 code [0x00007f6d993fb160, 0x00007f6d993fb408]
+Event: 0.112 Thread 0x00007f6da832c800 nmethod 533 0x00007f6d993fb550 code [0x00007f6d993fb720, 0x00007f6d993fbfc8]
+Event: 0.112 Thread 0x00007f6da832e000  539       3       java.util.ArrayDeque::poll (5 bytes)
+Event: 0.112 Thread 0x00007f6da8328000  540       3       java.util.ArrayDeque::pollFirst (42 bytes)
+Event: 0.112 Thread 0x00007f6da832e000 nmethod 539 0x00007f6d993fc510 code [0x00007f6d993fc680, 0x00007f6d993fc828]
+Event: 0.112 Thread 0x00007f6da8328000 nmethod 540 0x00007f6d993fc8d0 code [0x00007f6d993fca40, 0x00007f6d993fcd70]
+Event: 0.113 Thread 0x00007f6da832a000  542   !   3       java.util.zip.ZipFile::getInputStream (304 bytes)
+Event: 0.113 Thread 0x00007f6da832e000  543       3       java.util.zip.ZipFile$ZipFileInputStream::<init> (41 bytes)
+Event: 0.113 Thread 0x00007f6da832c800  548       3       java.lang.Character::isHighSurrogate (18 bytes)
+Event: 0.113 Thread 0x00007f6da8328000  544       3       java.util.zip.ZipFile::access$1100 (5 bytes)
+Event: 0.113 Thread 0x00007f6da8328000 nmethod 544 0x00007f6d993fced0 code [0x00007f6d993fd040, 0x00007f6d993fd1a8]
+Event: 0.113 Thread 0x00007f6da8328000  545       3       java.util.zip.ZipFile::access$1200 (5 bytes)
+Event: 0.113 Thread 0x00007f6da832c800 nmethod 548 0x00007f6d993fd250 code [0x00007f6d993fd3c0, 0x00007f6d993fd590]
+Event: 0.113 Thread 0x00007f6da832c800  546   !   3       java.util.zip.ZipFile::getInflater (56 bytes)
+Event: 0.113 Thread 0x00007f6da832e000 nmethod 543 0x00007f6d993fd610 code [0x00007f6d993fd7a0, 0x00007f6d993fdb38]
+Event: 0.113 Thread 0x00007f6da832e000  547       3       java.util.zip.ZipFile$ZipFileInflaterInputStream::<init> (29 bytes)
+Event: 0.113 Thread 0x00007f6da832e000 nmethod 547 0x00007f6d993fdd50 code [0x00007f6d993fdec0, 0x00007f6d993fe0c8]
+Event: 0.113 Thread 0x00007f6da832e000  552       3       org.apache.maven.surefire.util.internal.StringUtils::escapeToPrintable (152 bytes)
+Event: 0.113 Thread 0x00007f6da832c800 nmethod 546 0x00007f6d993fe190 code [0x00007f6d993fe380, 0x00007f6d993fef78]
+Event: 0.113 Thread 0x00007f6da832c800  549       3       java.util.Hashtable$Enumerator::hasNext (5 bytes)
+Event: 0.113 Thread 0x00007f6da8328000 nmethod 545 0x00007f6d993ff5d0 code [0x00007f6d993ff740, 0x00007f6d993ff8a8]
+Event: 0.113 Thread 0x00007f6da8328000  550       3       java.util.Hashtable$Enumerator::next (27 bytes)
+Event: 0.113 Thread 0x00007f6da832c800 nmethod 549 0x00007f6d993ff950 code [0x00007f6d993ffac0, 0x00007f6d993ffc68]
+Event: 0.113 Thread 0x00007f6da832c800  551       1       java.util.HashMap$Node::getValue (5 bytes)
+Event: 0.113 Thread 0x00007f6da832c800 nmethod 551 0x00007f6d993ec6d0 code [0x00007f6d993ec820, 0x00007f6d993ec930]
+Event: 0.113 Thread 0x00007f6da832c800  553       1       java.lang.reflect.Method::getModifiers (5 bytes)
+Event: 0.113 Thread 0x00007f6da832a000 nmethod 542 0x00007f6d993ffd10 code [0x00007f6d993fffc0, 0x00007f6d99401198]
+Event: 0.113 Thread 0x00007f6da8328000 nmethod 550 0x00007f6d99401d50 code [0x00007f6d99401ee0, 0x00007f6d99402158]
+Event: 0.113 Thread 0x00007f6da8328000  554       3       java.util.regex.Pattern$Ctype::isSatisfiedBy (24 bytes)
+Event: 0.113 Thread 0x00007f6da832c800 nmethod 553 0x00007f6d99402290 code [0x00007f6d994023e0, 0x00007f6d994024f0]
+Event: 0.113 Thread 0x00007f6da832c800  555       3       java.util.regex.ASCII::isType (15 bytes)
+Event: 0.113 Thread 0x00007f6da832a000  556       3       java.util.regex.ASCII::getType (17 bytes)
+Event: 0.113 Thread 0x00007f6da832a000 nmethod 556 0x00007f6d99402550 code [0x00007f6d994026c0, 0x00007f6d99402890]
+Event: 0.113 Thread 0x00007f6da832a000  557       3       java.util.regex.Pattern$CharProperty::match (56 bytes)
+Event: 0.113 Thread 0x00007f6da8328000 nmethod 554 0x00007f6d99402950 code [0x00007f6d99402ae0, 0x00007f6d99402e70]
+Event: 0.113 Thread 0x00007f6da8328000  558       3       java.util.regex.Pattern$Node::match (27 bytes)
+Event: 0.113 Thread 0x00007f6da832c800 nmethod 555 0x00007f6d99403010 code [0x00007f6d99403180, 0x00007f6d994033f0]
+Event: 0.113 Thread 0x00007f6da832c800  559       3       java.lang.Character::codePointAt (51 bytes)
+Event: 0.113 Thread 0x00007f6da8328000 nmethod 558 0x00007f6d99403510 code [0x00007f6d99403680, 0x00007f6d99403830]
+Event: 0.114 Thread 0x00007f6da832a000 nmethod 557 0x00007f6d99403950 code [0x00007f6d99403b00, 0x00007f6d99403fe8]
+Event: 0.114 Thread 0x00007f6da832c800 nmethod 559 0x00007f6d99404150 code [0x00007f6d99404300, 0x00007f6d994049a8]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (13 events):
+Event: 0.014 Thread 0x00007f6da804c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x000000071a407cc8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64
+Event: 0.014 Thread 0x00007f6da804c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x000000071a407fb0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/s
+Event: 0.077 Thread 0x00007f6da843e000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000071aed3118) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/src/share/vm/prims/methodHandles.cpp, line 1167]
+Event: 0.078 Thread 0x00007f6da843e000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000071aee0838) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/src/share/vm/prims/methodHandles.cpp, line 1167]
+Event: 0.088 Thread 0x00007f6da804c800 Exception <a 'java/lang/NoSuchMethodError': org.junit.runner.Description.createSuiteDescription(Ljava/lang/String;)Lorg/junit/runner/Description;> (0x000000071b182138) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjd
+Event: 0.089 Thread 0x00007f6da804c800 Exception <a 'java/lang/NoSuchMethodError': org.junit.runner.Description.createSuiteDescription(Ljava/lang/String;)Lorg/junit/runner/Description;> (0x000000071b184208) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjd
+Event: 0.089 Thread 0x00007f6da804c800 Exception <a 'java/lang/NoSuchMethodError': org.junit.runner.Description.createSuiteDescription(Ljava/lang/String;)Lorg/junit/runner/Description;> (0x000000071b184688) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjd
+Event: 0.092 Thread 0x00007f6da843e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000071afa51b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1501]
+Event: 0.092 Thread 0x00007f6da843e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000071afa55b0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1501]
+Event: 0.092 Thread 0x00007f6da843e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000071afa8270) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1501]
+Event: 0.092 Thread 0x00007f6da843e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000071afa8668) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1501]
+Event: 0.092 Thread 0x00007f6da843e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000071afa9730) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1501]
+Event: 0.092 Thread 0x00007f6da843e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000071afa9b28) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1501]
+
+Events (250 events):
+Event: 0.094 loading class sun/util/locale/provider/LocaleServiceProviderPool$LocalizedObjectGetter done
+Event: 0.094 loading class java/util/Currency$CurrencyNameGetter done
+Event: 0.095 loading class sun/util/resources/CurrencyNames
+Event: 0.095 loading class sun/util/resources/LocaleNamesBundle
+Event: 0.095 loading class sun/util/resources/OpenListResourceBundle
+Event: 0.095 loading class sun/util/resources/OpenListResourceBundle done
+Event: 0.095 loading class sun/util/resources/LocaleNamesBundle done
+Event: 0.095 loading class org/junit/internal/runners/SuiteMethod
+Event: 0.095 loading class sun/util/resources/CurrencyNames done
+Event: 0.095 loading class org/junit/internal/runners/SuiteMethod done
+Event: 0.095 loading class sun/util/resources/en/CurrencyNames_en_US
+Event: 0.095 loading class sun/util/resources/en/CurrencyNames_en_US done
+Event: 0.095 loading class java/util/HashMap$KeySet
+Event: 0.095 loading class java/util/HashMap$KeySet done
+Event: 0.095 loading class org/junit/internal/runners/JUnit38ClassRunner
+Event: 0.095 loading class org/junit/internal/runners/JUnit38ClassRunner done
+Event: 0.095 loading class java/text/DecimalFormat
+Event: 0.095 loading class org/junit/runner/manipulation/Filterable
+Event: 0.095 loading class java/text/DecimalFormat done
+Event: 0.095 loading class org/junit/runner/manipulation/Filterable done
+Event: 0.095 loading class org/junit/runner/manipulation/Orderable
+Event: 0.095 loading class org/junit/runner/manipulation/Orderable done
+Event: 0.095 loading class java/text/FieldPosition
+Event: 0.095 loading class java/text/FieldPosition done
+Event: 0.095 loading class java/text/DigitList
+Event: 0.095 loading class org/junit/runner/manipulation/Sortable
+Event: 0.095 loading class org/junit/runner/manipulation/Sortable done
+Event: 0.095 loading class java/text/DigitList done
+Event: 0.095 loading class java/math/RoundingMode
+Event: 0.095 Thread 0x00007f6da804c800 DEOPT PACKING pc=0x00007f6d992c019e sp=0x00007f6db22406d0
+Event: 0.095 Thread 0x00007f6da804c800 DEOPT UNPACKING pc=0x00007f6d990474c4 sp=0x00007f6db2240420 mode 0
+Event: 0.095 loading class java/math/RoundingMode done
+Event: 0.096 loading class org/junit/internal/builders/JUnit3Builder
+Event: 0.096 loading class org/junit/internal/builders/JUnit3Builder done
+Event: 0.096 loading class org/junit/internal/builders/JUnit4Builder
+Event: 0.096 loading class org/junit/internal/builders/JUnit4Builder done
+Event: 0.096 loading class org/junit/runners/JUnit4
+Event: 0.096 loading class org/junit/runners/JUnit4 done
+Event: 0.096 loading class org/junit/runners/BlockJUnit4ClassRunner
+Event: 0.096 loading class org/junit/runners/BlockJUnit4ClassRunner done
+Event: 0.096 loading class org/junit/runners/ParentRunner
+Event: 0.096 loading class org/junit/runners/ParentRunner done
+Event: 0.097 loading class junit/framework/TestCase
+Event: 0.097 loading class junit/framework/TestCase done
+Event: 0.097 loading class junit/framework/Assert
+Event: 0.097 loading class junit/framework/Assert done
+Event: 0.098 loading class org/junit/runners/model/Statement
+Event: 0.098 loading class org/junit/runners/model/Statement done
+Event: 0.098 loading class org/junit/runners/ParentRunner$2
+Event: 0.098 loading class org/junit/runners/ParentRunner$2 done
+Event: 0.098 loading class org/junit/runners/model/MemberValueConsumer
+Event: 0.098 loading class org/junit/runners/model/MemberValueConsumer done
+Event: 0.098 loading class org/junit/rules/RunRules
+Event: 0.098 loading class org/junit/rules/RunRules done
+Event: 0.098 loading class org/junit/internal/runners/statements/RunAfters
+Event: 0.098 loading class org/junit/internal/runners/statements/RunAfters done
+Event: 0.099 loading class org/junit/internal/runners/statements/RunBefores
+Event: 0.099 loading class org/junit/internal/runners/statements/RunBefores done
+Event: 0.099 loading class org/junit/runners/ParentRunner$3
+Event: 0.099 loading class org/junit/runners/ParentRunner$3 done
+Event: 0.099 loading class java/io/FileOutputStream$1
+Event: 0.099 loading class java/io/FileOutputStream$1 done
+Event: 0.099 loading class java/lang/ProcessBuilder$NullInputStream
+Event: 0.099 loading class java/lang/ProcessBuilder$NullInputStream done
+Event: 0.099 loading class org/junit/runners/model/InvalidTestClassError
+Event: 0.099 loading class org/junit/runners/model/InvalidTestClassError done
+Event: 0.099 loading class java/lang/ProcessBuilder$NullOutputStream
+Event: 0.099 loading class java/lang/ProcessBuilder$NullOutputStream done
+Event: 0.099 loading class org/apache/maven/surefire/shade/org/apache/commons/io/IOUtils
+Event: 0.099 loading class org/apache/maven/surefire/shade/org/apache/commons/io/IOUtils done
+Event: 0.099 loading class java/util/concurrent/locks/LockSupport
+Event: 0.099 loading class java/util/concurrent/locks/LockSupport done
+Event: 0.099 Executing VM operation: Deoptimize
+Event: 0.099 Executing VM operation: Deoptimize done
+Event: 0.099 loading class org/junit/internal/AssumptionViolatedException
+Event: 0.099 loading class org/junit/internal/AssumptionViolatedException done
+Event: 0.099 loading class sun/nio/ch/Interruptible
+Event: 0.099 loading class sun/nio/ch/Interruptible done
+Event: 0.099 loading class org/hamcrest/SelfDescribing
+Event: 0.099 loading class org/hamcrest/SelfDescribing done
+Event: 0.100 loading class org/apache/maven/surefire/shade/org/apache/commons/io/output/StringBuilderWriter
+Event: 0.100 loading class org/apache/maven/surefire/shade/org/apache/commons/io/output/StringBuilderWriter done
+Event: 0.100 loading class org/junit/runner/manipulation/NoTestsRemainException
+Event: 0.100 loading class org/junit/runner/manipulation/NoTestsRemainException done
+Event: 0.100 loading class org/junit/runners/model/RunnerScheduler
+Event: 0.100 loading class org/junit/runners/model/RunnerScheduler done
+Event: 0.100 loading class java/io/CharArrayWriter
+Event: 0.100 loading class java/io/CharArrayWriter done
+Event: 0.100 loading class org/apache/maven/surefire/shade/org/apache/commons/io/output/ByteArrayOutputStream
+Event: 0.100 loading class org/apache/maven/surefire/shade/org/apache/commons/io/output/ByteArrayOutputStream done
+Event: 0.100 loading class org/junit/internal/runners/statements/FailOnTimeout
+Event: 0.100 loading class org/junit/internal/runners/statements/FailOnTimeout done
+Event: 0.100 loading class org/junit/internal/runners/statements/ExpectException
+Event: 0.100 loading class org/junit/internal/runners/statements/ExpectException done
+Event: 0.100 loading class java/io/PrintWriter
+Event: 0.100 loading class java/io/PrintWriter done
+Event: 0.100 loading class org/junit/internal/runners/statements/InvokeMethod
+Event: 0.100 loading class org/junit/internal/runners/statements/InvokeMethod done
+Event: 0.100 loading class org/junit/internal/runners/statements/Fail
+Event: 0.100 loading class org/junit/internal/runners/statements/Fail done
+Event: 0.101 loading class org/junit/runners/BlockJUnit4ClassRunner$1
+Event: 0.101 loading class org/junit/runners/BlockJUnit4ClassRunner$1 done
+Event: 0.101 loading class org/junit/validator/TestClassValidator
+Event: 0.101 loading class org/junit/validator/TestClassValidator done
+Event: 0.101 loading class org/junit/validator/AnnotationsValidator
+Event: 0.101 loading class org/junit/validator/AnnotationsValidator done
+Event: 0.101 loading class org/junit/validator/AnnotationsValidator$AnnotatableValidator
+Event: 0.101 loading class org/junit/validator/AnnotationsValidator$AnnotatableValidator done
+Event: 0.101 loading class org/junit/validator/AnnotationsValidator$ClassValidator
+Event: 0.101 loading class org/junit/validator/AnnotationsValidator$ClassValidator done
+Event: 0.101 loading class org/junit/validator/AnnotationValidatorFactory
+Event: 0.101 loading class org/junit/validator/AnnotationValidatorFactory done
+Event: 0.102 loading class org/junit/validator/AnnotationsValidator$MethodValidator
+Event: 0.102 loading class org/junit/validator/AnnotationsValidator$MethodValidator done
+Event: 0.102 loading class org/junit/validator/AnnotationsValidator$FieldValidator
+Event: 0.102 loading class org/junit/validator/AnnotationsValidator$FieldValidator done
+Event: 0.102 loading class java/util/Collections$SingletonList
+Event: 0.102 loading class java/util/Collections$SingletonList done
+Event: 0.102 loading class org/junit/validator/PublicClassValidator
+Event: 0.102 loading class org/junit/validator/PublicClassValidator done
+Event: 0.102 loading class org/junit/runners/model/TestClass
+Event: 0.102 loading class org/junit/runners/model/TestClass done
+Event: 0.102 loading class org/junit/runners/model/Annotatable
+Event: 0.102 loading class org/junit/runners/model/Annotatable done
+Event: 0.103 loading class org/junit/runners/model/FrameworkMember
+Event: 0.103 loading class org/junit/runners/model/FrameworkMember done
+Event: 0.103 loading class org/junit/runners/model/FrameworkMethod
+Event: 0.103 loading class org/junit/runners/model/FrameworkMethod done
+Event: 0.103 loading class org/junit/runners/model/FrameworkField
+Event: 0.103 loading class org/junit/runners/model/FrameworkField done
+Event: 0.103 loading class org/junit/runners/model/TestClass$FieldComparator
+Event: 0.103 loading class org/junit/runners/model/TestClass$FieldComparator done
+Event: 0.103 loading class org/junit/runners/model/TestClass$MethodComparator
+Event: 0.103 loading class org/junit/runners/model/TestClass$MethodComparator done
+Event: 0.104 loading class org/junit/internal/MethodSorter
+Event: 0.104 loading class org/junit/internal/MethodSorter done
+Event: 0.104 loading class org/junit/internal/MethodSorter$1
+Event: 0.104 loading class org/junit/internal/MethodSorter$1 done
+Event: 0.104 loading class org/junit/internal/MethodSorter$2
+Event: 0.104 loading class org/junit/internal/MethodSorter$2 done
+Event: 0.104 loading class org/junit/FixMethodOrder
+Event: 0.104 loading class org/junit/FixMethodOrder done
+Event: 0.104 loading class java/util/TimSort
+Event: 0.104 loading class java/util/TimSort done
+Event: 0.104 loading class org/junit/Before
+Event: 0.104 loading class org/junit/Before done
+Event: 0.104 loading class org/junit/BeforeClass
+Event: 0.104 loading class org/junit/BeforeClass done
+Event: 0.105 loading class org/junit/runners/ParentRunner$1
+Event: 0.105 loading class org/junit/runners/ParentRunner$1 done
+Event: 0.105 loading class org/junit/internal/Checks
+Event: 0.105 loading class org/junit/internal/Checks done
+Event: 0.105 loading class org/junit/AfterClass
+Event: 0.105 loading class org/junit/AfterClass done
+Event: 0.105 loading class org/junit/internal/runners/rules/RuleMemberValidator
+Event: 0.105 loading class org/junit/internal/runners/rules/RuleMemberValidator done
+Event: 0.105 loading class org/junit/internal/runners/rules/RuleMemberValidator$RuleValidator
+Event: 0.105 loading class org/junit/internal/runners/rules/RuleMemberValidator$RuleValidator done
+Event: 0.105 loading class org/junit/internal/runners/rules/RuleMemberValidator$Builder
+Event: 0.105 loading class org/junit/internal/runners/rules/RuleMemberValidator$Builder done
+Event: 0.106 loading class org/junit/ClassRule
+Event: 0.106 loading class org/junit/ClassRule done
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$DeclaringClassMustBePublic
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$DeclaringClassMustBePublic done
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBeStatic
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBeStatic done
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBePublic
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBePublic done
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$FieldMustBeATestRule
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$FieldMustBeATestRule done
+Event: 0.106 loading class org/junit/Rule
+Event: 0.106 loading class org/junit/Rule done
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBeNonStaticOrAlsoClassRule
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$MemberMustBeNonStaticOrAlsoClassRule done
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$FieldMustBeARule
+Event: 0.106 loading class org/junit/internal/runners/rules/RuleMemberValidator$FieldMustBeARule done
+Event: 0.107 loading class org/junit/internal/runners/rules/RuleMemberValidator$MethodMustBeATestRule
+Event: 0.107 loading class org/junit/internal/runners/rules/RuleMemberValidator$MethodMustBeATestRule done
+Event: 0.107 loading class org/junit/internal/runners/rules/RuleMemberValidator$MethodMustBeARule
+Event: 0.107 loading class org/junit/internal/runners/rules/RuleMemberValidator$MethodMustBeARule done
+Event: 0.107 loading class org/junit/validator/ValidateWith
+Event: 0.107 loading class org/junit/validator/ValidateWith done
+Event: 0.107 loading class java/lang/annotation/ElementType
+Event: 0.107 loading class java/lang/annotation/ElementType done
+Event: 0.108 loading class org/junit/Assert
+Event: 0.108 loading class org/junit/Assert done
+Event: 0.108 loading class java/lang/AssertionError
+Event: 0.108 loading class java/lang/AssertionError done
+Event: 0.108 loading class org/junit/ComparisonFailure
+Event: 0.108 loading class org/junit/ComparisonFailure done
+Event: 0.108 loading class org/junit/After
+Event: 0.108 loading class org/junit/After done
+Event: 0.109 loading class java/util/Formatter
+Event: 0.109 loading class java/util/Formatter done
+Event: 0.109 loading class java/util/Formatter$FormatSpecifier
+Event: 0.109 loading class java/util/Formatter$FormatString
+Event: 0.109 loading class java/util/Formatter$FormatString done
+Event: 0.109 loading class java/util/Formatter$FormatSpecifier done
+Event: 0.109 loading class java/util/Formatter$Flags
+Event: 0.109 loading class java/util/Formatter$Flags done
+Event: 0.109 loading class java/util/Formatter$Conversion
+Event: 0.109 loading class java/util/Formatter$Conversion done
+Event: 0.109 loading class java/util/Formatter$FixedString
+Event: 0.109 loading class java/util/Formatter$FixedString done
+Event: 0.109 loading class java/util/Formattable
+Event: 0.109 loading class java/util/Formattable done
+Event: 0.109 loading class org/junit/runner/OrderWith
+Event: 0.109 loading class org/junit/runner/OrderWith done
+Event: 0.109 loading class org/apache/maven/surefire/common/junit4/JUnit4ProviderUtil
+Event: 0.109 loading class org/apache/maven/surefire/common/junit4/JUnit4ProviderUtil done
+Event: 0.110 loading class org/apache/maven/surefire/common/junit4/MatchDescriptions
+Event: 0.110 loading class org/apache/maven/surefire/common/junit4/MatchDescriptions done
+Event: 0.110 loading class org/junit/internal/runners/model/EachTestNotifier
+Event: 0.110 loading class org/junit/internal/runners/model/EachTestNotifier done
+Event: 0.110 loading class org/junit/runner/notification/RunNotifier$3
+Event: 0.110 loading class org/junit/runner/notification/RunNotifier$3 done
+Event: 0.110 loading class org/junit/runners/ParentRunner$ClassRuleCollector
+Event: 0.110 loading class org/junit/runners/ParentRunner$ClassRuleCollector done
+Event: 0.110 loading class org/junit/rules/TestRule
+Event: 0.110 loading class org/junit/rules/TestRule done
+Event: 0.110 loading class org/junit/runners/RuleContainer
+Event: 0.110 loading class org/junit/runners/RuleContainer done
+Event: 0.111 loading class org/junit/runners/RuleContainer$1
+Event: 0.111 loading class org/junit/runners/RuleContainer$1 done
+Event: 0.111 loading class org/junit/runners/ParentRunner$4
+Event: 0.111 loading class org/junit/runners/ParentRunner$4 done
+Event: 0.111 loading class org/junit/runner/notification/RunNotifier$5
+Event: 0.111 loading class org/junit/runner/notification/RunNotifier$5 done
+Event: 0.111 loading class org/apache/maven/surefire/util/internal/TestClassMethodNameUtils
+Event: 0.111 loading class org/apache/maven/surefire/util/internal/TestClassMethodNameUtils done
+Event: 0.112 loading class org/junit/runners/BlockJUnit4ClassRunner$2
+Event: 0.112 loading class org/junit/runners/BlockJUnit4ClassRunner$2 done
+Event: 0.112 loading class org/junit/internal/runners/model/ReflectiveCallable
+Event: 0.112 loading class org/junit/internal/runners/model/ReflectiveCallable done
+Event: 0.112 loading class org/junit/runners/BlockJUnit4ClassRunner$RuleCollector
+Event: 0.112 loading class org/junit/runners/BlockJUnit4ClassRunner$RuleCollector done
+Event: 0.112 loading class org/junit/rules/MethodRule
+Event: 0.112 loading class org/junit/rules/MethodRule done
+Event: 0.112 loading class org/junit/runners/model/FrameworkMethod$1
+Event: 0.112 loading class org/junit/runners/model/FrameworkMethod$1 done
+Event: 0.112 loading class org/junit/runner/notification/RunNotifier$9
+Event: 0.112 loading class org/junit/runner/notification/RunNotifier$9 done
+Event: 0.113 loading class org/junit/runner/notification/RunNotifier$4
+Event: 0.113 loading class org/junit/runner/notification/RunNotifier$4 done
+Event: 0.113 loading class org/jbrew/cbrew/espresso/SumOperation
+Event: 0.113 loading class org/jbrew/cbrew/espresso/SumOperation done
+Event: 0.114 loading class java/lang/ClassLoaderHelper
+Event: 0.114 loading class java/lang/ClassLoaderHelper done
+Event: 0.114 loading class org/jbrew/cbrew/espresso/SumOperation$NativeAdapter
+Event: 0.114 loading class org/jbrew/cbrew/espresso/SumOperation$NativeAdapter done
+
+
+Dynamic libraries:
+5cec00000-5e3800000 rw-p 00000000 00:00 0 
+5e3800000-71a400000 ---p 00000000 00:00 0 
+71a400000-724a00000 rw-p 00000000 00:00 0 
+724a00000-7c0000000 ---p 00000000 00:00 0 
+7c0000000-7c00e0000 rw-p 00000000 00:00 0 
+7c00e0000-800000000 ---p 00000000 00:00 0 
+5629a9c9b000-5629a9c9c000 r-xp 00000000 fd:00 68571847                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/bin/java
+5629a9e9b000-5629a9e9c000 r--p 00000000 fd:00 68571847                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/bin/java
+5629a9e9c000-5629a9e9d000 rw-p 00001000 fd:00 68571847                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/bin/java
+5629aa79e000-5629aa7bf000 rw-p 00000000 00:00 0                          [heap]
+7f6ce0000000-7f6ce0021000 rw-p 00000000 00:00 0 
+7f6ce0021000-7f6ce4000000 ---p 00000000 00:00 0 
+7f6ce8000000-7f6ce8021000 rw-p 00000000 00:00 0 
+7f6ce8021000-7f6cec000000 ---p 00000000 00:00 0 
+7f6cec000000-7f6cec074000 rw-p 00000000 00:00 0 
+7f6cec074000-7f6cf0000000 ---p 00000000 00:00 0 
+7f6cf0000000-7f6cf0021000 rw-p 00000000 00:00 0 
+7f6cf0021000-7f6cf4000000 ---p 00000000 00:00 0 
+7f6cf4000000-7f6cf4021000 rw-p 00000000 00:00 0 
+7f6cf4021000-7f6cf8000000 ---p 00000000 00:00 0 
+7f6cf8000000-7f6cf80aa000 rw-p 00000000 00:00 0 
+7f6cf80aa000-7f6cfc000000 ---p 00000000 00:00 0 
+7f6cfc000000-7f6cfc0cd000 rw-p 00000000 00:00 0 
+7f6cfc0cd000-7f6d00000000 ---p 00000000 00:00 0 
+7f6d00000000-7f6d00092000 rw-p 00000000 00:00 0 
+7f6d00092000-7f6d04000000 ---p 00000000 00:00 0 
+7f6d04000000-7f6d0410d000 rw-p 00000000 00:00 0 
+7f6d0410d000-7f6d08000000 ---p 00000000 00:00 0 
+7f6d08000000-7f6d0802a000 rw-p 00000000 00:00 0 
+7f6d0802a000-7f6d0c000000 ---p 00000000 00:00 0 
+7f6d0c000000-7f6d0c021000 rw-p 00000000 00:00 0 
+7f6d0c021000-7f6d10000000 ---p 00000000 00:00 0 
+7f6d10000000-7f6d1002c000 rw-p 00000000 00:00 0 
+7f6d1002c000-7f6d14000000 ---p 00000000 00:00 0 
+7f6d14000000-7f6d14021000 rw-p 00000000 00:00 0 
+7f6d14021000-7f6d18000000 ---p 00000000 00:00 0 
+7f6d18000000-7f6d18021000 rw-p 00000000 00:00 0 
+7f6d18021000-7f6d1c000000 ---p 00000000 00:00 0 
+7f6d1c000000-7f6d1c08a000 rw-p 00000000 00:00 0 
+7f6d1c08a000-7f6d20000000 ---p 00000000 00:00 0 
+7f6d20000000-7f6d20090000 rw-p 00000000 00:00 0 
+7f6d20090000-7f6d24000000 ---p 00000000 00:00 0 
+7f6d24000000-7f6d24021000 rw-p 00000000 00:00 0 
+7f6d24021000-7f6d28000000 ---p 00000000 00:00 0 
+7f6d28000000-7f6d28021000 rw-p 00000000 00:00 0 
+7f6d28021000-7f6d2c000000 ---p 00000000 00:00 0 
+7f6d2f04b000-7f6d3c000000 r--p 00000000 fd:00 33562311                   /usr/lib/locale/locale-archive
+7f6d3c000000-7f6d3c021000 rw-p 00000000 00:00 0 
+7f6d3c021000-7f6d40000000 ---p 00000000 00:00 0 
+7f6d40000000-7f6d40021000 rw-p 00000000 00:00 0 
+7f6d40021000-7f6d44000000 ---p 00000000 00:00 0 
+7f6d44000000-7f6d44021000 rw-p 00000000 00:00 0 
+7f6d44021000-7f6d48000000 ---p 00000000 00:00 0 
+7f6d48000000-7f6d48021000 rw-p 00000000 00:00 0 
+7f6d48021000-7f6d4c000000 ---p 00000000 00:00 0 
+7f6d4c000000-7f6d4c021000 rw-p 00000000 00:00 0 
+7f6d4c021000-7f6d50000000 ---p 00000000 00:00 0 
+7f6d54000000-7f6d54021000 rw-p 00000000 00:00 0 
+7f6d54021000-7f6d58000000 ---p 00000000 00:00 0 
+7f6d5b3c4000-7f6d5b3c5000 r-xp 00000000 fd:02 538628926                  /home/nealk/JBrew/JBrew/bin/libagg_summer.so
+7f6d5b3c5000-7f6d5b5c4000 ---p 00001000 fd:02 538628926                  /home/nealk/JBrew/JBrew/bin/libagg_summer.so
+7f6d5b5c4000-7f6d5b5c5000 r--p 00000000 fd:02 538628926                  /home/nealk/JBrew/JBrew/bin/libagg_summer.so
+7f6d5b5c5000-7f6d5b5c6000 rw-p 00001000 fd:02 538628926                  /home/nealk/JBrew/JBrew/bin/libagg_summer.so
+7f6d5b5c6000-7f6d5b5c9000 ---p 00000000 00:00 0 
+7f6d5b5c9000-7f6d5b6c7000 rw-p 00000000 00:00 0 
+7f6d5b6c7000-7f6d5b6cf000 r-xp 00000000 fd:00 100749680                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libmanagement.so
+7f6d5b6cf000-7f6d5b8cf000 ---p 00008000 fd:00 100749680                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libmanagement.so
+7f6d5b8cf000-7f6d5b8d0000 r--p 00008000 fd:00 100749680                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libmanagement.so
+7f6d5b8d0000-7f6d5b8d1000 rw-p 00009000 fd:00 100749680                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libmanagement.so
+7f6d5b8d1000-7f6d5b8d4000 ---p 00000000 00:00 0 
+7f6d5b8d4000-7f6d5b9d2000 rw-p 00000000 00:00 0 
+7f6d5b9d2000-7f6d5b9e9000 r-xp 00000000 fd:00 100749682                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libnet.so
+7f6d5b9e9000-7f6d5bbe9000 ---p 00017000 fd:00 100749682                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libnet.so
+7f6d5bbe9000-7f6d5bbea000 r--p 00017000 fd:00 100749682                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libnet.so
+7f6d5bbea000-7f6d5bbeb000 rw-p 00018000 fd:00 100749682                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libnet.so
+7f6d5bbeb000-7f6d5bbfd000 r-xp 00000000 fd:00 100749683                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libnio.so
+7f6d5bbfd000-7f6d5bdfc000 ---p 00012000 fd:00 100749683                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libnio.so
+7f6d5bdfc000-7f6d5bdfd000 r--p 00011000 fd:00 100749683                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libnio.so
+7f6d5bdfd000-7f6d5bdfe000 rw-p 00012000 fd:00 100749683                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libnio.so
+7f6d5bdfe000-7f6d5bdff000 ---p 00000000 00:00 0 
+7f6d5bdff000-7f6d5beff000 rw-p 00000000 00:00 0 
+7f6d5beff000-7f6d5bf02000 ---p 00000000 00:00 0 
+7f6d5bf02000-7f6d5c000000 rw-p 00000000 00:00 0 
+7f6d5c000000-7f6d5c021000 rw-p 00000000 00:00 0 
+7f6d5c021000-7f6d60000000 ---p 00000000 00:00 0 
+7f6d60059000-7f6d6005a000 ---p 00000000 00:00 0 
+7f6d6005a000-7f6d6005d000 ---p 00000000 00:00 0 
+7f6d6005d000-7f6d6015a000 rw-p 00000000 00:00 0 
+7f6d6015a000-7f6d6015b000 ---p 00000000 00:00 0 
+7f6d6015b000-7f6d6015e000 ---p 00000000 00:00 0 
+7f6d6015e000-7f6d6025b000 rw-p 00000000 00:00 0 
+7f6d6025b000-7f6d6025c000 ---p 00000000 00:00 0 
+7f6d6025c000-7f6d6025f000 ---p 00000000 00:00 0 
+7f6d6025f000-7f6d6035c000 rw-p 00000000 00:00 0 
+7f6d6035c000-7f6d6035d000 ---p 00000000 00:00 0 
+7f6d6035d000-7f6d60360000 ---p 00000000 00:00 0 
+7f6d60360000-7f6d6045d000 rw-p 00000000 00:00 0 
+7f6d6045d000-7f6d6045e000 ---p 00000000 00:00 0 
+7f6d6045e000-7f6d60461000 ---p 00000000 00:00 0 
+7f6d60461000-7f6d6055e000 rw-p 00000000 00:00 0 
+7f6d6055e000-7f6d6055f000 ---p 00000000 00:00 0 
+7f6d6055f000-7f6d60562000 ---p 00000000 00:00 0 
+7f6d60562000-7f6d6065f000 rw-p 00000000 00:00 0 
+7f6d6065f000-7f6d60660000 ---p 00000000 00:00 0 
+7f6d60660000-7f6d60663000 ---p 00000000 00:00 0 
+7f6d60663000-7f6d70000000 rw-p 00000000 00:00 0 
+7f6d70000000-7f6d70021000 rw-p 00000000 00:00 0 
+7f6d70021000-7f6d74000000 ---p 00000000 00:00 0 
+7f6d74000000-7f6d74021000 rw-p 00000000 00:00 0 
+7f6d74021000-7f6d78000000 ---p 00000000 00:00 0 
+7f6d78000000-7f6d78021000 rw-p 00000000 00:00 0 
+7f6d78021000-7f6d7c000000 ---p 00000000 00:00 0 
+7f6d7c000000-7f6d7c021000 rw-p 00000000 00:00 0 
+7f6d7c021000-7f6d80000000 ---p 00000000 00:00 0 
+7f6d80000000-7f6d80021000 rw-p 00000000 00:00 0 
+7f6d80021000-7f6d84000000 ---p 00000000 00:00 0 
+7f6d84000000-7f6d84021000 rw-p 00000000 00:00 0 
+7f6d84021000-7f6d88000000 ---p 00000000 00:00 0 
+7f6d88000000-7f6d88021000 rw-p 00000000 00:00 0 
+7f6d88021000-7f6d8c000000 ---p 00000000 00:00 0 
+7f6d8c000000-7f6d8c021000 rw-p 00000000 00:00 0 
+7f6d8c021000-7f6d90000000 ---p 00000000 00:00 0 
+7f6d9000d000-7f6d90010000 ---p 00000000 00:00 0 
+7f6d90010000-7f6d90046000 rw-p 00000000 00:00 0 
+7f6d90046000-7f6d90047000 ---p 00000000 00:00 0 
+7f6d90047000-7f6d9004a000 ---p 00000000 00:00 0 
+7f6d9004a000-7f6d90147000 rw-p 00000000 00:00 0 
+7f6d90147000-7f6d90148000 ---p 00000000 00:00 0 
+7f6d90148000-7f6d9014b000 ---p 00000000 00:00 0 
+7f6d9014b000-7f6d90248000 rw-p 00000000 00:00 0 
+7f6d90248000-7f6d90249000 ---p 00000000 00:00 0 
+7f6d90249000-7f6d9024c000 ---p 00000000 00:00 0 
+7f6d9024c000-7f6d90349000 rw-p 00000000 00:00 0 
+7f6d90349000-7f6d9034a000 ---p 00000000 00:00 0 
+7f6d9034a000-7f6d9034d000 ---p 00000000 00:00 0 
+7f6d9034d000-7f6d9044a000 rw-p 00000000 00:00 0 
+7f6d9044a000-7f6d9044b000 ---p 00000000 00:00 0 
+7f6d9044b000-7f6d9044e000 ---p 00000000 00:00 0 
+7f6d9044e000-7f6d9054b000 rw-p 00000000 00:00 0 
+7f6d9054b000-7f6d9054e000 ---p 00000000 00:00 0 
+7f6d9054e000-7f6d9064c000 rw-p 00000000 00:00 0 
+7f6d9064c000-7f6d9064f000 ---p 00000000 00:00 0 
+7f6d9064f000-7f6d9074d000 rw-p 00000000 00:00 0 
+7f6d9074d000-7f6d90750000 ---p 00000000 00:00 0 
+7f6d90750000-7f6d9084e000 rw-p 00000000 00:00 0 
+7f6d9084e000-7f6d9084f000 ---p 00000000 00:00 0 
+7f6d9084f000-7f6d94000000 rw-p 00000000 00:00 0 
+7f6d94000000-7f6d94021000 rw-p 00000000 00:00 0 
+7f6d94021000-7f6d98000000 ---p 00000000 00:00 0 
+7f6d9800c000-7f6d9835d000 rw-p 00000000 00:00 0 
+7f6d9835d000-7f6d9852d000 r--s 04455000 fd:00 34136470                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/rt.jar
+7f6d9852d000-7f6d98cbe000 rw-p 00000000 00:00 0 
+7f6d98cbe000-7f6d98dfe000 ---p 00000000 00:00 0 
+7f6d98dfe000-7f6d98dff000 ---p 00000000 00:00 0 
+7f6d98dff000-7f6d98eff000 rw-p 00000000 00:00 0 
+7f6d98eff000-7f6d98f00000 ---p 00000000 00:00 0 
+7f6d98f00000-7f6d99000000 rw-p 00000000 00:00 0 
+7f6d99000000-7f6d99410000 rwxp 00000000 00:00 0 
+7f6d99410000-7f6da8000000 ---p 00000000 00:00 0 
+7f6da8000000-7f6da8d77000 rw-p 00000000 00:00 0 
+7f6da8d77000-7f6dac000000 ---p 00000000 00:00 0 
+7f6dac020000-7f6dac029000 r--s 0006f000 fd:02 1611120212                 /home/nealk/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar
+7f6dac029000-7f6dac033000 r--s 00054000 fd:02 1611121809                 /home/nealk/.m2/repository/junit/junit/4.13/junit-4.13.jar
+7f6dac033000-7f6dac034000 ---p 00000000 00:00 0 
+7f6dac034000-7f6dac134000 rw-p 00000000 00:00 0 
+7f6dac134000-7f6dac135000 ---p 00000000 00:00 0 
+7f6dac135000-7f6dac235000 rw-p 00000000 00:00 0 
+7f6dac235000-7f6dac236000 ---p 00000000 00:00 0 
+7f6dac236000-7f6dac336000 rw-p 00000000 00:00 0 
+7f6dac336000-7f6dac337000 ---p 00000000 00:00 0 
+7f6dac337000-7f6dac437000 rw-p 00000000 00:00 0 
+7f6dac437000-7f6dac438000 ---p 00000000 00:00 0 
+7f6dac438000-7f6dac538000 rw-p 00000000 00:00 0 
+7f6dac538000-7f6dac539000 ---p 00000000 00:00 0 
+7f6dac539000-7f6dac639000 rw-p 00000000 00:00 0 
+7f6dac639000-7f6dac63a000 ---p 00000000 00:00 0 
+7f6dac63a000-7f6dac73a000 rw-p 00000000 00:00 0 
+7f6dac73a000-7f6dac73b000 ---p 00000000 00:00 0 
+7f6dac73b000-7f6dac83b000 rw-p 00000000 00:00 0 
+7f6dac83b000-7f6dac83c000 ---p 00000000 00:00 0 
+7f6dac83c000-7f6dac93c000 rw-p 00000000 00:00 0 
+7f6dac93c000-7f6dac93d000 ---p 00000000 00:00 0 
+7f6dac93d000-7f6daca3d000 rw-p 00000000 00:00 0 
+7f6daca3d000-7f6daca3e000 ---p 00000000 00:00 0 
+7f6daca3e000-7f6dacbe4000 rw-p 00000000 00:00 0 
+7f6dacbe4000-7f6dad59a000 ---p 00000000 00:00 0 
+7f6dad59a000-7f6dad640000 rw-p 00000000 00:00 0 
+7f6dad640000-7f6dadff6000 ---p 00000000 00:00 0 
+7f6dadff6000-7f6dae049000 rw-p 00000000 00:00 0 
+7f6dae049000-7f6dae524000 ---p 00000000 00:00 0 
+7f6dae524000-7f6dae536000 rw-p 00000000 00:00 0 
+7f6dae536000-7f6dae8e5000 ---p 00000000 00:00 0 
+7f6dae8e5000-7f6dae8ed000 r-xp 00000000 fd:00 100749690                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libzip.so
+7f6dae8ed000-7f6daeaec000 ---p 00008000 fd:00 100749690                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libzip.so
+7f6daeaec000-7f6daeaed000 r--p 00007000 fd:00 100749690                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libzip.so
+7f6daeaed000-7f6daeaee000 rw-p 00000000 00:00 0 
+7f6daeaee000-7f6daf2f3000 r--s 00000000 fd:00 36016902                   /var/lib/sss/mc/passwd
+7f6daf2f3000-7f6daf2fb000 r-xp 00000000 fd:00 34247528                   /usr/lib64/libnss_sss.so.2
+7f6daf2fb000-7f6daf4fa000 ---p 00008000 fd:00 34247528                   /usr/lib64/libnss_sss.so.2
+7f6daf4fa000-7f6daf4fb000 r--p 00007000 fd:00 34247528                   /usr/lib64/libnss_sss.so.2
+7f6daf4fb000-7f6daf4fc000 rw-p 00008000 fd:00 34247528                   /usr/lib64/libnss_sss.so.2
+7f6daf4fc000-7f6daf527000 r-xp 00000000 fd:00 100749672                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libjava.so
+7f6daf527000-7f6daf727000 ---p 0002b000 fd:00 100749672                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libjava.so
+7f6daf727000-7f6daf728000 r--p 0002b000 fd:00 100749672                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libjava.so
+7f6daf728000-7f6daf729000 rw-p 0002c000 fd:00 100749672                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libjava.so
+7f6daf729000-7f6daf72a000 rw-p 00000000 00:00 0 
+7f6daf72a000-7f6daf738000 r-xp 00000000 fd:00 100749689                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libverify.so
+7f6daf738000-7f6daf937000 ---p 0000e000 fd:00 100749689                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libverify.so
+7f6daf937000-7f6daf939000 r--p 0000d000 fd:00 100749689                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/libverify.so
+7f6daf939000-7f6daf93a000 rw-p 00000000 00:00 0 
+7f6daf93a000-7f6daf941000 r-xp 00000000 fd:00 33562344                   /usr/lib64/librt-2.28.so
+7f6daf941000-7f6dafb41000 ---p 00007000 fd:00 33562344                   /usr/lib64/librt-2.28.so
+7f6dafb41000-7f6dafb42000 r--p 00007000 fd:00 33562344                   /usr/lib64/librt-2.28.so
+7f6dafb42000-7f6dafb43000 rw-p 00008000 fd:00 33562344                   /usr/lib64/librt-2.28.so
+7f6dafb43000-7f6dafb5a000 r-xp 00000000 fd:00 33554573                   /usr/lib64/libgcc_s-8-20190507.so.1
+7f6dafb5a000-7f6dafd59000 ---p 00017000 fd:00 33554573                   /usr/lib64/libgcc_s-8-20190507.so.1
+7f6dafd59000-7f6dafd5a000 r--p 00016000 fd:00 33554573                   /usr/lib64/libgcc_s-8-20190507.so.1
+7f6dafd5a000-7f6dafd5b000 rw-p 00017000 fd:00 33554573                   /usr/lib64/libgcc_s-8-20190507.so.1
+7f6dafd5b000-7f6dafedc000 r-xp 00000000 fd:00 33562330                   /usr/lib64/libm-2.28.so
+7f6dafedc000-7f6db00db000 ---p 00181000 fd:00 33562330                   /usr/lib64/libm-2.28.so
+7f6db00db000-7f6db00dc000 r--p 00180000 fd:00 33562330                   /usr/lib64/libm-2.28.so
+7f6db00dc000-7f6db00dd000 rw-p 00181000 fd:00 33562330                   /usr/lib64/libm-2.28.so
+7f6db00dd000-7f6db0263000 r-xp 00000000 fd:00 33562536                   /usr/lib64/libstdc++.so.6.0.25
+7f6db0263000-7f6db0462000 ---p 00186000 fd:00 33562536                   /usr/lib64/libstdc++.so.6.0.25
+7f6db0462000-7f6db046e000 r--p 00185000 fd:00 33562536                   /usr/lib64/libstdc++.so.6.0.25
+7f6db046e000-7f6db046f000 rw-p 00191000 fd:00 33562536                   /usr/lib64/libstdc++.so.6.0.25
+7f6db046f000-7f6db0472000 rw-p 00000000 00:00 0 
+7f6db0472000-7f6db1140000 r-xp 00000000 fd:00 68571860                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/server/libjvm.so
+7f6db1140000-7f6db133f000 ---p 00cce000 fd:00 68571860                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/server/libjvm.so
+7f6db133f000-7f6db13dd000 r--p 00ccd000 fd:00 68571860                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/server/libjvm.so
+7f6db13dd000-7f6db1406000 rw-p 00d6b000 fd:00 68571860                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/server/libjvm.so
+7f6db1406000-7f6db1437000 rw-p 00000000 00:00 0 
+7f6db1437000-7f6db15f0000 r-xp 00000000 fd:00 33562326                   /usr/lib64/libc-2.28.so
+7f6db15f0000-7f6db17f0000 ---p 001b9000 fd:00 33562326                   /usr/lib64/libc-2.28.so
+7f6db17f0000-7f6db17f4000 r--p 001b9000 fd:00 33562326                   /usr/lib64/libc-2.28.so
+7f6db17f4000-7f6db17f6000 rw-p 001bd000 fd:00 33562326                   /usr/lib64/libc-2.28.so
+7f6db17f6000-7f6db17fa000 rw-p 00000000 00:00 0 
+7f6db17fa000-7f6db17fd000 r-xp 00000000 fd:00 33562328                   /usr/lib64/libdl-2.28.so
+7f6db17fd000-7f6db19fc000 ---p 00003000 fd:00 33562328                   /usr/lib64/libdl-2.28.so
+7f6db19fc000-7f6db19fd000 r--p 00002000 fd:00 33562328                   /usr/lib64/libdl-2.28.so
+7f6db19fd000-7f6db19fe000 rw-p 00003000 fd:00 33562328                   /usr/lib64/libdl-2.28.so
+7f6db19fe000-7f6db1a0c000 r-xp 00000000 fd:00 36446709                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/jli/libjli.so
+7f6db1a0c000-7f6db1c0b000 ---p 0000e000 fd:00 36446709                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/jli/libjli.so
+7f6db1c0b000-7f6db1c0c000 r--p 0000d000 fd:00 36446709                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el8_1.x86_64/jre/lib/amd64/jli/libjli.so
+7f6db1c0c000-7f6db1c0d000 rw-p 00000000 00:00 0 
+7f6db1c0d000-7f6db1c23000 r-xp 00000000 fd:00 33562531                   /usr/lib64/libz.so.1.2.11
+7f6db1c23000-7f6db1e22000 ---p 00016000 fd:00 33562531                   /usr/lib64/libz.so.1.2.11
+7f6db1e22000-7f6db1e23000 r--p 00015000 fd:00 33562531                   /usr/lib64/libz.so.1.2.11
+7f6db1e23000-7f6db1e24000 rw-p 00000000 00:00 0 
+7f6db1e24000-7f6db1e3f000 r-xp 00000000 fd:00 33562340                   /usr/lib64/libpthread-2.28.so
+7f6db1e3f000-7f6db203e000 ---p 0001b000 fd:00 33562340                   /usr/lib64/libpthread-2.28.so
+7f6db203e000-7f6db203f000 r--p 0001a000 fd:00 33562340                   /usr/lib64/libpthread-2.28.so
+7f6db203f000-7f6db2040000 rw-p 0001b000 fd:00 33562340                   /usr/lib64/libpthread-2.28.so
+7f6db2040000-7f6db2044000 rw-p 00000000 00:00 0 
+7f6db2044000-7f6db206c000 r-xp 00000000 fd:00 33562239                   /usr/lib64/ld-2.28.so
+7f6db206d000-7f6db214a000 rw-p 00000000 00:00 0 
+7f6db214a000-7f6db214b000 ---p 00000000 00:00 0 
+7f6db214b000-7f6db214e000 ---p 00000000 00:00 0 
+7f6db214e000-7f6db224f000 rw-p 00000000 00:00 0 
+7f6db2250000-7f6db2253000 r--s 00012000 fd:02 1611122332                 /home/nealk/.m2/repository/org/apache/maven/surefire/surefire-junit4/2.22.2/surefire-junit4-2.22.2.jar
+7f6db2253000-7f6db2255000 r--s 00009000 fd:02 1074758521                 /home/nealk/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+7f6db2255000-7f6db2256000 r--s 00000000 fd:02 1611749732                 /home/nealk/.m2/repository/org/jbrew/core/annotations/0.1.0-beta.5/annotations-0.1.0-beta.5.jar
+7f6db2256000-7f6db2258000 r--s 00002000 fd:02 537708866                  /home/nealk/.m2/repository/org/apache/maven/surefire/surefire-logger-api/2.22.2/surefire-logger-api-2.22.2.jar
+7f6db2258000-7f6db225d000 r--s 00029000 fd:02 1611122312                 /home/nealk/.m2/repository/org/apache/maven/surefire/surefire-api/2.22.2/surefire-api-2.22.2.jar
+7f6db225d000-7f6db2261000 r--s 0003f000 fd:02 1611122318                 /home/nealk/.m2/repository/org/apache/maven/surefire/surefire-booter/2.22.2/surefire-booter-2.22.2.jar
+7f6db2261000-7f6db2262000 r--s 00000000 fd:02 1168062                    /home/nealk/JBrew/JBrew/cbrew/espresso/target/surefire/surefirebooter8273347997785871128.jar
+7f6db2262000-7f6db226a000 rw-s 00000000 fd:00 33924255                   /tmp/hsperfdata_nealk/8506
+7f6db226a000-7f6db226b000 rw-p 00000000 00:00 0 
+7f6db226b000-7f6db226c000 r--p 00000000 00:00 0 
+7f6db226c000-7f6db226d000 r--p 00028000 fd:00 33562239                   /usr/lib64/ld-2.28.so
+7f6db226d000-7f6db226e000 rw-p 00029000 fd:00 33562239                   /usr/lib64/ld-2.28.so
+7f6db226e000-7f6db226f000 rw-p 00000000 00:00 0 
+7fff8bc6e000-7fff8bc8f000 rw-p 00000000 00:00 0                          [stack]
+7fff8bd02000-7fff8bd05000 r--p 00000000 00:00 0                          [vvar]
+7fff8bd05000-7fff8bd07000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Djava.library.path=/home/nealk/JBrew/JBrew/bin/ 
+java_command: /home/nealk/JBrew/JBrew/cbrew/espresso/target/surefire/surefirebooter8273347997785871128.jar /home/nealk/JBrew/JBrew/cbrew/espresso/target/surefire 2020-04-15T17-22-15_618-jvmRun1 surefire4873075560912757663tmp surefire_11435575241880327381tmp
+java_class_path (initial): /home/nealk/JBrew/JBrew/cbrew/espresso/target/surefire/surefirebooter8273347997785871128.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/home/nealk/.local/bin:/home/nealk/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/nealk/maven/apache-maven-3.6.3/bin
+USERNAME=nealk
+SHELL=/bin/bash
+DISPLAY=:1
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xaf5740], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xaf5740], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8c6cb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8c6cb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8c6cb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8c6cb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8c6b40], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8c6f30], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8c6f30], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8c6f30], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8c6f30], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Red Hat Enterprise Linux release 8.1 (Ootpa)
+
+uname:Linux 4.18.0-147.8.1.el8_1.x86_64 #1 SMP Wed Feb 26 03:08:15 UTC 2020 x86_64
+libc:glibc 2.28 NPTL 2.28 
+rlimit: STACK 8192k, CORE infinity, NPROC 125923, NOFILE 4096, AS infinity
+load average:0.28 0.31 0.32
+
+/proc/meminfo:
+MemTotal:       32584540 kB
+MemFree:        23154072 kB
+MemAvailable:   24980056 kB
+Buffers:            2756 kB
+Cached:          2373700 kB
+SwapCached:            0 kB
+Active:          6838228 kB
+Inactive:        1381296 kB
+Active(anon):    5851360 kB
+Inactive(anon):   386756 kB
+Active(file):     986868 kB
+Inactive(file):   994540 kB
+Unevictable:          80 kB
+Mlocked:              80 kB
+SwapTotal:      16441340 kB
+SwapFree:       16441340 kB
+Dirty:               592 kB
+Writeback:           156 kB
+AnonPages:       5759812 kB
+Mapped:           843688 kB
+Shmem:            395048 kB
+KReclaimable:     313920 kB
+Slab:             663168 kB
+SReclaimable:     313920 kB
+SUnreclaim:       349248 kB
+KernelStack:       25648 kB
+PageTables:       111712 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    32733608 kB
+Committed_AS:   18932924 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   2465792 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      815996 kB
+DirectMap2M:    13678592 kB
+DirectMap1G:    18874368 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-15
+cpu_memory_nodes: 0
+active_processor_count: 16
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -1
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 4192854016
+memory_max_usage_in_bytes: 4227403776
+
+
+CPU:total 16 (initial active 16) (8 cores per cpu, 2 threads per core) family 6 model 158 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 2842.555
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 0
+cpu cores	: 8
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.556
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 1
+cpu cores	: 8
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.006
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 2
+cpu cores	: 8
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4703.503
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 3
+cpu cores	: 8
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.628
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 4
+cpu cores	: 8
+apicid		: 8
+initial apicid	: 8
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.939
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 5
+cpu cores	: 8
+apicid		: 10
+initial apicid	: 10
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4701.098
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 6
+cpu cores	: 8
+apicid		: 12
+initial apicid	: 12
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.089
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 7
+cpu cores	: 8
+apicid		: 14
+initial apicid	: 14
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 8
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.466
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 0
+cpu cores	: 8
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 9
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.726
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 1
+cpu cores	: 8
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 10
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.057
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 2
+cpu cores	: 8
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 11
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.080
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 3
+cpu cores	: 8
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 12
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.849
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 4
+cpu cores	: 8
+apicid		: 9
+initial apicid	: 9
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 13
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4700.735
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 5
+cpu cores	: 8
+apicid		: 11
+initial apicid	: 11
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 14
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4701.770
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 6
+cpu cores	: 8
+apicid		: 13
+initial apicid	: 13
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 15
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+stepping	: 13
+microcode	: 0xca
+cpu MHz		: 4702.602
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 16
+core id		: 7
+cpu cores	: 8
+apicid		: 15
+initial apicid	: 15
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs taa itlb_multihit
+bogomips	: 7200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 32584540k(23153988k free), swap 16441340k(16441340k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.242-b08) for linux-amd64 JRE (1.8.0_242-b08), built on Jan 16 2020 01:43:43 by "mockbuild" with gcc 8.3.1 20190507 (Red Hat 8.3.1-4)
+
+time: Wed Apr 15 17:22:17 2020
+timezone: EDT
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

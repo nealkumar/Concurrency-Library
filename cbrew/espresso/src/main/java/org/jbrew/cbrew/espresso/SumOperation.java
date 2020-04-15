@@ -1,21 +1,35 @@
 package org.jbrew.cbrew.espresso;
 
-public class SumOperation implements EspressoOperation{
+public class SumOperation /*implements EspressoOperation*/{
+	
+	private final static int DEFAULT_NUM_THREADS = 5;
 	
 	static {
-		System.load("agg_summer");
-	}
-	
-	private native int sum(int size, int[] arr);
-	
-	@Override
-	public int performOperation(int size, int[] arr) {
-		return sum(size, arr);
+		System.loadLibrary("agg_summer");
 	}
 
-	@Override
+	//@Override
 	public int performOperation(int[] arr) {
-		return sum(arr.length, arr);
+		//return new NativeAdapter().sumParallel(arr.length, arr, DEFAULT_NUM_THREADS);
+		return new NativeAdapter().sumSequential(arr.length, arr);
+		//return sumSequential(arr.length, arr);
+	}
+
+	//@Override
+	public int performOperation(int[] arr, boolean parallel) {
+		return new NativeAdapter().sumSequential(arr.length, arr);
+		//return sumSequential(arr.length, arr);
+	}
+
+	//@Override
+	public int performOperation(int numThreads, int[] arr) {
+		return new NativeAdapter().sumSequential(arr.length, arr);
+		//return sumSequential(arr.length, arr);
+	}
+	
+	private class NativeAdapter{
+		private native int sumSequential(int size, int[] arr);
+		private native int sumParallel(int size, int[] arr, int numThreads);
 	}
 
 }
