@@ -8,10 +8,11 @@
  */
 JNIEXPORT jint JNICALL Java_org_jbrew_cbrew_espresso_SumOperation_sumSequential
   (JNIEnv *env, jobject this, jint jsize, jintArray jarr){
-	int i, sum=0;
+	int sum=0;
 	jint *body = (*env)->GetIntArrayElements(env, jarr, 0);
-	for(i=0; i<jsize; i++){
-		sum += body[i];
+	int *p;
+	for(p=&body[0]; p<&body[jsize]; p++){
+		sum += *p;
 	}
 	return sum;
   }
