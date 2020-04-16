@@ -10,7 +10,7 @@ jobs:
       - name: Run Maven
         uses: xlui/action-maven-cli/jdk11@master
         with:
-           args: -Dmaven.test.skip=true verify sonar:sonar
+          args: -Dmaven.test.skip=true verify sonar:sonar
           #args: verify sonar:sonar
           #args: clean package org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
