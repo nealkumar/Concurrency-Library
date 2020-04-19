@@ -2,12 +2,12 @@ package org.jbrew.cbrew.espresso;
 
 import org.jbrew.core.annotations.UnderDevelopmentInvestigation;
 
-public class SumOperation extends EspressoOperation {
+public class IntSumOperation extends IntOperation {
 
 	private final static int DEFAULT_NUM_THREADS = 5;
 
 	static {
-		System.loadLibrary("agg_summer");
+		System.loadLibrary("summer");
 	}
 
 	private native int sumSequential(int size, int[] arr);

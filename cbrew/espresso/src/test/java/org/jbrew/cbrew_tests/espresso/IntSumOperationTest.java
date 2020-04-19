@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.jbrew.cbrew.espresso.SumOperation;
+import org.jbrew.cbrew.espresso.IntSumOperation;
 import org.jbrew.core.annotations.Testing;
 import org.junit.Ignore;
 import org.junit.Test;
 
 @Testing
-public class SumTest {
+public class IntSumOperationTest {
 	
 	@Test
 	public void sumRecBasicTest() {
 		int[] arr = {100, 50, 50};
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int sum = op.performOperation(arr);
 		assertEquals(200, sum);
 	}
@@ -29,7 +29,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSum(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
@@ -42,7 +42,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSum(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
@@ -55,7 +55,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSum(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
@@ -68,7 +68,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSumStreams(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
@@ -81,7 +81,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSumStreams(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
@@ -94,7 +94,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSumStreams(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
@@ -108,7 +108,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSumStreams(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
@@ -122,7 +122,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSumStreams(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
@@ -136,7 +136,7 @@ public class SumTest {
 			arr[index] = new Random().nextInt();
 		}
 		int trueSum = findSumStreams(arr);
-		SumOperation op = new SumOperation();
+		IntSumOperation op = new IntSumOperation();
 		int testSum = op.performOperation(arr);
 		System.out.println("Expecting: " + trueSum + ", Received: " + testSum);
 		assertEquals(trueSum, testSum);
