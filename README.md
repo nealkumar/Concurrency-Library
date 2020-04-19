@@ -17,6 +17,15 @@
 * To dive into the concurrency library's source code, please navigate [here](https://github.com/nealkumar/JBrew/tree/docpatch-010/concurrent). The README.md contains information on how to get started, and full documentation is available at [jbrew.org](https://jbrew.org/).
 * Feedback is always welcome, and can be submitted to [support@jbrew.org](mailto:support@jbrew.org). Thank you!
 
+# Installation
+## GNU/Linux
+1. Simply download the file "install.sh" above
+2. At your desired java.library.path, run the bash script as follows:
+	<code>./install.sh</code> will install to the current directory, and
+	<code>./install.sh /path/to/java.library.path</code> will install to the directory specified.
+3. You may be prompted to enter sudo password. Note that no text or cursor movement will appear on screen.
+	<code>[sudo] password for user:   </code>
+4. Your installation is complete! Make sure you set your java.library.java before compiling your code, as these libraries have native depdendenceies! For details on how to do this - either in Eclipse or from a terminal - can be found [at this link](https://examples.javacodegeeks.com/java-basics/java-library-path-what-is-it-and-how-to-use/).
 # JBrew Maven Dependencies
 <p>The following libraries are available as Maven depdendencies, which can be inserted into your project's <code>pom.xml</code>.</p>
 
