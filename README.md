@@ -38,7 +38,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew</groupId>
       <artifactId>concurrent</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -48,7 +48,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.cbrew</groupId>
       <artifactId>cbrew</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -58,7 +58,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.cbrew</groupId>
       <artifactId>cbrew-validators</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -68,7 +68,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -78,7 +78,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -88,7 +88,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>annotations</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -98,7 +98,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>jbrew-core</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
