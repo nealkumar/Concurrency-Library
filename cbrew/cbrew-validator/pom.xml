@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.jbrew.cbrew</groupId>
 		<artifactId>cbrew</artifactId>
-		<version>0.1.0-beta.6-SNAPSHOT</version>
+		<version>0.1.0-rc-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>cbrew-validator</artifactId>
