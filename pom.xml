@@ -5,7 +5,7 @@
 	<packaging>pom</packaging>
 	<groupId>org.jbrew</groupId>
 	<artifactId>jbrew-parent</artifactId>
-	<version>0.1.0-beta.6-SNAPSHOT</version>
+	<version>0.1.0-rc-SNAPSHOT</version>
 
 	<name>JBrew :: Parent POM</name>
 	<description>
@@ -13,7 +13,8 @@
 		Java Native Interface, carefully tuned for high performance Linux systems using OpenJDK versions 8 or greater!
 		The official documentation can be found at jbrew.org.
 	</description>
-	<url>https://jbrew.org</url>
+	<url>http://src.jbrew.org</url>
+	<inceptionYear>2020</inceptionYear>
 
 	<licenses>
 		<license>
@@ -69,7 +70,7 @@
 			<name>Neal Kumar</name>
 			<email>nealk@nealk.com</email>
 			<organization>JBrew</organization>
-			<organizationUrl>jbrew.org</organizationUrl>
+			<organizationUrl>http://src.jbrew.org</organizationUrl>
 		</developer>
 	</developers>
 
@@ -87,8 +88,8 @@
 
 	<distributionManagement>
 		<site>
-			<id>http://jbrew.org</id>
-			<url>http://jbrew.org</url>
+			<id>http://src.jbrew.org</id>
+			<url>http://src.jbrew.org</url>
 		</site>
 		<snapshotRepository>
 			<id>ossrh</id>

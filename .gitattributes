@@ -1,9 +1,3 @@
-*.so linguist-language=C
-
-*.h linguist-language=Shell
-
-*.class linguist-language=Shell
-
-*.yml linguist-language=Java
+*.h linguist-language=C
 
 *.md linguist-language=GCC-Machine-Description
