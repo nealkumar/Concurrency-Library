@@ -25,12 +25,11 @@ public class Validator {
 
 	private Validator(CBrewValidatorBuilder builder){
 		this.validateTaskList = new ArrayList<>(2);
-		this.taskQueue = new BoundedTaskQueue(validateTaskList.size());
+		this.taskQueue = new BoundedTaskQueue(validateTaskList.size());	// TODO - Make TaskQueue a collection so it can be be used instead of ArrayList 
 		this.memTestTask = (builder.memTestFlag) ? new MemoryAllocateValidatorTask() : null;
 		this.pThreadTestTask = (builder.pThreadTestFlag) ? new PThreadValidatorTask() : null;
 		this.runTasks(this.validateTaskList.toArray(new Task<?>[this.validateTaskList.size()]));
 	}
-	
 	
 	@SafeVarargs
 	private final void runTasks(Task<?>... tasks) {
@@ -60,7 +59,7 @@ public class Validator {
 		@Override
 		protected void execute() {
 			boolean result = executeTask();
-			accept(result);
+			accept(result);		//release this thread from blocking any more resources
 			String printStmt = "Status of " + getTaskName() + " Test is " + result;
 			Logger.getLogger(ValidatorTask.class).info(printStmt);
 			System.out.println(printStmt);
