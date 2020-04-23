@@ -3,7 +3,7 @@ package org.jbrew.cbrew.espresso;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-public abstract class EspressoOperation {
+public abstract class IntOperation extends NumericOperation<Integer>{
 
 	public final static int DEFAULT_NUM_THREADS = 8;
 
@@ -13,9 +13,14 @@ public abstract class EspressoOperation {
 	 * @param arr - the <code>int</code> array upon which the operation will occur.
 	 * @return an <code>int</code> with the results of the operation.
 	 */
-	public final int performOperation(int[] arr) {
-		return performSequential(arr);
+	public final Integer performOperation(Integer[] arr) {
+		return performSequential(mapToIntArray(arr));
 	}
+	
+	public final int performOperation(int[] arr) {
+		return performSequential((arr));
+	}
+	
 
 	/**
 	 * The variable argument implementation of {@link #performOperation(int[])}.
@@ -61,6 +66,10 @@ public abstract class EspressoOperation {
 	 */
 	public final int performOperation(int[] arr, int numThreads) {
 		return performParallel(arr, numThreads);
+	}
+	
+	private final int[] mapToIntArray(Integer[] arr) {
+		return Arrays.stream(arr).parallel().mapToInt(Integer::intValue).toArray();
 	}
 
 	protected abstract int performSequential(int[] arr);
