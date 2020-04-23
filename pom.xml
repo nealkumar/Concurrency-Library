@@ -267,8 +267,16 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.1</version>
-					<!--<configuration> <compilerArgs> <compilerArg>-h</compilerArg> <compilerArg>native/target/headers</compilerArg> 
+					<!--<configuration> <compilerArgs> <compilerArg>-h</compilerArg> <compilerArg>/headers</compilerArg> 
 						</compilerArgs> </configuration> -->
+					<configuration>
+						<compilerArgs>
+							<compilerArg>-h</compilerArg>
+							<compilerArg>${user.dir}/target/headers</compilerArg>
+						</compilerArgs>
+						<source>8</source>
+						<target>8</target>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>

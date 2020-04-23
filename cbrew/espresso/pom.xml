@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>jar</packaging>
+  <parent>
+    <groupId>org.jbrew.cbrew</groupId>
+    <artifactId>cbrew</artifactId>
+    <version>0.1.0-rc-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>espresso</artifactId>
+  
+  <name>JBrew :: CBrew :: Espresso</name>
+  <description>
+		The Espresso library provides aggregate collections operations implemented through the JNI. For large datasets, this 
+		library provides performance enhancements over using the Java language due to pointer and address manipulation.
+	</description>
+	<url>https://jbrew.org</url>
+
+	<properties>
+		<sonar.projectKey>org.jbrew.cbrew:espresso</sonar.projectKey>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.jbrew.core</groupId>
+			<artifactId>annotations</artifactId>
+			<version>0.1.0-beta.5</version>
+		</dependency>
+	</dependencies>
+</project>
