@@ -26,8 +26,8 @@ Note that contributors or other users who wish to use the latest nightly build s
     * <code>./install.sh /path/to/java.library.path</code> will install to the directory specified.
 3. You may be prompted to enter sudo password. Note that no text or cursor movement will appear on screen.
     * <code>[sudo] password for user:      </code>&nbsp;Enter your credentials, then hit <code>[Enter]</code>.
-4. Your installation is complete! ***Important:*** Make sure you set your java.library.path to the location specied in part 2, appended with /bin (Ex: <code>java.library.path=/path/in-part2/bin)</code> before compiling your code, as these libraries have links to native libraries.
-    * Essentially, whenever you run the <code>java</code> command, you will need to add <code>-Djava.library.path=path/to/where-you-ran/install.sh/in-step-2/bin</code> (Don't forget to append "/bin" to the end of the location!). More detailed istructions can be found [here](https://examples.javacodegeeks.com/java-basics/java-library-path-what-is-it-and-how-to-use/). Just remember to append "/bin"!
+4. Your installation is complete! ***Important:*** Make sure you set your java.library.path before compiling your code, as these libraries have links to native libraries.
+    * Essentially, whenever you run the <code>java</code> command, you will need to add <code>-Djava.library.path=path/to/where-you-ran/install.sh/in-step-2/</code>. More detailed istructions can be found [here](https://examples.javacodegeeks.com/java-basics/java-library-path-what-is-it-and-how-to-use/).
     * For Maven JUnit tests, it is reccomended you add the Apache Surefire plugin and provide the java.library.path as a compiler argument. [Use these instructions](https://stackoverflow.com/questions/10226082/surefire-junit-testing-using-native-libraries) if you are unsure how to do this.
 # JBrew Maven Dependencies
 <p>The following libraries are synchronixed with Maven Central, and can be inserted into your project's <code>pom.xml</code> as a dependency.</p>
@@ -38,7 +38,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew</groupId>
       <artifactId>concurrent</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -48,7 +48,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.cbrew</groupId>
       <artifactId>cbrew</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -58,7 +58,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.cbrew</groupId>
       <artifactId>cbrew-validators</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -68,7 +68,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native-validators</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -78,7 +78,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.native</groupId>
       <artifactId>native</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -88,7 +88,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>annotations</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -98,7 +98,7 @@ Note that contributors or other users who wish to use the latest nightly build s
     <dependency>
       <groupId>org.jbrew.core</groupId>
       <artifactId>jbrew-core</artifactId>
-      <version>0.1.0-beta.6</version>
+      <version>0.1.0-rc</version>
     </dependency>
   </dependencies>
 ```
@@ -115,7 +115,7 @@ following Linux distrubtions:
 * Ubuntu
 ## FreeBSD 12.1+
 As of release v0.1.0-beta.4, FreeBSD is now supported as part of the CBrew and Native libraries! TO configure JBrew for BSD, simply update the <code>java.library.path</code>
-from <code>$(user.home}/bin/</code> to <code>${user.home}/bin/freebsd/</code>. The reason for this configuration is that by default, C executables are packaged for 
+from <code>$(user.home}/bin/</code> to <code>${user.home}/binbsd/</code>. The reason for this configuration is that by default, C executables are packaged for 
 Linux systems. There are slight variances for FreeBSD systems which must be accounted for, and as such a seperate binaries folder was created to house all FreeBSD
 C libraries for CBrew and Native.
 ## Windows 10+
