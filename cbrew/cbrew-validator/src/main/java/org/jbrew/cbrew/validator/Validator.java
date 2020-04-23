@@ -104,10 +104,5 @@ public final class Validator {
 		}
 		private native final boolean pthreadTest();
 	}
-	
-	public static void main(String[] args) {
-		Validator v = new Validator.CBrewValidatorBuilder().withMemTest().withPThreadTest().build();
-		
-	}
 
 }
