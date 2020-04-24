@@ -9,7 +9,8 @@
  */
 JNIEXPORT jboolean JNICALL Java_org_jbrew_cbrew_validator_Validator_00024MallocValidator_mallocTest (JNIEnv *env, jobject this){
 	void* raw = malloc(1000);
-	if(raw != NULL) return 1;
+	int* intArr = (int*) malloc(1000 * sizeof(int));
+	if(raw != NULL && intArr != NULL) return 1;
 	return 0;
 	free(raw);
 }

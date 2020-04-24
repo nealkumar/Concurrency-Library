@@ -56,14 +56,20 @@ public final class Validator {
 	
 	private abstract class ValidatorTask extends ObjectBlockingTask<Boolean>{
 		@Override
-		protected void execute() {
-			boolean result = executeTask();
+		protected void execute(){
+			boolean result = false;
+			try {
+				 result = executeTask();
+			} catch(CBrewValidatorMemTestException fail) {
+				fail.printStackTrace();
+			}
+			//if(!result) throw new CBrewValidatorMemTestException();
 			accept(result);		//release this thread from blocking any more resources
 			String printStmt = "Status of " + getTaskName() + " Test is " + result;
 			Logger.getLogger(ValidatorTask.class).info(printStmt);
 			System.out.println(printStmt);
 		}
-		protected abstract boolean executeTask();
+		protected abstract boolean executeTask() throws CBrewValidatorMemTestException;
 		protected abstract String getTaskName();
 	}
 	
