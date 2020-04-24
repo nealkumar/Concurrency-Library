@@ -25,6 +25,12 @@
 		<sonar.projectKey>org.jbrew.cbrew:cbrew-validator</sonar.projectKey>
 	</properties>
 	
-	
+	<dependencies>
+		<dependency>
+			<groupId>org.jbrew</groupId>
+			<artifactId>concurrent</artifactId>
+			<version>0.1.0-beta.6</version>
+		</dependency>
+	</dependencies>
 
 </project>
