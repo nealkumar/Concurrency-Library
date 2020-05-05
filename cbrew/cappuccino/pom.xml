@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>jar</packaging>
+  <parent>
+    <groupId>org.jbrew.cbrew</groupId>
+    <artifactId>cbrew</artifactId>
+    <version>0.1.0-rc-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>cappuccino</artifactId>
+  
+  <name>JBrew :: CBrew :: Cappuccino</name>
+  <description>
+  		The Cappuccino library provides native Unix-like commands such as reading, writing, or appending to a file, concatenating
+  		two files, and many more. The native operations are supported by the OpenJDK's Java Native Interface. Care should be observed
+  		before using this library, as there are native code dependencies. For more information, please consult the README.md on the 
+  		project's main page (https://github.com/nealkumar/JBrew/). 
+	</description>
+	<url>https://jbrew.org</url>
+
+	<properties>
+		<sonar.projectKey>org.jbrew.cbrew:espresso</sonar.projectKey>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.jbrew.core</groupId>
+			<artifactId>annotations</artifactId>
+			<version>0.1.0-beta.6</version>
+		</dependency>
+	</dependencies>
+</project>
