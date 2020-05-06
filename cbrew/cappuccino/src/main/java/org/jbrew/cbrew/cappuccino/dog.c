@@ -97,8 +97,17 @@ static int udom_open(const char *path, int flags);
  */
 #define	BUFSIZE_SMALL (MAXPHYS)
 
+int go(int, char**);
+
+int main(int argc, char** argv){
+	char* arg1 = "test.txt";
+	char* arg2 = "test.txt";
+	char* args[] = {arg1, arg2};
+	go(2, args); 
+}
+
 int
-main(int argc, char *argv[])
+go(int argc, char *argv[])
 {
 	int ch;
 	struct flock stdout_lock;
