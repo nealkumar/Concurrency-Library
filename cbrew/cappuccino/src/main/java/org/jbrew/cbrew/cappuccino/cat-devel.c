@@ -4,8 +4,15 @@
 #define getchar() getc(stdin)
 #define putchar(x) putc((x), stdout)
 
+int cat(int, char**);
+
 int
 main(int argc, char** argv){
+	if(cat(argc, argv)) return 0;
+	return 1;
+}
+
+int cat(int argc, char** argv){
 	FILE* fp;
 	void filecopy(FILE*, FILE*);
 	char* prog = argv[0];
@@ -27,6 +34,7 @@ main(int argc, char** argv){
 			exit(2);
 		}
 	}
+	return 1;
 }
 
 void filecopy(FILE* ifp, FILE* ofp){
