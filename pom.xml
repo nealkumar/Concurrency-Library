@@ -296,7 +296,7 @@
 						<skip>true</skip>
 						<skipDeploy>true</skipDeploy>
 					</configuration>
-					<version>3.9.0</version>
+					<version>3.9.1</version>
 					<executions>
 						<execution>
 							<id>default-deploy</id>
